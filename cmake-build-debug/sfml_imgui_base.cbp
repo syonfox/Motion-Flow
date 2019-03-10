@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="sfml_imgui_base"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml_imgui_base">
+				<Option output="/home/syonfox/github/Motion-Flow/cmake-build-debug/sfml_imgui_base_d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
+					<Add directory="/home/syonfox/github/Motion-Flow"/>
+					<Add directory="/home/syonfox/github/Motion-Flow/imgui-sfml"/>
+					<Add directory="/home/syonfox/github/Motion-Flow/SFML-2.5.1/include/SFML"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_imgui_base"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml_imgui_base/fast">
+				<Option output="/home/syonfox/github/Motion-Flow/cmake-build-debug/sfml_imgui_base_d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
+					<Add directory="/home/syonfox/github/Motion-Flow"/>
+					<Add directory="/home/syonfox/github/Motion-Flow/imgui-sfml"/>
+					<Add directory="/home/syonfox/github/Motion-Flow/SFML-2.5.1/include/SFML"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_imgui_base/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imconfig.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imconfig-SFML.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imconfig.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.cpp">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui.cpp">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_demo.cpp">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_draw.cpp">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_internal.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_widgets.cpp">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_rectpack.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_textedit.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_truetype.h">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/main.cpp">
+			<Option target="sfml_imgui_base"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

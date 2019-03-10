@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="imgui_sfml"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\imgui-sfml\;CMake Files\imgui-sfml\examples\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/syonfox/github/sfml_imgui_base/imgui-sfml"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgui_sfml_example">
+				<Option output="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/imgui_sfml_example_d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
+					<Add directory="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 imgui_sfml_example"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgui_sfml_example/fast">
+				<Option output="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/imgui_sfml_example_d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
+					<Add directory="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 imgui_sfml_example/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/imconfig.h">
+			<Option target="imgui_sfml_example"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/sfml_imgui_base/main.cpp">
+			<Option target="imgui_sfml_example"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/sfml_imgui_base/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/sfml_imgui_base/imgui-sfml/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\imgui-sfml\"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/sfml_imgui_base/imgui-sfml/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\imgui-sfml\examples\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/syonfox/github/Motion-Flow/imconfig.h
+SFML/System/Vector2.hpp
+-
+SFML/Graphics/Color.hpp
+-
+
+/home/syonfox/github/Motion-Flow/player.cpp
+cmath
+-
+SFML/Window/Keyboard.hpp
+-
+player.hpp
+/home/syonfox/github/Motion-Flow/player.hpp
+
+/home/syonfox/github/Motion-Flow/player.hpp
+SFML/Graphics/ConvexShape.hpp
+-
+SFML/System/Time.hpp
+-
+SFML/Graphics/RenderWindow.hpp
+-
+imconfig.h
+/home/syonfox/github/Motion-Flow/imconfig.h
+slope.hpp
+/home/syonfox/github/Motion-Flow/slope.hpp
+
+/home/syonfox/github/Motion-Flow/slope.hpp
+SFML/System/Time.hpp
+-
+SFML/Graphics/RenderWindow.hpp
+-
+SFML/Graphics/VertexArray.hpp
+-
+deque
+-
+
