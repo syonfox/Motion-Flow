@@ -25,7 +25,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../"
   "../imgui-sfml"
-  "../SFML-2.5.1/include/SFML"
   "/usr/include/opencv"
   )
 

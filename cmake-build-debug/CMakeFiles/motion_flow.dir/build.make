@@ -227,11 +227,9 @@ motion_flow_d: /usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0
 motion_flow_d: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0
 motion_flow_d: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0
 motion_flow_d: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
-motion_flow_d: ../SFML-2.5.1/include/SFML/../../lib/libsfml-audio.so
-motion_flow_d: ../SFML-2.5.1/include/SFML/../../lib/libsfml-graphics.so
-motion_flow_d: ../SFML-2.5.1/include/SFML/../../lib/libsfml-network.so
-motion_flow_d: ../SFML-2.5.1/include/SFML/../../lib/libsfml-system.so
-motion_flow_d: ../SFML-2.5.1/include/SFML/../../lib/libsfml-window.so
+motion_flow_d: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+motion_flow_d: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+motion_flow_d: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 motion_flow_d: /usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0
 motion_flow_d: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0
 motion_flow_d: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0

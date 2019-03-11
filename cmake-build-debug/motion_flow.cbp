@@ -5,7 +5,7 @@
 		<Option title="motion_flow"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\OpenCV\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\OpenCV\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
@@ -47,7 +47,6 @@
 					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
 					<Add directory="/home/syonfox/github/Motion-Flow"/>
 					<Add directory="/home/syonfox/github/Motion-Flow/imgui-sfml"/>
-					<Add directory="/home/syonfox/github/Motion-Flow/SFML-2.5.1/include/SFML"/>
 					<Add directory="/usr/include/opencv"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
@@ -75,7 +74,6 @@
 					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
 					<Add directory="/home/syonfox/github/Motion-Flow"/>
 					<Add directory="/home/syonfox/github/Motion-Flow/imgui-sfml"/>
-					<Add directory="/home/syonfox/github/Motion-Flow/SFML-2.5.1/include/SFML"/>
 					<Add directory="/usr/include/opencv"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
@@ -199,6 +197,21 @@
 		</Unit>
 		<Unit filename="/home/syonfox/github/Motion-Flow/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
 		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/share/OpenCV/OpenCVConfig-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\"/>

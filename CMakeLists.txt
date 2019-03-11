@@ -6,18 +6,18 @@ cmake_minimum_required(VERSION 3.1)
 
 
 project(motion_flow)
-
+find_package(SFML 2 REQUIRED network audio graphics window system)
 find_package(OpenGL REQUIRED)
 find_package(OpenCV REQUIRED)
 message("OpenCV Libs ${OpenCV_LIBS}")
 #set(IMGUI_ROOT ${CMAKE_CURRENT_LIST_DIR}/imgui-sfml)
 
-set(SFML_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/SFML-2.5.1/include/SFML/)
+#set(SFML_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/SFML-2.5.1/include/SFML/)
 #file(GLOB SFML_HEADERS "${SFML_INCLUDE_DIR}/*.hpp" )
-file(GLOB SFML_LIBRARIES "${SFML_INCLUDE_DIR}/../../lib/*.so")
+#file(GLOB SFML_LIBRARIES "${SFML_INCLUDE_DIR}/../../lib/*.so")
 
-message(status "** SFML Include: ${SFML_INCLUDE_DIR}")
-message(status "** SFML Libraries: ${SFML_LIBRARIES}")
+#message(status "** SFML Include: ${SFML_INCLUDE_DIR}")
+#message(status "** SFML Libraries: ${SFML_LIBRARIES}")
 
 message(status "** IMGUI Root: ${IMGUI_ROOT}")
 
@@ -59,6 +59,16 @@ set(SRCS "imconfig.h" ${IMGUI_SFML_SOURCES} ${EXAMPLE_FILES} slope.cpp slope.hpp
 
 add_executable(motion_flow ${SRCS})
 
+# Detect and add SFML
+#set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
+#Find any version 2.X of SFML
+#See the FindSFML.cmake file for additional details and instructions
+
+#if(SFML_FOUND)
+#  include_directories(${SFML_INCLUDE_DIR})
+#  target_link_libraries(motion_flow ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+#endif()
+
 target_compile_definitions(motion_flow PRIVATE IMGUI_INCLUDE_IMCONFIG_H)
 # FIXME(SMA) : Wrong header used here when IMGUI_ROOT contains a imconfig.h
 target_include_directories(motion_flow PRIVATE
@@ -66,7 +76,7 @@ target_include_directories(motion_flow PRIVATE
         ${IMGUI_SFML_INCLUDE_DIRS}
         )
 
-target_link_libraries(motion_flow ${OPENGL_LIBRARIES} ${OpenCV_LIBS} ${IMGUI_SFML_DEPENDENCIES})
+target_link_libraries(motion_flow ${OPENGL_LIBRARIES} ${OpenCV_LIBS} ${IMGUI_SFML_DEPENDENCIES} sfml-graphics sfml-window sfml-system )
 install(TARGETS motion_flow DESTINATION bin)
 set_target_properties(motion_flow PROPERTIES DEBUG_POSTFIX _d)
 
