@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = -DIMGUI_INCLUDE_IMCONFIG_H
 
-CXX_INCLUDES = -I/home/syonfox/github/Motion-Flow -I/home/syonfox/github/Motion-Flow/imgui-sfml -isystem /usr/include/opencv 
+CXX_INCLUDES = -I/home/syonfox/github/Motion-Flow -I/home/syonfox/github/Motion-Flow/imgui-sfml -isystem /usr/local/include/opencv4 
 

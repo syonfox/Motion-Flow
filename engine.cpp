@@ -6,7 +6,7 @@
 
 
 Engine::Engine(sf::Vector2u ws):
-    slope(1,1000,100)
+    slope(2,500,1000)
 {
     player.setPos(sf::Vector2f(100, 100));
     windowSize = ws;
@@ -18,7 +18,7 @@ Engine::Engine(sf::Vector2u ws):
 void Engine::update(sf::Time dt) {
     if(state != State::PAUSE) {
 
-        slope.update(dt, sf::Vector2f(0,0));
+        slope.update(dt, player.getPos());
         player.update(dt, slope);
     }
 }
@@ -59,10 +59,10 @@ void Engine::render(sf::RenderWindow &window) {
     gui();
 
 
-    //camera.setCenter(player.getPosition());
-    //window.setView(camera);
+    camera.setCenter(player.getPos());
+    window.setView(camera);
     draw(window);
-    //window.setView(window.getDefaultView());
+    window.setView(window.getDefaultView());
 }
 
 void Engine::draw(sf::RenderWindow &window) {
@@ -71,17 +71,19 @@ void Engine::draw(sf::RenderWindow &window) {
 }
 
 void Engine::gui() {
-    ImGui::Begin("Debug");
+    if(debugWindow) {
+        ImGui::Begin("Debug");
 
-    if (ImGui::CollapsingHeader("Engine")) {
-        ImGui::Text("Engine Info");
-        if (ImGui::CollapsingHeader("Camera")) {
-            ImGui::Text("Camera Info");
-            ImGui::Text("Pos(%f, %f)", camera.getCenter().x, camera.getCenter().y);
+        if (ImGui::CollapsingHeader("Engine")) {
+            ImGui::Text("Engine Info");
+            if (ImGui::CollapsingHeader("Camera")) {
+                ImGui::Text("Camera Info");
+                ImGui::Text("Pos(%f, %f)", camera.getCenter().x, camera.getCenter().y);
+
+            }
+
 
         }
-
-
+        ImGui::End();
     }
-    ImGui::End();
 }

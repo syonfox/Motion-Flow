@@ -13,20 +13,27 @@
 
 class Slope {
 private:
+    double epsilon;
     std::deque<sf::Vector2f> points;
     sf::VertexArray sprite;
     int step;
     int frontBufferDistance;
     int backBufferDistance;
     int bufferSize;
-
-    double slopeFunction(double x);
+    double squareDistance(sf::Vector2f &p , sf::Vector2f &q);
+    double squareDistance(sf::Vector2f &p, double &x ); //computes y for you
+    sf::Vector2f lineLineIntersection(sf::Vector2f &p1 , sf::Vector2f &p2, sf::Vector2f &q1,sf::Vector2f &q2);
 public:
-
+    double slopeFunction(double x);
+    double slope(double x);
     Slope(int _step, int _frontBufferDistance, int _backBufferDistance);
     void update(sf::Time dt,  sf::Vector2f playerPos);
     void render(sf::RenderWindow &window);
-    float colisionPoint(sf::Vector2f p);
+    float colisionPoint_depth(sf::Vector2f p);
+
+    //returns true if collision happens and set mtv if no colision mtv is unchanged
+
+    bool colisionPoint(sf::Vector2f p, sf::Vector2f &mtv);
 };
 
 

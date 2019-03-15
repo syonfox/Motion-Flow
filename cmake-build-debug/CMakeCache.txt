@@ -239,7 +239,7 @@ OPENGL_opengl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libOpenGL.so
 OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=/usr/share/OpenCV
+OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
 
 //Path to a program.
 ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
@@ -253,6 +253,12 @@ SFML_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SFML
 //Path to a file.
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for THOR.
+THOR_DIR:PATH=THOR_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Thor.
+Thor_DIR:PATH=Thor_DIR-NOTFOUND
+
 //Value Computed by CMake
 motion_flow_BINARY_DIR:STATIC=/home/syonfox/github/Motion-Flow/cmake-build-debug
 
@@ -264,6 +270,9 @@ sfml_imgui_base_BINARY_DIR:STATIC=/home/syonfox/github/Motion-Flow/cmake-build-d
 
 //Value Computed by CMake
 sfml_imgui_base_SOURCE_DIR:STATIC=/home/syonfox/github/Motion-Flow
+
+//The directory containing a CMake configuration file for thor.
+thor_DIR:PATH=thor_DIR-NOTFOUND
 
 
 ########################
@@ -416,7 +425,7 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding OpenCV
-FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v3.2.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v4.1.0(4.1)]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libOpenGL.so][/usr/lib/x86_64-linux-gnu/libGLX.so][/usr/include][c ][v()]
 //ADVANCED property for variable: OPENGL_EGL_INCLUDE_DIR

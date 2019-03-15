@@ -31,7 +31,11 @@ private:
     Player player;
     float g;
 
+
+
 public:
+    bool debugWindow;
+
     Engine(sf::Vector2u windowSize);
 
     void update(sf::Time dt);

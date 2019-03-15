@@ -9,8 +9,8 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(640, 480), "Motion Flow");
-    window.setFramerateLimit(60);
+    sf::RenderWindow window(sf::VideoMode(1366, 720), "Motion Flow");
+    window.setFramerateLimit(120);
     ImGui::SFML::Init(window);
 
     sf::CircleShape shape(100.f);
@@ -100,9 +100,9 @@ int main()
             if (ImGui::BeginMainMenuBar()) {
                 if (ImGui::BeginMenu("Debug")) {
 
-                    if (ImGui::MenuItem("Toggel Debug Window", nullptr, &showMenuDebug)) {
+                    if (ImGui::MenuItem("Toggle Debug Window", nullptr, &showMenuDebug)) {
                     }
-                    if (ImGui::MenuItem("Toggel ImGUI Demo", nullptr, &showimguiDemo)) {
+                    if (ImGui::MenuItem("Toggle ImGUI Demo", nullptr, &showimguiDemo)) {
                     }
 
                     ImGui::EndMenu();
@@ -110,11 +110,13 @@ int main()
             }
             ImGui::EndMainMenuBar();
 
-            if(showimguiDemo){
+            if (showimguiDemo) {
                 ImGui::ShowTestWindow();
             }
 
-            if(showMenuDebug){
+            e.debugWindow = showMenuDebug;
+            if (showMenuDebug) {
+
 
                 ImGui::Begin("Debug");
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
@@ -130,22 +132,27 @@ int main()
                     ImGui::Text("Ticks/Second: %d", ticksPerSecond);
                     ImGui::Text("Tick: %d", tick);
                     ImGui::Text("Fps: %d   , Tps: %d   , Tpf: %d", framesPerSecond, ticksPerSecond, ticksPerFrame);
-                    ImGui::Text("Engine Time per Second: %f   , Engine Time per Tick: %f s", simTimePerSecond, tickTime.asSeconds());
+                    ImGui::Text("Engine Time per Second: %f   , Engine Time per Tick: %f s", simTimePerSecond,
+                                tickTime.asSeconds());
 
-                    //ticksPerSecond = (int)simTimePerSecond / tickTime.asSeconds();
-                    //simTimePerSecond = tickTime.asSeconds() * ticksPerSecond;
-                    //secondsPerTick = sf::seconds(1.0f / ticksPerSecond);
-                    //ticksPerFrame = ticksPerSecond / framesPerSecond;
+//                    ticksPerSecond = (int)simTimePerSecond / tickTime.asSeconds();
+//                    simTimePerSecond = tickTime.asSeconds() * ticksPerSecond;
+//                    secondsPerTick = sf::seconds(1.0f / ticksPerSecond);
+//                    ticksPerFrame = ticksPerSecond / framesPerSecond;
                 }
                 ImGui::End();
             }
 
+
+            window.clear();
+            //window.draw(shape);
+            e.render(window);
+            ImGui::SFML::Render(window);
+            window.display();
         }
-        window.clear();
-        //window.draw(shape);
-        e.render(window);
-        ImGui::SFML::Render(window);
-        window.display();
+
+        sf::sleep(secondsPerTick - deltaClock.getElapsedTime());
+
     }
 
     ImGui::SFML::Shutdown();

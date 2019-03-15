@@ -17,6 +17,7 @@ private:
     sf::Vector2f pos;
     sf::Vector2f vel;
     sf::Vector2f acc;
+    sf::Vector2f force;
     float mass;
     float angle;
     float rotation;
@@ -27,6 +28,10 @@ private:
     sf::ConvexShape shape;
 
     sf::Transform transform;
+
+    bool debugDraw;
+    sf::VertexArray debugLines;
+
 
 public:
     Player();
