@@ -20,9 +20,13 @@ private:
     int frontBufferDistance;
     int backBufferDistance;
     int bufferSize;
+
     double squareDistance(sf::Vector2f &p , sf::Vector2f &q);
     double squareDistance(sf::Vector2f &p, double &x ); //computes y for you
+    //Computes the intersection point of 2 lines //PARALEL LINES NOT ALLOWED
     sf::Vector2f lineLineIntersection(sf::Vector2f &p1 , sf::Vector2f &p2, sf::Vector2f &q1,sf::Vector2f &q2);
+
+
 public:
     double slopeFunction(double x);
     double slope(double x);

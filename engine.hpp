@@ -37,7 +37,6 @@ public:
     bool debugWindow;
 
     Engine(sf::Vector2u windowSize);
-
     void update(sf::Time dt);
     void handleEvent(sf::Event &e);
     void render(sf::RenderWindow &window);

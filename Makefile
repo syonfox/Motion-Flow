@@ -48,10 +48,10 @@ RM = /home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bi
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/syonfox/github/sfml_imgui_base
+CMAKE_SOURCE_DIR = /home/syonfox/github/Motion-Flow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/syonfox/github/sfml_imgui_base
+CMAKE_BINARY_DIR = /home/syonfox/github/Motion-Flow
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,6 +78,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -112,23 +124,11 @@ install/local/fast: preinstall/fast
 	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/syonfox/github/sfml_imgui_base/CMakeFiles /home/syonfox/github/sfml_imgui_base/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/syonfox/github/Motion-Flow/CMakeFiles /home/syonfox/github/Motion-Flow/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/syonfox/github/sfml_imgui_base/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/syonfox/github/Motion-Flow/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -157,17 +157,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sfml_imgui_base
+# Target rules for targets named motion_flow
 
 # Build rule for target.
-sfml_imgui_base: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sfml_imgui_base
-.PHONY : sfml_imgui_base
+motion_flow: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 motion_flow
+.PHONY : motion_flow
 
 # fast build rule for target.
-sfml_imgui_base/fast:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/build
-.PHONY : sfml_imgui_base/fast
+motion_flow/fast:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/build
+.PHONY : motion_flow/fast
+
+engine.o: engine.cpp.o
+
+.PHONY : engine.o
+
+# target to build an object file
+engine.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/engine.cpp.o
+.PHONY : engine.cpp.o
+
+engine.i: engine.cpp.i
+
+.PHONY : engine.i
+
+# target to preprocess a source file
+engine.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/engine.cpp.i
+.PHONY : engine.cpp.i
+
+engine.s: engine.cpp.s
+
+.PHONY : engine.s
+
+# target to generate assembly for a file
+engine.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/engine.cpp.s
+.PHONY : engine.cpp.s
 
 imgui-sfml/imgui-SFML.o: imgui-sfml/imgui-SFML.cpp.o
 
@@ -175,7 +202,7 @@ imgui-sfml/imgui-SFML.o: imgui-sfml/imgui-SFML.cpp.o
 
 # target to build an object file
 imgui-sfml/imgui-SFML.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui-SFML.cpp.o
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o
 .PHONY : imgui-sfml/imgui-SFML.cpp.o
 
 imgui-sfml/imgui-SFML.i: imgui-sfml/imgui-SFML.cpp.i
@@ -184,7 +211,7 @@ imgui-sfml/imgui-SFML.i: imgui-sfml/imgui-SFML.cpp.i
 
 # target to preprocess a source file
 imgui-sfml/imgui-SFML.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui-SFML.cpp.i
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.i
 .PHONY : imgui-sfml/imgui-SFML.cpp.i
 
 imgui-sfml/imgui-SFML.s: imgui-sfml/imgui-SFML.cpp.s
@@ -193,7 +220,7 @@ imgui-sfml/imgui-SFML.s: imgui-sfml/imgui-SFML.cpp.s
 
 # target to generate assembly for a file
 imgui-sfml/imgui-SFML.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui-SFML.cpp.s
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.s
 .PHONY : imgui-sfml/imgui-SFML.cpp.s
 
 imgui-sfml/imgui.o: imgui-sfml/imgui.cpp.o
@@ -202,7 +229,7 @@ imgui-sfml/imgui.o: imgui-sfml/imgui.cpp.o
 
 # target to build an object file
 imgui-sfml/imgui.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui.cpp.o
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o
 .PHONY : imgui-sfml/imgui.cpp.o
 
 imgui-sfml/imgui.i: imgui-sfml/imgui.cpp.i
@@ -211,7 +238,7 @@ imgui-sfml/imgui.i: imgui-sfml/imgui.cpp.i
 
 # target to preprocess a source file
 imgui-sfml/imgui.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui.cpp.i
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.i
 .PHONY : imgui-sfml/imgui.cpp.i
 
 imgui-sfml/imgui.s: imgui-sfml/imgui.cpp.s
@@ -220,7 +247,7 @@ imgui-sfml/imgui.s: imgui-sfml/imgui.cpp.s
 
 # target to generate assembly for a file
 imgui-sfml/imgui.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui.cpp.s
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.s
 .PHONY : imgui-sfml/imgui.cpp.s
 
 imgui-sfml/imgui_demo.o: imgui-sfml/imgui_demo.cpp.o
@@ -229,7 +256,7 @@ imgui-sfml/imgui_demo.o: imgui-sfml/imgui_demo.cpp.o
 
 # target to build an object file
 imgui-sfml/imgui_demo.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_demo.cpp.o
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o
 .PHONY : imgui-sfml/imgui_demo.cpp.o
 
 imgui-sfml/imgui_demo.i: imgui-sfml/imgui_demo.cpp.i
@@ -238,7 +265,7 @@ imgui-sfml/imgui_demo.i: imgui-sfml/imgui_demo.cpp.i
 
 # target to preprocess a source file
 imgui-sfml/imgui_demo.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_demo.cpp.i
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.i
 .PHONY : imgui-sfml/imgui_demo.cpp.i
 
 imgui-sfml/imgui_demo.s: imgui-sfml/imgui_demo.cpp.s
@@ -247,7 +274,7 @@ imgui-sfml/imgui_demo.s: imgui-sfml/imgui_demo.cpp.s
 
 # target to generate assembly for a file
 imgui-sfml/imgui_demo.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_demo.cpp.s
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.s
 .PHONY : imgui-sfml/imgui_demo.cpp.s
 
 imgui-sfml/imgui_draw.o: imgui-sfml/imgui_draw.cpp.o
@@ -256,7 +283,7 @@ imgui-sfml/imgui_draw.o: imgui-sfml/imgui_draw.cpp.o
 
 # target to build an object file
 imgui-sfml/imgui_draw.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_draw.cpp.o
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o
 .PHONY : imgui-sfml/imgui_draw.cpp.o
 
 imgui-sfml/imgui_draw.i: imgui-sfml/imgui_draw.cpp.i
@@ -265,7 +292,7 @@ imgui-sfml/imgui_draw.i: imgui-sfml/imgui_draw.cpp.i
 
 # target to preprocess a source file
 imgui-sfml/imgui_draw.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_draw.cpp.i
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.i
 .PHONY : imgui-sfml/imgui_draw.cpp.i
 
 imgui-sfml/imgui_draw.s: imgui-sfml/imgui_draw.cpp.s
@@ -274,7 +301,7 @@ imgui-sfml/imgui_draw.s: imgui-sfml/imgui_draw.cpp.s
 
 # target to generate assembly for a file
 imgui-sfml/imgui_draw.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_draw.cpp.s
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.s
 .PHONY : imgui-sfml/imgui_draw.cpp.s
 
 imgui-sfml/imgui_widgets.o: imgui-sfml/imgui_widgets.cpp.o
@@ -283,7 +310,7 @@ imgui-sfml/imgui_widgets.o: imgui-sfml/imgui_widgets.cpp.o
 
 # target to build an object file
 imgui-sfml/imgui_widgets.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_widgets.cpp.o
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o
 .PHONY : imgui-sfml/imgui_widgets.cpp.o
 
 imgui-sfml/imgui_widgets.i: imgui-sfml/imgui_widgets.cpp.i
@@ -292,7 +319,7 @@ imgui-sfml/imgui_widgets.i: imgui-sfml/imgui_widgets.cpp.i
 
 # target to preprocess a source file
 imgui-sfml/imgui_widgets.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_widgets.cpp.i
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.i
 .PHONY : imgui-sfml/imgui_widgets.cpp.i
 
 imgui-sfml/imgui_widgets.s: imgui-sfml/imgui_widgets.cpp.s
@@ -301,7 +328,7 @@ imgui-sfml/imgui_widgets.s: imgui-sfml/imgui_widgets.cpp.s
 
 # target to generate assembly for a file
 imgui-sfml/imgui_widgets.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/imgui-sfml/imgui_widgets.cpp.s
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.s
 .PHONY : imgui-sfml/imgui_widgets.cpp.s
 
 main.o: main.cpp.o
@@ -310,7 +337,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -319,7 +346,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -328,8 +355,62 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml_imgui_base.dir/build.make CMakeFiles/sfml_imgui_base.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+player.o: player.cpp.o
+
+.PHONY : player.o
+
+# target to build an object file
+player.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/player.cpp.o
+.PHONY : player.cpp.o
+
+player.i: player.cpp.i
+
+.PHONY : player.i
+
+# target to preprocess a source file
+player.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/player.cpp.i
+.PHONY : player.cpp.i
+
+player.s: player.cpp.s
+
+.PHONY : player.s
+
+# target to generate assembly for a file
+player.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/player.cpp.s
+.PHONY : player.cpp.s
+
+slope.o: slope.cpp.o
+
+.PHONY : slope.o
+
+# target to build an object file
+slope.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/slope.cpp.o
+.PHONY : slope.cpp.o
+
+slope.i: slope.cpp.i
+
+.PHONY : slope.i
+
+# target to preprocess a source file
+slope.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/slope.cpp.i
+.PHONY : slope.cpp.i
+
+slope.s: slope.cpp.s
+
+.PHONY : slope.s
+
+# target to generate assembly for a file
+slope.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/slope.cpp.s
+.PHONY : slope.cpp.s
 
 # Help Target
 help:
@@ -339,11 +420,14 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... edit_cache"
-	@echo "... sfml_imgui_base"
+	@echo "... motion_flow"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install/local"
-	@echo "... install"
+	@echo "... engine.o"
+	@echo "... engine.i"
+	@echo "... engine.s"
 	@echo "... imgui-sfml/imgui-SFML.o"
 	@echo "... imgui-sfml/imgui-SFML.i"
 	@echo "... imgui-sfml/imgui-SFML.s"
@@ -362,6 +446,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... player.o"
+	@echo "... player.i"
+	@echo "... player.s"
+	@echo "... slope.o"
+	@echo "... slope.i"
+	@echo "... slope.s"
 .PHONY : help
 
 

@@ -22,7 +22,8 @@ private:
     float angle;
     float rotation;
 
-    float g;
+    float g; //gravity accelearation
+    float c; //drag coefficient
 
     sf::Color color;
     sf::ConvexShape shape;
@@ -30,6 +31,7 @@ private:
     sf::Transform transform;
 
     bool debugDraw;
+    bool debugWindow;
     sf::VertexArray debugLines;
 
 
