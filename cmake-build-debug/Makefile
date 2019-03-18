@@ -358,6 +358,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+motion.o: motion.cpp.o
+
+.PHONY : motion.o
+
+# target to build an object file
+motion.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/motion.cpp.o
+.PHONY : motion.cpp.o
+
+motion.i: motion.cpp.i
+
+.PHONY : motion.i
+
+# target to preprocess a source file
+motion.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/motion.cpp.i
+.PHONY : motion.cpp.i
+
+motion.s: motion.cpp.s
+
+.PHONY : motion.s
+
+# target to generate assembly for a file
+motion.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/motion.cpp.s
+.PHONY : motion.cpp.s
+
 player.o: player.cpp.o
 
 .PHONY : player.o
@@ -446,6 +473,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... motion.o"
+	@echo "... motion.i"
+	@echo "... motion.s"
 	@echo "... player.o"
 	@echo "... player.i"
 	@echo "... player.s"

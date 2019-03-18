@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_draw.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o"
   "/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_widgets.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o"
   "/home/syonfox/github/Motion-Flow/main.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/main.cpp.o"
+  "/home/syonfox/github/Motion-Flow/motion.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/motion.cpp.o"
   "/home/syonfox/github/Motion-Flow/player.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/player.cpp.o"
   "/home/syonfox/github/Motion-Flow/slope.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/slope.cpp.o"
   )

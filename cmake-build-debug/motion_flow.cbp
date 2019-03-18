@@ -183,6 +183,12 @@
 		<Unit filename="/home/syonfox/github/Motion-Flow/main.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/motion.cpp">
+			<Option target="motion_flow"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/motion.hpp">
+			<Option target="motion_flow"/>
+		</Unit>
 		<Unit filename="/home/syonfox/github/Motion-Flow/player.cpp">
 			<Option target="motion_flow"/>
 		</Unit>

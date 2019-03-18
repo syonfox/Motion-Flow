@@ -1,9 +1,8 @@
 /home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/syonfox/github/Motion-Flow
 -- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
--- Found OpenCV: /usr/local (found suitable version "4.1.0", minimum required is "4.1") 
 status** imgui includes:  /home/syonfox/github/Motion-Flow;/home/syonfox/github/Motion-Flow/imgui-sfml 
 
 status** imgui-sfml sources: /home/syonfox/github/Motion-Flow/imgui-sfml/imconfig-SFML.h;/home/syonfox/github/Motion-Flow/imgui-sfml/imconfig.h;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.cpp;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.h;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui.cpp;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui.h;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_demo.cpp;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_draw.cpp;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_internal.h;/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_widgets.cpp;/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_rectpack.h;/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_textedit.h;/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_truetype.h
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/syonfox/github/Motion-Flow
+-- Build files have been written to: /home/syonfox/github/Motion-Flow/cmake-build-debug

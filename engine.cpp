@@ -3,11 +3,15 @@
 //
 
 #include "engine.hpp"
+#include "motion.hpp"
 
 
 Engine::Engine(sf::Vector2u ws):
     slope(2,500,1000)
 {
+
+    Motion::init_motion();
+
     player.setPos(sf::Vector2f(100, 100));
     windowSize = ws;
     camera = sf::View( sf::FloatRect( sf::Vector2f(0,0), sf::Vector2f((float) ws.x, (float) ws.y) ) );
