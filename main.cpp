@@ -6,6 +6,7 @@
 #include "imgui.h"
 #include "imgui-SFML.h"
 #include "engine.hpp"
+#include "motion.hpp"
 #include <iostream>
 
 
@@ -31,7 +32,7 @@ int main()
     */
 
     Engine e = Engine(window.getSize());
-
+    Motion::init();
     uint tick = 0;
     sf::Time tickTime = sf::seconds(0.01f); // the amount of time to simulate
     // every tick (adjust this to change
@@ -159,6 +160,7 @@ int main()
 
     }
 
+    Motion::shutdown();
     ImGui::SFML::Shutdown();
 
     return 0;

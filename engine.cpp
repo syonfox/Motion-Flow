@@ -10,7 +10,6 @@ Engine::Engine(sf::Vector2u ws):
     slope(2,500,1000)
 {
 
-    Motion::init_motion();
 
     player.setPos(sf::Vector2f(100, 100));
     windowSize = ws;

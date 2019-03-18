@@ -13,10 +13,14 @@ private:
     static void* pose_detection(void* threadid);
 
     static cv::Mat bones;
+    static int tid;
+    static pthread_t poseThread;
 
 public:
 
-    static  int init_motion();
+
+    static  int init();
+    static  int shutdown();
     //static  cv::Mat get_bones();
     //array get_curent_scelition();
     //

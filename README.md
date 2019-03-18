@@ -29,7 +29,10 @@ In order to build download the repositiory and build using cmake
 ```
 git clone https://github.com/syonfox/Motion-Flow.git
 cd Motion_Flow
-cmake.
+./getModels.sh
+mkdir build
+cd build
+cmake ..
 make -j 8
 ./motion_flow
 ```

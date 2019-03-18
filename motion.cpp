@@ -142,13 +142,18 @@ void* Motion::pose_detection(void *threadid) {
 
     return 0;
 }
+pthread_t Motion::poseThread;
 
-int Motion::init_motion() {
+int Motion::init() {
+    int rc;
+    //Other Setup here
+
+//    int tid;
+//    pthread_t poseThread;
+
     std::cout << "init_motion() : creating pose_detection thread, " << std::endl;
-    long tid;
-    pthread_t poseThread;
 
-    int rc = pthread_create(&poseThread, NULL, pose_detection, NULL);
+    rc = pthread_create(&poseThread, NULL, pose_detection, NULL);
 
       if (rc) {
           std::cout << "Error:unable to create thread," << rc << std::endl;
@@ -156,6 +161,22 @@ int Motion::init_motion() {
       }
 }
 
+int Motion::shutdown() {
+    int rc;
+    std::cout << "Status: Shuting Down Motion " << std::endl;
+    rc = pthread_cancel(poseThread);
+
+    if (rc) {
+          std::cout << "Error:unable to cancel thread," << rc << std::endl;
+         exit(-1);
+    }
+    rc = pthread_join(poseThread,NULL); //somting s wrong here
+    if (rc) {
+          std::cout << "Error:unable to join thread," << rc << std::endl;
+         exit(-1);
+    }
+    std::cout << "Status: Pose Thread Joined" << rc << std::endl;
+}
 //Motion::Motion() {
 //
 //    cv::Mat m1;
