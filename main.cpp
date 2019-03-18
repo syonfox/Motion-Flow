@@ -6,9 +6,17 @@
 #include "imgui.h"
 #include "imgui-SFML.h"
 #include "engine.hpp"
+#include <opencv2/dnn.hpp>
+#include <iostream>
+
 
 int main()
 {
+
+    cv::Mat m1;
+    m1.create(4,4, CV_32F);
+    std::cout << m1 << std::endl;
+
     sf::RenderWindow window(sf::VideoMode(1366, 720), "Motion Flow");
     window.setFramerateLimit(120);
     ImGui::SFML::Init(window);

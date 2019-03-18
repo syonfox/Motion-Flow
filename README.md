@@ -1,10 +1,10 @@
 
-#Motion Flow
+# Motion Flow
 
 This is a small game made using opencv and sfml meant to demonstrate the
 use of machine learing pose detection as control for games.  
 
-####Dependences:
+#### Dependences:
 
 * OpenCV 4+
 * SFML 2.5.1
@@ -24,35 +24,34 @@ cmake .
 sudo make install
 ```
 
-###Build/Run
+### Build/Run
 In order to build download the repositiory and build using cmake
 ```
 git clone https://github.com/syonfox/Motion-Flow.git
 cd Motion_Flow
 cmake.
 make -j 8
-./motion_flow 
-
+./motion_flow
 ```
 
-####Design
-#####Main:
+#### Design
+##### Main:
 Setup sfml window
 initalize Imgui
 Run the core loop whitch calls various engine features and preformes drawing
 frame rate and times are handeled here
 
-#####Engine:
+##### Engine:
 This is responsibal for manageing the game
 TODO: 
 - Make Engine setup a thread to do image proccessing and pass the inputs on to the player
 - Implement Menu and settings
 
-
-#####Player:
+time
+##### Player:
 A player object whitch hanedls contole events and the players physiscs
 
-#####Slope:
+##### Slope:
 An object whitch has an slopeFunction whitch defines the ski hill
 it also provies functions for detecting collisions with the hill
 
