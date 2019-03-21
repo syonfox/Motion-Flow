@@ -32,7 +32,9 @@ int main()
     */
 
     Engine e = Engine(window.getSize());
-    Motion::init();
+
+    //Motion::init();
+
     uint tick = 0;
     sf::Time tickTime = sf::seconds(0.01f); // the amount of time to simulate
     // every tick (adjust this to change

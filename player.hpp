@@ -20,6 +20,8 @@ private:
     sf::Vector2f force;
     float mass;
     float angle;
+    float velAngle;
+    float aoi; //angle of incadince
     float rotation;
 
     float g; //gravity accelearation
@@ -28,11 +30,26 @@ private:
     sf::Color color;
     sf::ConvexShape shape;
 
+    sf::ConvexShape body;
+    sf::VertexArray ski;
+
+    sf::Color bodyColor;
+    sf::Color skiColor;
+    int scarfLength;
+    sf::VertexArray scarf;
+    std::deque<sf::Vector2f> scarfPoints;
+    sf::Color scarfColor;
+
+    void updateScarf(void);
+    //void drawScarf(void);
     sf::Transform transform;
 
     bool debugDraw;
     bool debugWindow;
     sf::VertexArray debugLines;
+
+    int bodyWidth, bodyHeight;
+    void genBody(int width, int hight);
 
 
 public:

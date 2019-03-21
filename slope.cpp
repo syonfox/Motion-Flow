@@ -7,7 +7,7 @@
 #include "slope.hpp"
 
 double Slope::slopeFunction(double x){
-    return 100+ 80*sin(x/80)+(0.8*x) + 10*sin(x/20) + 10*sin((x+2)/20);
+    return 100+ 50*sin(x/100)+(0.5*x) + 10*sin(x/100) + 10*sin((x+2)/500);
 }
 double Slope::slope(double x){
     return (slopeFunction(x-epsilon) - slopeFunction(x+epsilon)) / (2*epsilon);
@@ -107,7 +107,7 @@ bool Slope::colisionPoint(sf::Vector2f p, sf::Vector2f &mtv){
 //}
 
 Slope::Slope(int _step, int _frontBufferDistance, int _backBufferDistance){
-    epsilon = 0.01;
+    epsilon = 1;
     step = _step;
     frontBufferDistance = _frontBufferDistance;
     backBufferDistance = _backBufferDistance;
