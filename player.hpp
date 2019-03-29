@@ -24,6 +24,9 @@ private:
     float aoi; //angle of incadince
     float rotation;
 
+    float airTime;
+    bool inAir;
+
     float g; //gravity accelearation
     float c; //drag coefficient
 

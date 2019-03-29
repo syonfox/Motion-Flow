@@ -102,7 +102,7 @@ void Player::update(sf::Time dt, Slope s){
     float t = dt.asSeconds();
     //c = 0.01
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
-        //this->applyForce(sf::Vector2f(-100*mass,0));
+        this->applyForce(sf::Vector2f(-100*mass,0));
 
         //acc.x -= 50;
     }
@@ -111,7 +111,7 @@ void Player::update(sf::Time dt, Slope s){
         this->applyForce(sf::Vector2f(100*mass,0));
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
-        this->applyForce(sf::Vector2f(0, -100*mass));
+        //this->applyForce(sf::Vector2f(0, -100*mass));
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 
@@ -161,7 +161,30 @@ void Player::update(sf::Time dt, Slope s){
         applyForce(Fn);
         //applyGravity = false;
         //applyForce(sf::Vector2f(-g*mtv.x/mtv.y, 0));
+
+        if(inAir) {
+            if(aoi < 20 ){
+            //speed boost
+                vel.x *=2;
+                vel.y *=2;
+            }
+//            else {
+//                vel.x *=0.5;
+//                vel.y *=0.5;
+//            }
+        }
+
+        airTime = 0;
+        inAir = false;
+    } else {
+        airTime += t;
     }
+
+    if(airTime > 0.5)
+        inAir = true;
+
+
+
 
     if(vel != sf::Vector2f(0,0)) { //if there is speed
         float drag = c * thor::squaredLength(vel);
@@ -246,6 +269,7 @@ window.draw(ski,transform);
             ImGui::SliderFloat("Gravity Constant", &g, 0,1000);
             ImGui::SliderFloat("Drag Constant", &c, 0, 1,"%.5f", 2.f);
             ImGui::SliderInt("Scarf Length", &scarfLength, 10, 1000 );
+            ImGui::Text("In Air: %d \t Air Time: %f", inAir, airTime);
 
         }
 

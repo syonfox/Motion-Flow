@@ -61,7 +61,6 @@ void Engine::handleEvent(sf::Event &e) {
 void Engine::render(sf::RenderWindow &window) {
     gui();
 
-
     camera.setCenter(player.getPos());
     window.setView(camera);
     draw(window);
