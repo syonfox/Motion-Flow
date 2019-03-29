@@ -23,7 +23,8 @@
 
 
 double Slope::slopeFunction(double x){
-    return 100+ 50*sin(x/100)+(0.3*x) +30* cos(x/75)+  20*sin(x/50) + 169*sin((x)/300);
+    //return 100+ 50*sin(x/100)+(0.3*x) +30* cos(x/75)+  20*sin(x/50) + 169*sin((x)/300);
+    return  100+ 70* sin(x/100)+ 40*sin(x/200)+ 20*sin(x/300)+ 40*sin(x/800) + (0.3*x);
 }
 double Slope::slope(double x){
     return (slopeFunction(x-epsilon) - slopeFunction(x+epsilon)) / (2*epsilon);
@@ -170,7 +171,7 @@ void Slope::render(sf::RenderWindow &window){
             if(i%2 == 0)
                 sprite[i] = (sf::Vertex(points[i/2], sf::Color::White));
             else
-                sprite[i] = (sf::Vertex(sf::Vector2f(points[i/2].x, points[i/2].y+1000), sf::Color::White));
+                sprite[i] = (sf::Vertex(sf::Vector2f(points[i/2].x, points[i/2].y+2000), sf::Color::White));
         }
     } else {
         sprite.setPrimitiveType(sf::LineStrip);

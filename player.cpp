@@ -13,7 +13,7 @@ pos(010,010),
 vel(0,0),
 acc(0,0),
 color(sf::Color::Red),
-skiColor(sf::Color::Green),
+skiColor(sf::Color(100,100,100)),
 bodyColor(sf::Color::Red),
 scarfColor(sf::Color::Blue),
 debugLines(sf::Lines, 6)
@@ -39,7 +39,7 @@ debugLines(sf::Lines, 6)
     ski[2] = sf::Vertex(sf::Vector2f(len-5,0), skiColor);
     ski[3] = sf::Vertex(sf::Vector2f(len-5,-3), skiColor);
     ski[4] = sf::Vertex(sf::Vector2f(len,-3), skiColor);
-    ski[5] = sf::Vertex(sf::Vector2f(len-2,-10), skiColor);
+    ski[5] = sf::Vertex(sf::Vector2f(len-2,-5), skiColor);
 //    ski.setPoint(0, sf::Vector2f(-20,0));
 //    ski.setPoint(1, sf::Vector2f(15,0));
 //    ski.setPoint(2, sf::Vector2f(20,-5));
@@ -53,7 +53,7 @@ debugLines(sf::Lines, 6)
     //scarf= sf::VertexArray(sf::LinesStrip 10)
 
     bodyWidth = 20;
-    bodyHeight = 60;
+    bodyHeight = 40;
     body = sf::ConvexShape(6);
     genBody(bodyWidth, bodyHeight);
 
@@ -96,6 +96,14 @@ void Player::updateScarf() {
         scarfPoints.pop_back();
     }
 
+}
+
+Pose Player::getControl(){
+    if(Motion::isRunning()) {
+        return Motion::getPose();
+    }
+
+    //else use keyboard;
 }
 
 void Player::update(sf::Time dt, Slope s){
@@ -239,6 +247,7 @@ void Player::render(sf::RenderWindow &window){
 
 
     scarf.clear();
+    scarf.setPrimitiveType(sf::LinesStrip);
     scarf.resize(scarfPoints.size());
     int size = scarfPoints.size();
     for(int i =size-1; i >= 0; i--){

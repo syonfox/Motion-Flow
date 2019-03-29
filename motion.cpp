@@ -76,7 +76,7 @@ void* Motion::pose_detection(void *threadid) {
 
     cv::dnn::Net net = cv::dnn::readNetFromCaffe(protoFile, weightsFile);
     double t=0;
-    while( cv::waitKey(1) < 0)
+    while( cv::waitKey(1) < 0 && running)
     {
         double t = (double) cv::getTickCount();
 
@@ -136,52 +136,62 @@ void* Motion::pose_detection(void *threadid) {
         imshow("Output-Skeleton", frame);
         video.write(frame);
     }
+
     // When everything done, release the video capture and write object
     cap.release();
     video.release();
 
     return 0;
 }
-pthread_t Motion::poseThread;
 
+
+bool Motion::isRunning() { return  running; }
+
+Pose Motion::getPose() {
+    return pose;
+}
+Pose Motion::pose;
+bool Motion::running;
+pthread_t Motion::poseThread;
 int Motion::init() {
     int rc;
+
+    running = true;
     //Other Setup here
 
 //    int tid;
 //    pthread_t poseThread;
 
-    std::cout << "init_motion() : creating pose_detection thread, " << std::endl;
+    std::cout << "Status: Creating Pose Detection Thread, " << std::endl;
 
     rc = pthread_create(&poseThread, NULL, pose_detection, NULL);
 
-      if (rc) {
-          std::cout << "Error:unable to create thread," << rc << std::endl;
-         exit(-1);
-      }
+    if (rc) {
+        std::cerr << "Error: unable to create thread," << rc << std::endl;
+        exit(-1);
+    }
+
+
+    return 0;
+
+
 }
 
 int Motion::shutdown() {
     int rc;
-    std::cout << "Status: Shuting Down Motion " << std::endl;
-    rc = pthread_cancel(poseThread);
 
-    if (rc) {
-          std::cout << "Error:unable to cancel thread," << rc << std::endl;
-         exit(-1);
-    }
+
+
+    std::cout << "Status: Shuting Down Motion " << std::endl;
+    running = false;
+
     rc = pthread_join(poseThread,NULL); //somting s wrong here
     if (rc) {
-          std::cout << "Error:unable to join thread," << rc << std::endl;
-         exit(-1);
+        std::cerr << "Error:unable to join thread," << rc << std::endl;
+        exit(-1);
     }
-    std::cout << "Status: Pose Thread Joined" << rc << std::endl;
+    std::cout << "Status: Pose Thread Joined " << rc << std::endl;
+
+    return 0;
+
 }
-//Motion::Motion() {
-//
-//    cv::Mat m1;
-//    m1.create(4,4, CV_32F);
-//    std::cout << m1 << std::endl;
-//
-//
-//}

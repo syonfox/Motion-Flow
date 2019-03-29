@@ -11,6 +11,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "imconfig.h"
 #include "slope.hpp"
+#include "motion.hpp"
 
 class Player {
 private:
@@ -53,6 +54,10 @@ private:
 
     int bodyWidth, bodyHeight;
     void genBody(int width, int hight);
+
+    Pose getControl();
+
+
 
 
 public:

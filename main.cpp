@@ -151,7 +151,7 @@ int main()
             }
 
 
-            window.clear();
+            window.clear(sf::Color(135, 206, 235, 256)); //background colour
             //window.draw(shape);
             e.render(window);
             ImGui::SFML::Render(window);

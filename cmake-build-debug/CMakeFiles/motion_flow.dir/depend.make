@@ -187,9 +187,29 @@ CMakeFiles/motion_flow.dir/motion.cpp.o: /usr/local/include/opencv4/opencv2/vide
 
 CMakeFiles/motion_flow.dir/player.cpp.o: ../imgui-sfml/imgui.h
 CMakeFiles/motion_flow.dir/player.cpp.o: ../imgui-sfml/imconfig.h
+CMakeFiles/motion_flow.dir/player.cpp.o: ../motion.hpp
 CMakeFiles/motion_flow.dir/player.cpp.o: ../player.cpp
 CMakeFiles/motion_flow.dir/player.cpp.o: ../player.hpp
 CMakeFiles/motion_flow.dir/player.cpp.o: ../slope.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/base.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/bufferpool.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/check.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/cv_cpu_helper.h
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/cvdef.h
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/cvstd.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/fast_math.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/hal/interface.h
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/mat.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/mat.inl.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/matx.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/neon_utils.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/saturate.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/traits.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/types.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: /usr/local/include/opencv4/opencv2/opencv_modules.hpp
 
 CMakeFiles/motion_flow.dir/slope.cpp.o: ../slope.cpp
 CMakeFiles/motion_flow.dir/slope.cpp.o: ../slope.hpp

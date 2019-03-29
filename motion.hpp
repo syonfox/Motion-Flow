@@ -12,6 +12,8 @@ enum class Pose{STAND,CROUCH, SNOWPLOW, JUMP, LEANLEFT, LEANRIGHT};
 
 class Motion {
 private:
+
+    static bool running;
     static void* pose_detection(void* threadid);
 
     static cv::Mat bones;
@@ -19,12 +21,14 @@ private:
     static pthread_t poseThread;
 
     static Pose pose;
+
+
 public:
 
 
     static  int init();
     static  int shutdown();
-
+    static bool isRunning();
     static Pose getPose();
     //static  cv::Mat get_bones();
     //array get_curent_scelition();

@@ -64,18 +64,18 @@ void Engine::render(sf::RenderWindow &window) {
     float lenth = thor::length(player.getVel());
     camera.setCenter(player.getPos());
 
-
-    sf::Vector2f targetSize = sf::Vector2f(windowSize.x+(windowSize.x*lenth)/400,windowSize.y+(windowSize.y*lenth)/400);
+    //lenth = 400;
+    sf::Vector2f targetSize = sf::Vector2f(windowSize.x+(windowSize.x*lenth)/400, windowSize.y+(windowSize.y*lenth)/400);
     sf::Vector2f size = camera.getSize();
     if(size.x < targetSize.x){
-        size.x ++;
+        size.x +=windowSize.x/1000.f;
     } else {
-        size.x --;
+        size.x -=windowSize.x/1000.f;
     }
     if(size.y < targetSize.y){
-        size.y ++;
+        size.y +=windowSize.y/1000.f;
     } else {
-        size.y --;
+        size.y -=windowSize.y/1000.f;
     }
     camera.setSize(size);
 
