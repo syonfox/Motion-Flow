@@ -21,7 +21,7 @@ private:
     int backBufferDistance;
     int bufferSize;
 
-    bool fillSlope;
+
 
     double squareDistance(sf::Vector2f &p , sf::Vector2f &q);
     double squareDistance(sf::Vector2f &p, double &x ); //computes y for you
@@ -29,7 +29,13 @@ private:
     sf::Vector2f lineLineIntersection(sf::Vector2f &p1 , sf::Vector2f &p2, sf::Vector2f &q1,sf::Vector2f &q2);
 
 
+    //perlina noise
+
+
+
+
 public:
+    bool fillSlope;
     double slopeFunction(double x);
     double slope(double x);
     Slope(int _step, int _frontBufferDistance, int _backBufferDistance);

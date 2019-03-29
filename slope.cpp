@@ -6,8 +6,24 @@
 #include <assert.h>
 #include "slope.hpp"
 
+
+
+
+//double Slope::rand()
+//{
+//    Z =  (A * Z + C) % M;
+//    return Z / M - 0.5;
+//}
+//
+//double Slope::interpolate(double pa, double pb , double px) {
+//    double ft = px * PI,
+//           f = (1 - cos(ft)) * 0.5;
+//    return pa * (1 - f) + pb * f;
+//}
+
+
 double Slope::slopeFunction(double x){
-    return 100+ 50*sin(x/100)+(0.5*x) +30* cos(x/75)+  20*sin(x/50) + 1*sin((x+2)/10);
+    return 100+ 50*sin(x/100)+(0.5*x) +30* cos(x/75)+  20*sin(x/50) + 169*sin((x)/300);
 }
 double Slope::slope(double x){
     return (slopeFunction(x-epsilon) - slopeFunction(x+epsilon)) / (2*epsilon);
@@ -73,6 +89,8 @@ bool Slope::colisionPoint(sf::Vector2f p, sf::Vector2f &mtv){
         printf("toobig");
     }
     return true;
+
+
 
 }
 //bool Slope::colisionPoint(sf::Vector2f p, sf::Vector2f &mtv){
@@ -155,6 +173,7 @@ void Slope::render(sf::RenderWindow &window){
                 sprite[i] = (sf::Vertex(sf::Vector2f(points[i/2].x, points[i/2].y+1000), sf::Color::White));
         }
     } else {
+        sprite.setPrimitiveType(sf::LineStrip);
         sprite.resize(points.size());
         int size = points.size();
         for (int i = size - 1; i >= 0; i--) {

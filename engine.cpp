@@ -87,6 +87,13 @@ void Engine::gui() {
 
 
         }
+
+        if (ImGui::CollapsingHeader("Slope")) {
+            ImGui::Text("Engine Info");
+            ImGui::Checkbox("Fill in Slope", &slope.fillSlope);
+
+
+        }
         ImGui::End();
     }
 }
