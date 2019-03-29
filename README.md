@@ -53,8 +53,45 @@ TODO:
 time
 ##### Player:
 A player object whitch hanedls contole events and the players physiscs
+Player Contorles:
+Brake: Snowplow (A)
+Speed Up : Crouch (D)
+Nothing : Stand NOrmally
+
+
 
 ##### Slope:
 An object whitch has an slopeFunction whitch defines the ski hill
 it also provies functions for detecting collisions with the hill
 
+
+##### TODO:
+
+- Make Player respond to controles from "Motion.cpp" or from sf::keyboard
+- Make motion.cpp Parse Bones and output Controls Input ()
+- Get Motion working with webcam not just video file
+
+- Add menu and pause screen
+    - get game states working
+    - make menue screen
+    - make pause screen
+    - make game over screen
+
+- add more debug info (optional)
+    - IE CHANGEING COLOR OF PLAYERS AND SIZE AND DIFRENT CONSTENS
+- Gamplay
+    - Smooth out speed boost?
+    - fix player rotation (maybe have it contoled by the human player IF WE HAVE TIME)
+    - Detect when player looses (Do this after the others stuff) (to hard of collision, flip over or somting)
+    - //Make slope generated with perlian noise not a function
+    - Insted of perlian noise make the sing wave more suitibal for jumps
+    - Tune the physcs to be funner for jumps
+
+
+- Graphics
+    - better player sprite (eather get a spritye working with a drawing or design a shape that looks nice)
+    - better snow
+        - Better drawing of the ground
+        - mabe snow falling from sky (Optional)
+    - Add trees to sope or somting
+    - add other things that are interesting like candy cains or raindear lol

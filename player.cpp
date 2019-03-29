@@ -122,12 +122,15 @@ void Player::update(sf::Time dt, Slope s){
 
 
     sf::Vector2f mtv, p ,Fn;
+
+    //the point in world cords
     p = transform.transformPoint(sf::Vector2f(0,0));
 
 
     float slopeAngle = thor::polarAngle(sf::Vector2f(1, -s.slope(p.x)));
     if(vel != sf::Vector2f(0,0))
         velAngle = thor::polarAngle(vel);
+
     //colisions should be done after the physics update since if done before the player can
     // sink into the ground a little bit
     if(s.colisionPoint(p, mtv) && mtv != sf::Vector2f(0,0)){
@@ -142,7 +145,8 @@ void Player::update(sf::Time dt, Slope s){
 
         thor::setPolarAngle(vel, slopeAngle);
 
-        if(aoi > 10){
+        if(aoi > 20){
+            //You lose
             vel.x *= (1-(aoi)/180);
             vel.y *= (1-(aoi)/180);
         }
@@ -168,10 +172,6 @@ void Player::update(sf::Time dt, Slope s){
                 vel.x *=2;
                 vel.y *=2;
             }
-//            else {
-//                vel.x *=0.5;
-//                vel.y *=0.5;
-//            }
         }
 
         airTime = 0;
@@ -249,9 +249,9 @@ void Player::render(sf::RenderWindow &window){
     window.draw(scarf);
     //window.draw(shape,transform);
     //transform.rotate(velAngle);
-window.draw(body,transform);
-//transform.rotate(angle);
-window.draw(ski,transform);
+    window.draw(body,transform);
+    //transform.rotate(angle);
+    window.draw(ski,transform);
     if(debugDraw) {
         transform.rotate(-velAngle);
         window.draw(debugLines, transform);
@@ -265,6 +265,8 @@ window.draw(ski,transform);
 //            ImGui::SameLine();
             ImGui::Checkbox("Draw Debug Stuff", &debugDraw);
             ImGui::Text("Position:(%f,%f) \t angle: %f", pos.x, pos.y, angle);
+            ImGui::Text("Velocity:(%f,%f)", vel.x, vel.y);
+
             ImGui::Text("Vel Angle: %f \t aoi: %f", velAngle, aoi);
             ImGui::SliderFloat("Gravity Constant", &g, 0,1000);
             ImGui::SliderFloat("Drag Constant", &c, 0, 1,"%.5f", 2.f);

@@ -2,6 +2,7 @@
 // Created by syonfox on 07/03/19.
 //
 
+#include <Thor/Vectors.hpp>
 #include "engine.hpp"
 #include "motion.hpp"
 
@@ -60,8 +61,24 @@ void Engine::handleEvent(sf::Event &e) {
 
 void Engine::render(sf::RenderWindow &window) {
     gui();
-
+    float lenth = thor::length(player.getVel());
     camera.setCenter(player.getPos());
+
+
+    sf::Vector2f targetSize = sf::Vector2f(windowSize.x+(windowSize.x*lenth)/400,windowSize.y+(windowSize.y*lenth)/400);
+    sf::Vector2f size = camera.getSize();
+    if(size.x < targetSize.x){
+        size.x ++;
+    } else {
+        size.x --;
+    }
+    if(size.y < targetSize.y){
+        size.y ++;
+    } else {
+        size.y --;
+    }
+    camera.setSize(size);
+
     window.setView(camera);
     draw(window);
     window.setView(window.getDefaultView());
@@ -81,7 +98,7 @@ void Engine::gui() {
             if (ImGui::CollapsingHeader("Camera")) {
                 ImGui::Text("Camera Info");
                 ImGui::Text("Pos(%f, %f)", camera.getCenter().x, camera.getCenter().y);
-
+                ImGui::Text("Size(%f, %f)", camera.getSize().x, camera.getSize().y);
             }
 
 

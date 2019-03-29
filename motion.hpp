@@ -8,6 +8,8 @@
 
 #include <opencv2/core/mat.hpp>
 
+enum class Pose{STAND,CROUCH, SNOWPLOW, JUMP, LEANLEFT, LEANRIGHT};
+
 class Motion {
 private:
     static void* pose_detection(void* threadid);
@@ -16,14 +18,16 @@ private:
     static int tid;
     static pthread_t poseThread;
 
+    static Pose pose;
 public:
 
 
     static  int init();
     static  int shutdown();
+
+    static Pose getPose();
     //static  cv::Mat get_bones();
     //array get_curent_scelition();
-    //
 };
 
 
