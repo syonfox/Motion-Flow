@@ -21,6 +21,8 @@ private:
     int backBufferDistance;
     int bufferSize;
 
+    bool fillSlope;
+
     double squareDistance(sf::Vector2f &p , sf::Vector2f &q);
     double squareDistance(sf::Vector2f &p, double &x ); //computes y for you
     //Computes the intersection point of 2 lines //PARALEL LINES NOT ALLOWED

@@ -7,7 +7,7 @@
 #include "slope.hpp"
 
 double Slope::slopeFunction(double x){
-    return 100+ 50*sin(x/100)+(0.5*x) + 10*sin(x/100) + 10*sin((x+2)/500);
+    return 100+ 50*sin(x/100)+(0.5*x) +30* cos(x/75)+  20*sin(x/50) + 1*sin((x+2)/10);
 }
 double Slope::slope(double x){
     return (slopeFunction(x-epsilon) - slopeFunction(x+epsilon)) / (2*epsilon);
@@ -115,6 +115,8 @@ Slope::Slope(int _step, int _frontBufferDistance, int _backBufferDistance){
 
     sprite = sf::VertexArray(sf::LineStrip, bufferSize);
     points.push_front(sf::Vector2f(0, slopeFunction(0)));
+
+    fillSlope = true;
 }
 
 void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
@@ -141,10 +143,23 @@ void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
 
 void Slope::render(sf::RenderWindow &window){
     sprite.clear();
-    sprite.resize(points.size());
-    int size = points.size();
-    for(int i =size-1; i >= 0; i--){
-        sprite[i]= (sf::Vertex(points[i], sf::Color::White));
+
+    if(fillSlope) {
+        sprite.setPrimitiveType(sf::TrianglesStrip);
+        sprite.resize(points.size()*2);
+        int size = points.size()*2;
+        for (int i = size - 1; i >= 0; i--) {
+            if(i%2 == 0)
+                sprite[i] = (sf::Vertex(points[i/2], sf::Color::White));
+            else
+                sprite[i] = (sf::Vertex(sf::Vector2f(points[i/2].x, points[i/2].y+1000), sf::Color::White));
+        }
+    } else {
+        sprite.resize(points.size());
+        int size = points.size();
+        for (int i = size - 1; i >= 0; i--) {
+            sprite[i] = (sf::Vertex(points[i], sf::Color::White));
+        }
     }
     window.draw(sprite);
 }
