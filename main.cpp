@@ -33,7 +33,7 @@ int main()
 
     Engine e = Engine(window.getSize());
 
-    Motion::init();
+    //Motion::init();
 
     uint tick = 0;
     sf::Time tickTime = sf::seconds(0.01f); // the amount of time to simulate
@@ -42,9 +42,9 @@ int main()
     int ticksPerSecond = 120; // number of ticks to simulate evry second (adjust
     // this to change the speed (kind of)
     float simTimePerSecond = tickTime.asSeconds() * ticksPerSecond;
-    sf::Time secondsPerTick = sf::seconds(1.0f / ticksPerSecond);
+    sf::Time secondsPerTick = sf::seconds(1.0f / (float) ticksPerSecond);
 
-    int framesPerSecond = 120; // desired render rate
+    int framesPerSecond = 60; // desired render rate
     int ticksPerFrame =
             ticksPerSecond /
             framesPerSecond; // todo: make it adgust fps for valid ratio
@@ -61,9 +61,10 @@ int main()
     */
     sf::Clock deltaClock;
 
+    sf::Time frameTime;
     while (window.isOpen()) {
 
-        deltaClock.restart();
+        frameTime = deltaClock.restart();
         tick++;
 
         ////Update engine////
@@ -107,7 +108,7 @@ int main()
             if (ImGui::BeginMainMenuBar()) {
                 if (ImGui::BeginMenu("Debug")) {
 
-                    if (ImGui::MenuItem("Toggle Debug Window", nullptr, &showMenuDebug)) {
+                    if (ImGui::MenuItem("Toggle Debug Window", nullptr, &Engine::showDebugWindow)) {
                     }
                     if (ImGui::MenuItem("Toggle ImGUI Demo", nullptr, &showimguiDemo)) {
                     }
@@ -121,23 +122,23 @@ int main()
                 ImGui::ShowTestWindow();
             }
 
-            e.debugWindow = showMenuDebug;
-            if (showMenuDebug) {
+            if (Engine::showDebugWindow) {
 
 
                 ImGui::Begin("Debug");
-                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
-                            1000.0f / ImGui::GetIO().Framerate,
-                            ImGui::GetIO().Framerate);
+//                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
+//                            1000.0f / ImGui::GetIO().Framerate,
+//                            ImGui::GetIO().Framerate);
 
+                ImGui::Text("Tick Time: %fs , TPS: %f", frameTime.asSeconds(), 1.f / (float) frameTime.asSeconds());
                 ImGui::Text("Has Focus %d, ImGui Has Focus %d", hasFocus, ImGui::IsMouseHoveringAnyWindow());
 
                 if (ImGui::CollapsingHeader("Time")) {
                     /// ImGui::InputFloat("Time Simulated per Tick",
                     /// &(tickTime.asSeconds(), 1);
-                    ImGui::InputFloat("Speed (sim seconds/second)", &simTimePerSecond, 1);
-                    ImGui::Text("Ticks/Second: %d", ticksPerSecond);
-                    ImGui::Text("Tick: %d", tick);
+                    //ImGui::InputFloat("Speed (sim seconds/second)", &simTimePerSecond, 1);
+                    //ImGui::Text("Ticks/Second: %d", ticksPerSecond);
+                    ImGui::Text("Tick: %d   , Seconds/Tick: %f", tick, secondsPerTick.asSeconds());
                     ImGui::Text("Fps: %d   , Tps: %d   , Tpf: %d", framesPerSecond, ticksPerSecond, ticksPerFrame);
                     ImGui::Text("Engine Time per Second: %f   , Engine Time per Tick: %f s", simTimePerSecond,
                                 tickTime.asSeconds());

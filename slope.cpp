@@ -24,7 +24,7 @@
 
 double Slope::slopeFunction(double x){
     //return 100+ 50*sin(x/100)+(0.3*x) +30* cos(x/75)+  20*sin(x/50) + 169*sin((x)/300);
-    return  100+ 70* sin(x/100)+ 40*sin(x/200)+ 20*sin(x/300)+ 40*sin(x/800) + (0.3*x);
+    return  100+ 70* sin(x/100)+ 40*sin(x/200)+ 20*sin(x/300)+ 40*sin(x/800) + (0.1*x);
 }
 double Slope::slope(double x){
     return (slopeFunction(x-epsilon) - slopeFunction(x+epsilon)) / (2*epsilon);

@@ -9,6 +9,8 @@
 #include <SFML/Graphics/ConvexShape.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 #include "imconfig.h"
 #include "slope.hpp"
 #include "motion.hpp"
@@ -44,7 +46,11 @@ private:
     std::deque<sf::Vector2f> scarfPoints;
     sf::Color scarfColor;
 
+    sf::Texture texture;
+    sf::Sprite sprite;
+
     void updateScarf(void);
+    sf::Vector2f scarfPoint;
     //void drawScarf(void);
     sf::Transform transform;
 
@@ -55,6 +61,9 @@ private:
     int bodyWidth, bodyHeight;
     void genBody(int width, int hight);
 
+
+
+    Pose pose;
     Pose getControl();
 
 

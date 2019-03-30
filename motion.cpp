@@ -51,12 +51,12 @@ int nPoints = 18;
 //using namespace cv::dnn;
 
 void* Motion::pose_detection(void *threadid) {
-    std::string videoFile = "../sample_video.mp4";
+    std::string videoFile = "../testsquathorz.mp4";
     // Take arguments from commmand line
 
     int inWidth = 368;
     int inHeight = 368;
-    float thresh = 0.01;
+    float thresh = 0.05;
 
     cv::VideoCapture cap(videoFile);
 
@@ -134,7 +134,7 @@ void* Motion::pose_detection(void *threadid) {
         cv::putText(frame, cv::format("time taken = %.2f sec", t), cv::Point(50, 50), cv::FONT_HERSHEY_COMPLEX, .8, cv::Scalar(255, 50, 0), 2);
         // imshow("Output-Keypoints", frameCopy);
         imshow("Output-Skeleton", frame);
-        video.write(frame);
+        //video.write(frame);
     }
 
     // When everything done, release the video capture and write object

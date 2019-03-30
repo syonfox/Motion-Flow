@@ -10,6 +10,7 @@
 
 enum class Pose{STAND,CROUCH, SNOWPLOW, JUMP, LEANLEFT, LEANRIGHT};
 
+
 class Motion {
 private:
 

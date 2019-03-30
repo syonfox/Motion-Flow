@@ -7,6 +7,7 @@
 #include <Thor/Vectors.hpp>
 #include <imgui-sfml/imgui.h>
 #include "player.hpp"
+#include "engine.hpp"
 
 Player::Player():
 pos(010,010),
@@ -15,7 +16,7 @@ acc(0,0),
 color(sf::Color::Red),
 skiColor(sf::Color(100,100,100)),
 bodyColor(sf::Color::Red),
-scarfColor(sf::Color::Blue),
+scarfColor(sf::Color::Red),
 debugLines(sf::Lines, 6)
 {
     debugDraw = true;
@@ -58,6 +59,12 @@ debugLines(sf::Lines, 6)
     genBody(bodyWidth, bodyHeight);
 
 
+    texture.loadFromFile("../penguin.png");
+    sprite.setTexture(texture);
+    sprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
+    sprite.setPosition(-64, -128);
+    scarfPoint = sf::Vector2f(-64+90, -128+106);
+
 }
 
 
@@ -73,7 +80,7 @@ void Player::genBody(int width, int hight){
 }
 
 void Player::updateScarf() {
-    sf::Vector2f p = transform.transformPoint(sf::Vector2f(0,-bodyHeight+bodyHeight/4));
+    sf::Vector2f p = transform.transformPoint(scarfPoint);
     if(thor::length( p - scarfPoints.front()) > 2){
         scarfPoints.push_front(p);
     }
@@ -102,28 +109,47 @@ Pose Player::getControl(){
     if(Motion::isRunning()) {
         return Motion::getPose();
     }
+//else use keyboard;
 
-    //else use keyboard;
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        return Pose::CROUCH;
+
+    int lean = 0;
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+       lean--;
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+       lean++;
+
+    if(lean == -1)
+        return Pose::LEANLEFT;
+    if(lean == 1)
+        return  Pose::LEANRIGHT;
+
+    return Pose::STAND;
 }
 
 void Player::update(sf::Time dt, Slope s){
     float t = dt.asSeconds();
     //c = 0.01
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
-        this->applyForce(sf::Vector2f(-100*mass,0));
 
-        //acc.x -= 50;
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
-        //acc.x += 50;
-        this->applyForce(sf::Vector2f(100*mass,0));
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
-        //this->applyForce(sf::Vector2f(0, -100*mass));
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+    pose = getControl();
+    switch(pose) {
+        case Pose::CROUCH:
+            if(inAir){
+                applyForce(sf::Vector2f(0,3000.f));
+            } else {
+                sf::Vector2f boostF = vel;
+                thor::setLength(boostF, 3000.f);
+                applyForce(boostF);
+            }
+            break;
 
+        case Pose::STAND:
+        default:
+
+            break;
     }
+
 
     applyForce(sf::Vector2f(0,g*mass));
 
@@ -255,18 +281,23 @@ void Player::render(sf::RenderWindow &window){
     }
 
 
-    window.draw(scarf);
+
     //window.draw(shape,transform);
     //transform.rotate(velAngle);
-    window.draw(body,transform);
+    //window.draw(body,transform);
     //transform.rotate(angle);
-    window.draw(ski,transform);
+    //window.draw(ski,transform);
+
+    window.draw(sprite, transform);
+    window.draw(scarf);
     if(debugDraw) {
         transform.rotate(-velAngle);
         window.draw(debugLines, transform);
     }
 
-    if(debugWindow){
+
+
+    if(Engine::showDebugWindow){
 
         ImGui::Begin("Debug");
         if (ImGui::CollapsingHeader("Player")) {
@@ -281,7 +312,7 @@ void Player::render(sf::RenderWindow &window){
             ImGui::SliderFloat("Drag Constant", &c, 0, 1,"%.5f", 2.f);
             ImGui::SliderInt("Scarf Length", &scarfLength, 10, 1000 );
             ImGui::Text("In Air: %d \t Air Time: %f", inAir, airTime);
-
+            ImGui::Text("Pose: %d", pose);
         }
 
         ImGui::End();

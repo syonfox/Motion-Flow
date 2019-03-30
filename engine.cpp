@@ -7,8 +7,10 @@
 #include "motion.hpp"
 
 
+bool Engine::showDebugWindow = true;
+
 Engine::Engine(sf::Vector2u ws):
-    slope(2,500,1000)
+    slope(1,5000,3000)
 {
 
 
@@ -90,7 +92,7 @@ void Engine::draw(sf::RenderWindow &window) {
 }
 
 void Engine::gui() {
-    if(debugWindow) {
+    if(showDebugWindow) {
         ImGui::Begin("Debug");
 
         if (ImGui::CollapsingHeader("Engine")) {

@@ -34,7 +34,7 @@ private:
 
 
 public:
-    bool debugWindow;
+    static bool showDebugWindow;
 
     Engine(sf::Vector2u windowSize);
     void update(sf::Time dt);
