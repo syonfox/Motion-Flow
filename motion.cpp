@@ -51,7 +51,7 @@ int nPoints = 18;
 //using namespace cv::dnn;
 
 void* Motion::pose_detection(void *threadid) {
-    std::string videoFile = "../testsquathorz.mp4";
+    std::string videoFile = "../asdtestsquathorz.mp4";
     // Take arguments from commmand line
 
     int inWidth = 368;

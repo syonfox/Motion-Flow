@@ -10,7 +10,7 @@
 bool Engine::showDebugWindow = true;
 
 Engine::Engine(sf::Vector2u ws):
-    slope(1,5000,3000)
+    slope(10,4000,2000)
 {
 
 

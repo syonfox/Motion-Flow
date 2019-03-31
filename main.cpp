@@ -36,13 +36,13 @@ int main()
 
     Engine e = Engine(window.getSize());
 
-    Motion::init();
+    //Motion::init();
 
     uint tick = 0;
-    sf::Time tickTime = sf::seconds(0.01f); // the amount of time to simulate
+    sf::Time tickTime = sf::seconds(0.02f); // the amount of time to simulate
     // every tick (adjust this to change
     // the acuracy of the sim)
-    int ticksPerSecond = 120; // number of ticks to simulate evry second (adjust
+    int ticksPerSecond = 60; // number of ticks to simulate evry second (adjust
     // this to change the speed (kind of)
     float simTimePerSecond = tickTime.asSeconds() * ticksPerSecond;
     sf::Time secondsPerTick = sf::seconds(1.0f / (float) ticksPerSecond);
