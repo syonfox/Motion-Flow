@@ -72,9 +72,9 @@ it also provies functions for detecting collisions with the hill
 - Get Motion working with webcam not just video file
 
 - Add menu and pause screen
-    - get game states working
+    - get game states working (done kindof)
     - make menue screen
-    - make pause screen
+    - make pause screen (done)
     - make game over screen
 
 - add more debug info (optional)
@@ -86,6 +86,8 @@ it also provies functions for detecting collisions with the hill
     - //Make slope generated with perlian noise not a function
     - Insted of perlian noise make the sing wave more suitibal for jumps
     - Tune the physcs to be funner for jumps
+        - Tune the constenst
+        - detect when the player dose a good landing and give apropreat speed Boost
 
 
 - Graphics
@@ -95,3 +97,4 @@ it also provies functions for detecting collisions with the hill
         - mabe snow falling from sky (Optional)
     - Add trees to sope or somting
     - add other things that are interesting like candy cains or raindear lol
+    - add paralec effect to background

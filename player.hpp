@@ -31,7 +31,7 @@ private:
     bool inAir;
 
     float g; //gravity accelearation
-    float c; //drag coefficient
+    sf::Vector2f c; //drag coefficient
 
     sf::Color color;
     sf::ConvexShape shape;
@@ -66,10 +66,13 @@ private:
     Pose pose;
     Pose getControl();
 
-
+    int score;
 
 
 public:
+
+
+
     Player();
     void update(sf::Time dt, Slope s);
     void render(sf::RenderWindow &window);
@@ -100,6 +103,11 @@ public:
 
     void setRotation(float rotation);
 
+    float getAirTime() const;
+
+    int getScore() const;
+
+    bool isInAir() const;
 };
 
 

@@ -25,7 +25,8 @@ debugLines(sf::Lines, 6)
     rotation = 0;
     angle = 0;
     g = 100;
-    c = 0.01;
+    c.x = 0.005;
+    c.y = 0.02;
 
     shape = sf::ConvexShape(3);
     shape.setPoint(0, sf::Vector2f(-20, 0));
@@ -129,6 +130,9 @@ Pose Player::getControl(){
 }
 
 void Player::update(sf::Time dt, Slope s){
+
+    score = pos.x;
+
     float t = dt.asSeconds();
     //c = 0.01
 
@@ -221,9 +225,21 @@ void Player::update(sf::Time dt, Slope s){
 
 
     if(vel != sf::Vector2f(0,0)) { //if there is speed
-        float drag = c * thor::squaredLength(vel);
-        sf::Vector2f dragF = vel * -1.f;
-        thor::setLength(dragF, drag);
+//        float drag = c * thor::squaredLength(vel);
+//        sf::Vector2f dragF = vel * -1.f;
+//        thor::setLength(dragF, drag);
+//
+
+        sf::Vector2f dragF;
+        dragF.x = -c.x * vel.x*vel.x;
+        dragF.y = -c.y * vel.y*vel.y;
+
+        if(vel.x < 0)
+            dragF.x = -dragF.x;
+        if(vel.y < 0)
+            dragF.y = -dragF.y;
+
+
         applyForce(dragF);
     }
 
@@ -293,6 +309,7 @@ void Player::render(sf::RenderWindow &window){
     if(debugDraw) {
         transform.rotate(-velAngle);
         window.draw(debugLines, transform);
+        transform.rotate(velAngle);
     }
 
 
@@ -309,7 +326,8 @@ void Player::render(sf::RenderWindow &window){
 
             ImGui::Text("Vel Angle: %f \t aoi: %f", velAngle, aoi);
             ImGui::SliderFloat("Gravity Constant", &g, 0,1000);
-            ImGui::SliderFloat("Drag Constant", &c, 0, 1,"%.5f", 2.f);
+            ImGui::SliderFloat("Drag Coefecent X", &c.x, 0, 1,"%.5f", 2.f);
+            ImGui::SliderFloat("Drag Coefecent Y", &c.y, 0, 1,"%.5f", 2.f);
             ImGui::SliderInt("Scarf Length", &scarfLength, 10, 1000 );
             ImGui::Text("In Air: %d \t Air Time: %f", inAir, airTime);
             ImGui::Text("Pose: %d", pose);
@@ -371,4 +389,16 @@ float Player::getRotation() const {
 
 void Player::setRotation(float rotation) {
     Player::rotation = rotation;
+}
+
+float Player::getAirTime() const {
+    return airTime;
+}
+
+int Player::getScore() const {
+    return score;
+}
+
+bool Player::isInAir() const {
+    return inAir;
 }

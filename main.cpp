@@ -21,6 +21,9 @@ int main()
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Red);
     static bool hasFocus = true;
+    ImGuiIO io = ImGui::GetIO();
+    io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+    io.NavActive = true;
 
     bool showMenuDebug = true;
     bool showimguiDemo = false;
@@ -80,8 +83,8 @@ int main()
                 // if the window has focuse and Imgui dose not
                 // if (hasFocus && !ImGui::IsMouseHoveringAnyWindow()) {
                 if (hasFocus) {
-                    // nonimgui event handling
-                    //e.handleEvent(event);
+                     // nonimgui event handling
+                    e.handleEvent(event);
                     //printf("Sending event to engine\n");
                 }
 
@@ -125,7 +128,7 @@ int main()
             if (Engine::showDebugWindow) {
 
 
-                ImGui::Begin("Debug");
+                ImGui::Begin("Debug", &Engine::showDebugWindow, ImVec2(400,400) );
 //                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
 //                            1000.0f / ImGui::GetIO().Framerate,
 //                            ImGui::GetIO().Framerate);

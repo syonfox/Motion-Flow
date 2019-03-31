@@ -19,17 +19,20 @@ private:
     sf::Vector2u windowSize;
     sf::View camera;
 
-    State state = State::PLAY;
+    State state;
 
     bool isPaused = false;
 
 
+    void pasueDraw(sf::RenderWindow & window);
     void gui();
     void draw(sf::RenderWindow & window);
 
     Slope slope;
     Player player;
     float g;
+
+
 
 
 
