@@ -73,6 +73,10 @@ SFML/Graphics/Texture.hpp
 -
 SFML/Graphics/Sprite.hpp
 -
+SFML/Audio/SoundBuffer.hpp
+-
+SFML/Audio/Sound.hpp
+-
 imconfig.h
 /home/syonfox/github/Motion-Flow/imconfig.h
 slope.hpp

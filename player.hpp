@@ -11,6 +11,8 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
+#include <SFML/Audio/Sound.hpp>
 #include "imconfig.h"
 #include "slope.hpp"
 #include "motion.hpp"
@@ -49,6 +51,7 @@ private:
     sf::Texture texture;
     sf::Sprite sprite;
 
+    void updateSounds();
     void updateScarf(void);
     sf::Vector2f scarfPoint;
     //void drawScarf(void);
@@ -67,6 +70,9 @@ private:
     Pose getControl();
 
     int score;
+
+    sf::SoundBuffer snowSoundBuffer;
+    sf::Sound snowSound;
 
 
 public:

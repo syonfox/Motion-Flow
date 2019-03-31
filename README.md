@@ -50,11 +50,11 @@ TODO:
 - Make Engine setup a thread to do image proccessing and pass the inputs on to the player
 - Implement Menu and settings
 
-time
+
 ##### Player:
 A player object whitch hanedls contole events and the players physiscs
 Player Contorles:
-Brake: Snowplow (A)
+Brake: Snowplow (A) // Not used
 Speed Up : Crouch (D)
 Nothing : Stand NOrmally
 
@@ -91,10 +91,24 @@ it also provies functions for detecting collisions with the hill
 
 
 - Graphics
-    - better player sprite (eather get a spritye working with a drawing or design a shape that looks nice)
+    - better player sprite
+        - Better drawing
+        - an animation (Optional)
     - better snow
-        - Better drawing of the ground
+        - (Done, I thynk its good enough)Better drawing of the ground
         - mabe snow falling from sky (Optional)
     - Add trees to sope or somting
     - add other things that are interesting like candy cains or raindear lol
     - add paralec effect to background
+    - Landing text for how good the landing was.
+
+- Sound
+    - background music
+    - sliding sound effect
+    - crash sound effect
+    - speedup sound effect
+
+
+ sources:
+ Sond clips used from:
+ https://freesound.org/people/E330/sounds/223082/

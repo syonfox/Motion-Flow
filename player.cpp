@@ -60,12 +60,16 @@ debugLines(sf::Lines, 6)
     genBody(bodyWidth, bodyHeight);
 
 
-    texture.loadFromFile("../penguin.png");
+    texture.loadFromFile("../res/dead_penguin.png");
     sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
     sprite.setPosition(-64, -128);
     scarfPoint = sf::Vector2f(-64+90, -128+106);
 
+    snowSoundBuffer.loadFromFile("../res/snow.wav");
+    snowSound.setBuffer(snowSoundBuffer);
+    snowSound.setLoop(true);
+    snowSound.play();
 }
 
 
@@ -103,6 +107,17 @@ void Player::updateScarf() {
     while (scarfPoints.end() != it){
         scarfPoints.pop_back();
     }
+
+}
+
+void Player::updateSounds() {
+
+    if(inAir && snowSound.getStatus() == sf::Sound::Status::Playing)
+        snowSound.pause();
+
+    if(!inAir && snowSound.getStatus() == sf::Sound::Status::Paused)
+        snowSound.play();
+
 
 }
 
@@ -218,7 +233,7 @@ void Player::update(sf::Time dt, Slope s){
         airTime += t;
     }
 
-    if(airTime > 0.5)
+    if(airTime > 0.1)
         inAir = true;
 
 
@@ -255,8 +270,7 @@ void Player::update(sf::Time dt, Slope s){
 
     pos += dp;
     vel += acc * t;
-//    vel.y*=0.99;
-//    vel.x*=0.99;
+
     acc.x=0;
     acc.y=0;
 
@@ -282,6 +296,7 @@ void Player::update(sf::Time dt, Slope s){
     transform.rotate(angle);
 
     updateScarf();
+    updateSounds();
 
 }
 void Player::render(sf::RenderWindow &window){

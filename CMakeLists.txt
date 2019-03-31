@@ -61,7 +61,7 @@ target_include_directories(motion_flow PRIVATE
         ${IMGUI_SFML_INCLUDE_DIRS}
         )
 
-target_link_libraries(motion_flow ${OPENGL_LIBRARIES} ${OpenCV_LIBS} ${IMGUI_SFML_DEPENDENCIES} sfml-graphics sfml-window sfml-system thor pthread)
+target_link_libraries(motion_flow ${OPENGL_LIBRARIES} ${OpenCV_LIBS} ${IMGUI_SFML_DEPENDENCIES} sfml-graphics sfml-window sfml-system sfml-audio thor pthread)
 install(TARGETS motion_flow DESTINATION bin)
 set_target_properties(motion_flow PROPERTIES DEBUG_POSTFIX _d)
 
