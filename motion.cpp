@@ -14,18 +14,36 @@
 #define MPI
 
 #ifdef MPI
+
+
 const int POSE_PAIRS[14][2] =
         {
-                {0,1}, {1,2}, {2,3},
-                {3,4}, {1,5}, {5,6},
-                {6,7}, {1,14}, {14,8}, {8,9},
-                {9,10}, {14,11}, {11,12}, {12,13}
+                {0,1},
+                {1,2},
+
+                {2,3},
+                {3,4},
+
+                {1,5},
+
+                {5,6},
+                {6,7},
+                {1,14},
+                {14,8},
+                {8,9},
+                {9,10},
+                {14,11},
+                {11,12},
+                {12,13}
         };
+
+// 0 (HEAD ), 1 (NECK) , 2 (Right shoulder), 5 (LEFT shoulder)
 
 std::string protoFile = "../pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
 std::string weightsFile = "../pose/mpi/pose_iter_160000.caffemodel";
 
 int nPoints = 15;
+
 #endif
 
 #ifdef COCO
@@ -51,14 +69,18 @@ int nPoints = 18;
 //using namespace cv::dnn;
 
 void* Motion::pose_detection(void *threadid) {
-    std::string videoFile = "../testsquathorz.mp4";
-    // Take arguments from commmand line
 
+
+    std::string videoFile = "../testsquathorz.mp4";
+
+    // Take arguments from commmand line
     int inWidth = 368;
     int inHeight = 368;
     float thresh = 0.05;
 
     cv::VideoCapture cap(videoFile);
+
+    //cap has the video file
 
     if (!cap.isOpened())
     {
@@ -72,9 +94,10 @@ void* Motion::pose_detection(void *threadid) {
 
     cv::VideoWriter video("Output-Skeleton.avi",cv::VideoWriter::fourcc('M','J','P','G'), 10, cv::Size(frameWidth,frameHeight));
 
-
+    //video is where the output location
 
     cv::dnn::Net net = cv::dnn::readNetFromCaffe(protoFile, weightsFile);
+
     double t=0;
     while( cv::waitKey(1) < 0 && running)
     {
@@ -82,17 +105,25 @@ void* Motion::pose_detection(void *threadid) {
 
         cap >> frame;
         frameCopy = frame.clone();
+
+        //changin the input image to blob type of dimension 368, 368
         cv::Mat inpBlob = cv::dnn::blobFromImage(frame, 1.0 / 255, cv::Size(inWidth, inHeight), cv::Scalar(0, 0, 0), false, false);
 
         net.setInput(inpBlob);
 
         cv::Mat output = net.forward();
 
-        int H = output.size[2];
-        int W = output.size[3];
 
+
+        int H = output.size[2];
+        std::cout << "H : " << H << "\n";
+
+        int W = output.size[3];
         // find the position of the body parts
-        std::vector<cv::Point> points(nPoints);
+        std::cout << "W : " << W << "\n";
+
+        std::vector<cv::Point> points(nPoints); //15 points nPoints = 15
+
         for (int n=0; n < nPoints; n++)
         {
             // Probability map of corresponding body's part.
@@ -101,11 +132,12 @@ void* Motion::pose_detection(void *threadid) {
             cv::Point2f p(-1,-1);
             cv::Point maxLoc;
             double prob;
+
             minMaxLoc(probMap, 0, &prob, 0, &maxLoc);
             if (prob > thresh)
             {
                 p = maxLoc;
-                p.x *= (float)frameWidth / W ;
+                p.x = p.x * ( (float)frameWidth / W )  ;
                 p.y *= (float)frameHeight / H ;
 
                 circle(frameCopy, cv::Point((int)p.x, (int)p.y), 8, cv::Scalar(0,255,255), -1);
@@ -114,15 +146,35 @@ void* Motion::pose_detection(void *threadid) {
             points[n] = p;
         }
 
-//        float cutHeight = (20) *(float)frameHeight / H;
-//        //points is the
-        int nPairs = sizeof(POSE_PAIRS)/sizeof(POSE_PAIRS[0]);
+
+        float cutHeights = (15) * ( (float)frameHeight / H );
+        cv::Point2f start (0.0f , cutHeights);
+        cv::Point2f end (frameWidth , cutHeights);
+
+        line(frame, start , end, cv::Scalar(0,255,255), 8);
+
+        if ( points[1].y > cutHeights  || points[2].y > cutHeights || points[5].y > cutHeights) {
+
+            pose = Pose::CROUCH;
+
+        }
+
+        else   {
+
+            pose = Pose::STAND;
+        }
+
+        //points[n] = co-oridinate actual image
+
+        int nPairs = sizeof(POSE_PAIRS)/sizeof(POSE_PAIRS[0]); // we have 14 pairs = 28/2 ?
 
         for (int n = 0; n < nPairs; n++)
         {
             // lookup 2 connected body/hand parts
             cv::Point2f partA = points[POSE_PAIRS[n][0]];
+            std::cout << " POINT 1 x =" << partA.x << "AND y=" << partA.y << "\n";
             cv::Point2f partB = points[POSE_PAIRS[n][1]];
+            std::cout << " POINT 2 x =" << partB.x << "AND y=" << partB.y << "\n";
 
             if (partA.x<=0 || partA.y<=0 || partB.x<=0 || partB.y<=0)
                 continue;
@@ -135,7 +187,7 @@ void* Motion::pose_detection(void *threadid) {
 
         t = ((double)cv::getTickCount() - t)/cv::getTickFrequency();
         cv::putText(frame, cv::format("time taken = %.2f sec", t), cv::Point(50, 50), cv::FONT_HERSHEY_COMPLEX, .8, cv::Scalar(255, 50, 0), 2);
-        // imshow("Output-Keypoints", frameCopy);
+        imshow("Output-Keypoints", frameCopy);
         imshow("Output-Skeleton", frame);
 
 
@@ -144,6 +196,8 @@ void* Motion::pose_detection(void *threadid) {
 //        }
 
         //video.write(frame);
+
+
     }
 
     // When everything done, release the video capture and write object
