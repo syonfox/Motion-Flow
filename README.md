@@ -71,6 +71,10 @@ it also provies functions for detecting collisions with the hill
 - Make motion.cpp Parse Bones and output Controls Input ()
 - Get Motion working with webcam not just video file
 
+- OPtimize video capture, under 0.5 sec/frame
+- get opencv runing on gpu
+
+
 - Add menu and pause screen
     - get game states working (done kindof)
     - make menue screen (done could be better)
