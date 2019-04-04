@@ -73,15 +73,15 @@ it also provies functions for detecting collisions with the hill
 
 - Add menu and pause screen
     - get game states working (done kindof)
-    - make menue screen
+    - make menue screen (done could be better)
     - make pause screen (done)
-    - make game over screen
+    - make game over screen (Done)
 
 - add more debug info (optional)
-    - IE CHANGEING COLOR OF PLAYERS AND SIZE AND DIFRENT CONSTENS
+
 - Gamplay
     - Smooth out speed boost?
-    - fix player rotation (maybe have it contoled by the human player IF WE HAVE TIME)
+    - fix player rotation (optional smooth the rotation on inpact)
     - Detect when player looses (Do this after the others stuff) (to hard of collision, flip over or somting)
     - //Make slope generated with perlian noise not a function
     - Insted of perlian noise make the sing wave more suitibal for jumps
@@ -99,16 +99,18 @@ it also provies functions for detecting collisions with the hill
         - mabe snow falling from sky (Optional)
     - Add trees to sope or somting
     - add other things that are interesting like candy cains or raindear lol
-    - add paralec effect to background
+    - add paralec effect to background (Rafid)
     - Landing text for how good the landing was.
 
 - Sound
-    - background music
+    - background music (Rafid)
     - sliding sound effect
-    - crash sound effect
-    - speedup sound effect
+    - crash sound effect  (Rafid)
+    - speedup sound effect (Rafid)
 
 
  sources:
  Sond clips used from:
  https://freesound.org/people/E330/sounds/223082/
+
+ https://pixabay.com/vectors/tree-trunk-nature-leaves-branches-576836/

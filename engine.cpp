@@ -20,6 +20,10 @@ Engine::Engine(sf::Vector2u ws):
 
     state = State::PLAY;
 
+    skyColorDay = sf::Color(135, 206, 235, 256);
+    skyColorDusk = sf::Color(255, 127, 0);
+    skyColorNight = sf::Color(0, 0, 0);
+
 
 }
 void Engine::update(sf::Time dt) {
@@ -39,7 +43,8 @@ void Engine::handleEvent(sf::Event &e) {
                 state = State::PLAY;
             }
         }
-        if(e.key.code == sf::Keyboard::W) {
+        if(e.key.code == sf::Keyboard::Escape) {
+            state = State::GAMEOVER;
 
         }
         else if(e.key.code == sf::Keyboard::A) {
@@ -67,48 +72,59 @@ void Engine::handleEvent(sf::Event &e) {
 
 void Engine::render(sf::RenderWindow &window) {
     gui();
-    float lenth = thor::length(player.getVel());
-    camera.setCenter(player.getPos());
-    //lenth = 400;
-    sf::Vector2f targetSize = sf::Vector2f(windowSize.x+(windowSize.x*lenth)/400, windowSize.y+(windowSize.y*lenth)/400);
-    sf::Vector2f size = camera.getSize();
-    if(size.x < targetSize.x){
-        size.x +=windowSize.x/1000.f;
-    } else {
-        size.x -=windowSize.x/1000.f;
+
+    if(state == State::PLAY || state == State::PAUSE) {
+        float lenth = thor::length(player.getVel());
+        camera.setCenter(player.getPos());
+        //lenth = 400;
+        sf::Vector2f targetSize = sf::Vector2f(windowSize.x + (windowSize.x * lenth) / 400,
+                                               windowSize.y + (windowSize.y * lenth) / 400);
+        sf::Vector2f size = camera.getSize();
+        if (size.x < targetSize.x) {
+            size.x += windowSize.x / 1000.f;
+        } else {
+            size.x -= windowSize.x / 1000.f;
+        }
+        if (size.y < targetSize.y) {
+            size.y += windowSize.y / 1000.f;
+        } else {
+            size.y -= windowSize.y / 1000.f;
+        }
+        camera.setSize(size);
+
+        window.setView(camera);
+        draw(window);
+        window.setView(window.getDefaultView());
+
+        ImGui::Begin("Score", NULL, 0 | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoBackground |
+                                    ImGuiWindowFlags_NoBringToFrontOnFocus);
+        ImGui::SetWindowFontScale(2);
+        ImGui::SetWindowPos(ImVec2(10, 10));
+        ImGui::SetWindowSize(ImVec2(500, 200));
+        ImGui::TextColored(ImColor(0, 0, 0), "Score:    %d", player.getScore());
+        ImGui::Text("Air Time: %.2f", player.getAirTime());
+
+        ImGui::End();
+
     }
-    if(size.y < targetSize.y){
-        size.y +=windowSize.y/1000.f;
-    } else {
-        size.y -=windowSize.y/1000.f;
-    }
-    camera.setSize(size);
-
-    window.setView(camera);
-    draw(window);
-    window.setView(window.getDefaultView());
-
-    ImGui::Begin("Score", NULL, 0 | ImGuiWindowFlags_NoDecoration |ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoBringToFrontOnFocus );
-    ImGui::SetWindowFontScale(2);
-    ImGui::SetWindowPos(ImVec2(10,10));
-    ImGui::SetWindowSize(ImVec2(500,200));
-    ImGui::TextColored(ImColor(0,0,0), "Score:    %d", player.getScore());
-    ImGui::Text("Air Time: %.2f", player.getAirTime());
-
-    ImGui::End();
-
-
     if(state == State::PAUSE) {
         pasueDraw(window);
     }
+
+    if(state == State::MAINMENU) {
+        mainMenuDraw(window);
+    }
+
+    if(state == State::GAMEOVER) {
+        gameoverDraw(window);
+    }
+
 
 }
 
 void Engine::draw(sf::RenderWindow &window) {
     slope.render(window);
     player.render(window);
-
-
 }
 
 void Engine::gui() {
@@ -169,7 +185,78 @@ void Engine::pasueDraw(sf::RenderWindow &window) {
             }
     }
     ImGui::SameLine();
-    ImGui::Button("Main Menu",ImVec2(100,50));
+    if(ImGui::Button("Main Menu",ImVec2(100,50))) {
+        state = State::MAINMENU;
+    }
+
+    ImGui::End();
+
+
+
+}
+
+void Engine::mainMenuDraw(sf::RenderWindow &window) {
+
+    window.clear(sf::Color::Black);
+      ImGui::Begin("Main Menu", NULL, 0 | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove| ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoBackground);
+//    ImGuiStyle style = ImGui::GetStyle();
+//    style.FrameRounding ;
+    ImVec2 size(windowSize.x , windowSize.y);
+    ImVec2 pos(100,500);
+    ImGui::SetWindowPos(pos);
+    ImGui::SetWindowSize(size);
+
+
+    ImGui::SetWindowFontScale(5);
+
+    ImGui::Text("Main Menu");
+
+    ImGui::SetWindowFontScale(1);
+    if(ImGui::Button("Play",ImVec2(100,50))) {
+        isPaused = false;
+        state = State::PLAY;
+    }
+
+    ImGui::End();
+
+}
+
+void Engine::gameoverDraw(sf::RenderWindow &window) {
+
+    window.clear(sf::Color::Black);
+      ImGui::Begin("Game Over", NULL, 0 | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove| ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoBackground);
+//    ImGuiStyle style = ImGui::GetStyle();
+//    style.FrameRounding ;
+    ImVec2 btnSize(310, 50);
+    ImVec2 size(windowSize.x , windowSize.y);
+    ImVec2 pos(windowSize.x/2 - btnSize.x/2,windowSize.y/2);
+    ImGui::SetWindowPos(pos);
+    ImGui::SetWindowSize(size);
+
+
+    ImGui::SetWindowFontScale(5);
+
+    ImGui::Text("Game Over");
+
+    ImGui::SetWindowFontScale(1);
+    if(ImGui::Button("Contine",btnSize)) {
+        //restart();
+        isPaused = false;
+        state = State::PLAY;
+    }
+
+
+    if(ImGui::Button("Try Again",btnSize)) {
+        //restart();
+        isPaused = false;
+        state = State::PLAY;
+    }
+
+    if(ImGui::Button("Main Menu",btnSize)) {
+        //restart();
+        isPaused = false;
+        state = State::MAINMENU;
+    }
 
     ImGui::End();
 

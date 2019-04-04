@@ -136,12 +136,31 @@ Slope::Slope(int _step, int _frontBufferDistance, int _backBufferDistance){
     points.push_front(sf::Vector2f(0, slopeFunction(0)));
 
     fillSlope = true;
+
+    treeSpacing = 100;
+    treeVar = 100;
+    nextTree = 0;
+    tree1.loadFromFile("../res/tree1.png");
+
 }
 
 void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
 
     while(points.front().x < playerPos.x+frontBufferDistance) {
         points.push_front(sf::Vector2f(points.front().x+step, slopeFunction(points.front().x+step)));
+
+        if(points.front().x >= nextTree) {
+            trees.push_front(sf::Sprite(tree1,sf::IntRect(0, 0, 320, 640)));
+
+
+            float scale = (rand()%10)/20.f + 0.2f;
+            trees.front().setScale(scale,scale);
+            trees.front().getLocalBounds().height;
+
+            trees.front().setPosition(points.front().x -trees.front().getLocalBounds().width*scale/2, points.front().y-trees.front().getLocalBounds().height*scale +20);
+            nextTree = nextTree+treeSpacing + rand()% (2*treeVar) - treeVar;
+        }
+
     }
 
     while(points.back().x < playerPos.x-backBufferDistance){
@@ -161,6 +180,10 @@ void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
 }
 
 void Slope::render(sf::RenderWindow &window){
+
+    for(int i = 0 ; i < trees.size(); i ++) {
+        window.draw(trees[i]);
+    }
     sprite.clear();
 
     if(fillSlope) {
@@ -182,4 +205,7 @@ void Slope::render(sf::RenderWindow &window){
         }
     }
     window.draw(sprite);
+
+
+
 }

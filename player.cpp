@@ -60,7 +60,7 @@ debugLines(sf::Lines, 6)
     genBody(bodyWidth, bodyHeight);
 
 
-    texture.loadFromFile("../res/dead_penguin.png");
+    texture.loadFromFile("../res/penguin.png");
     sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
     sprite.setPosition(-64, -128);
@@ -125,7 +125,8 @@ Pose Player::getControl(){
     if(Motion::isRunning()) {
         return Motion::getPose();
     }
-//else use keyboard;
+
+    //else use keyboard;
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         return Pose::CROUCH;
@@ -243,7 +244,6 @@ void Player::update(sf::Time dt, Slope s){
 //        float drag = c * thor::squaredLength(vel);
 //        sf::Vector2f dragF = vel * -1.f;
 //        thor::setLength(dragF, drag);
-//
 
         sf::Vector2f dragF;
         dragF.x = -c.x * vel.x*vel.x;

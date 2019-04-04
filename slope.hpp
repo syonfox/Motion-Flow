@@ -9,6 +9,8 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/VertexArray.hpp>
 #include <deque>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
 
 
 class Slope {
@@ -31,6 +33,13 @@ private:
 
     //perlina noise
 
+
+    std::deque<sf::Sprite> trees;
+    sf::Texture tree1;
+
+    int treeSpacing;
+    int treeVar;
+    int nextTree;
 
 
 

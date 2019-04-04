@@ -51,7 +51,7 @@ int nPoints = 18;
 //using namespace cv::dnn;
 
 void* Motion::pose_detection(void *threadid) {
-    std::string videoFile = "../asdtestsquathorz.mp4";
+    std::string videoFile = "../testsquathorz.mp4";
     // Take arguments from commmand line
 
     int inWidth = 368;
@@ -114,6 +114,8 @@ void* Motion::pose_detection(void *threadid) {
             points[n] = p;
         }
 
+//        float cutHeight = (20) *(float)frameHeight / H;
+//        //points is the
         int nPairs = sizeof(POSE_PAIRS)/sizeof(POSE_PAIRS[0]);
 
         for (int n = 0; n < nPairs; n++)
@@ -130,10 +132,17 @@ void* Motion::pose_detection(void *threadid) {
             circle(frame, partB, 8, cv::Scalar(0,0,255), -1);
         }
 
+
         t = ((double)cv::getTickCount() - t)/cv::getTickFrequency();
         cv::putText(frame, cv::format("time taken = %.2f sec", t), cv::Point(50, 50), cv::FONT_HERSHEY_COMPLEX, .8, cv::Scalar(255, 50, 0), 2);
         // imshow("Output-Keypoints", frameCopy);
         imshow("Output-Skeleton", frame);
+
+
+//        if(points[0] < 200) {
+//            pose = Pose::CROUCH;
+//        }
+
         //video.write(frame);
     }
 

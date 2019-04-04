@@ -12,7 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
 
-enum class State{QUIT,MAINMENU, PAUSE, PLAY};
+enum class State{QUIT,MAINMENU, PAUSE, PLAY, GAMEOVER};
 
 class Engine {
 private:
@@ -25,6 +25,10 @@ private:
 
 
     void pasueDraw(sf::RenderWindow & window);
+    void mainMenuDraw(sf::RenderWindow & window);
+    void gameoverDraw(sf::RenderWindow & window);
+
+
     void gui();
     void draw(sf::RenderWindow & window);
 
@@ -32,6 +36,10 @@ private:
     Player player;
     float g;
 
+    float skySetting;
+    sf::Color skyColorDay;
+    sf::Color skyColorDusk;
+    sf::Color skyColorNight;
 
 
 

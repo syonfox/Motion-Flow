@@ -253,26 +253,11 @@ SFML_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SFML
 //Path to a file.
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
 
-//The directory containing a CMake configuration file for THOR.
-THOR_DIR:PATH=THOR_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Thor.
-Thor_DIR:PATH=Thor_DIR-NOTFOUND
-
 //Value Computed by CMake
 motion_flow_BINARY_DIR:STATIC=/home/syonfox/github/Motion-Flow/cmake-build-debug
 
 //Value Computed by CMake
 motion_flow_SOURCE_DIR:STATIC=/home/syonfox/github/Motion-Flow
-
-//Value Computed by CMake
-sfml_imgui_base_BINARY_DIR:STATIC=/home/syonfox/github/Motion-Flow/cmake-build-debug
-
-//Value Computed by CMake
-sfml_imgui_base_SOURCE_DIR:STATIC=/home/syonfox/github/Motion-Flow
-
-//The directory containing a CMake configuration file for thor.
-thor_DIR:PATH=thor_DIR-NOTFOUND
 
 
 ########################
