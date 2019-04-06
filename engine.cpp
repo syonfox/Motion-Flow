@@ -36,6 +36,7 @@ Engine::Engine(sf::Vector2u ws):
     skyColorNight = sf::Color(0, 0, 0);
 
     skySetting = 10;
+    skyThreshold = 400;
 
 
 
