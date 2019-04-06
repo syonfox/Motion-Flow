@@ -78,8 +78,8 @@ void* Motion::pose_detection(void *threadid) {
     int inHeight = 368;
     float thresh = 0.05;
 
-    //cv::VideoCapture cap(videoFile);
-    cv::VideoCapture cap(0);
+    cv::VideoCapture cap(videoFile);
+    //cv::VideoCapture cap(0);
     //cap has the video file
 
     if (!cap.isOpened())
@@ -106,17 +106,17 @@ void* Motion::pose_detection(void *threadid) {
     {
         double t = (double) cv::getTickCount();
 
-        cap.open(0);
-        //cap >> frame;
-        cv::Mat img;
+        //cap.open(0);
+        cap >> frame;
+        //cv::Mat img;
         //img.create(frameWidth, frameHeight, CV_32F);
-        cap.set(cv::CAP_PROP_POS_AVI_RATIO, 1);
+        //cap.set(cv::CAP_PROP_POS_AVI_RATIO, 1);
 
-        cap.read(img);
+        //cap.read(img);
 
-        frame = img.clone();
+        //frame = img.clone();
 
-        cap.release();
+        //cap.release();
         frameCopy = frame.clone();
 
         //changin the input image to blob type of dimension 368, 368

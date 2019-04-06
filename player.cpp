@@ -71,11 +71,26 @@ debugLines(sf::Lines, 6)
     landingText.setScale(2,2);
     textDuration = 2;
 
+     backgroundSoundBuffer.loadFromFile("../res/background.wav");
+     backgroundSound.setBuffer(backgroundSoundBuffer);
+     backgroundSound.setLoop(true);
+     backgroundSound.setVolume(60);
+     backgroundSound.play();
+
 
     snowSoundBuffer.loadFromFile("../res/snow.wav");
     snowSound.setBuffer(snowSoundBuffer);
     snowSound.setLoop(true);
-    snowSound.play();
+    //snowSound.play();
+
+    crashSoundBuffer.loadFromFile("../res/crash_sound.wav");
+    crashSound.setBuffer(crashSoundBuffer);
+    crashSound.setPitch(2);
+    crashSound.setLoop(false);
+
+    flySoundBuffer.loadFromFile("../res/fly_sound_trimmed.wav");
+    flySound.setBuffer(flySoundBuffer);
+    flySound.setLoop(false);
 }
 void Player::restart() {
     acc = sf::Vector2f(0,0);
@@ -151,11 +166,13 @@ void Player::updateText(float dt) {
 
 void Player::updateSounds() {
 
-    if(inAir && snowSound.getStatus() == sf::Sound::Status::Playing)
-        snowSound.pause();
+//    if(inAir && snowSound.getStatus() == sf::Sound::Status::Playing)
+//        snowSound.pause();
+//
+//    if(!inAir && snowSound.getStatus() == sf::Sound::Status::Paused)
+//        snowSound.play();
 
-    if(!inAir && snowSound.getStatus() == sf::Sound::Status::Paused)
-        snowSound.play();
+    // how to figure out a bad landing
 
 
 }
@@ -276,15 +293,20 @@ void Player::update(sf::Time dt, Slope s){
             if(aoi < boostThreshold * 0.25 ){
                 s = "Perfect Landing";
                 bonus *= 10;
+                flySound.play();
+
             } else if(aoi < boostThreshold * 0.5) {
+                flySound.play();
                 s = "Great Landing";
                 bonus *= 5;
             } else if (aoi < boostThreshold * 0.75) {
+                flySound.play();
                 s = "Good Landing";
                 bonus *=3;
             }else if (aoi < boostThreshold) {
                 s = "Okay Landing";
             } else {
+                crashSound.play();
                 s = "Bad Landing";
                 combo = 0;
             }

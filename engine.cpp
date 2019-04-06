@@ -64,6 +64,7 @@ void Engine::updateSkyColor(){
             skySetting = 0;
             pause();
             state = State::GAMEOVER;
+            //state = State::GAMEOVER;
         } else {
             skySetting = 10;
         }
