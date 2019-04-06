@@ -7,6 +7,7 @@
 #include "imgui-SFML.h"
 #include "engine.hpp"
 #include "motion.hpp"
+#include "fonts.hpp"
 #include <iostream>
 
 
@@ -21,11 +22,24 @@ int main()
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Red);
     static bool hasFocus = true;
+
+
     ImGuiIO io = ImGui::GetIO();
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
     io.NavActive = true;
 
-    bool showMenuDebug = true;
+    //ImFont* font1 = io.Fonts->AddFontDefault();
+    //ImFont* font1 = io.Fonts->AddFontFromFileTTF("../imgui-sfml/misc/fonts/DroidSans.ttf", 32);
+//    ImFont* font1 = io.Fonts->AddFontFromFileTTF("../res/FFF_Tusj.ttf", 13);
+//    ImGui::SFML::UpdateFontTexture();
+//
+//    sf::Font sfFont1;
+//    sfFont1.loadFromFile("../res/FFF_Tusj.ttf");
+
+
+    //Font::load("../res/FFF_Tusj.ttf", 13, "trsj");
+    Engine::Fonts.push_back(Font("../res/FFF_Tusj.ttf", 13, "tusj"));
+    Engine::Fonts.push_back(Font("../res/FFF_Tusj.ttf", 32, "tusj_big"));
     bool showimguiDemo = false;
     // timing
     /*
@@ -33,6 +47,8 @@ int main()
     tickTime is the number of sim time per tick
 
     */
+
+
 
     Engine e = Engine(window.getSize());
 
@@ -105,7 +121,9 @@ int main()
             }
 
 
+
             ImGui::SFML::Update(window, deltaClock.restart());
+
 
 
             if (ImGui::BeginMainMenuBar()) {
@@ -132,9 +150,10 @@ int main()
 //                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
 //                            1000.0f / ImGui::GetIO().Framerate,
 //                            ImGui::GetIO().Framerate);
-
+                ImGui::PushFont(Engine::Fonts[0].imfont);
                 ImGui::Text("Tick Time: %fs , TPS: %f", frameTime.asSeconds(), 1.f / (float) frameTime.asSeconds());
                 ImGui::Text("Has Focus %d, ImGui Has Focus %d", hasFocus, ImGui::IsMouseHoveringAnyWindow());
+                ImGui::PopFont();
 
                 if (ImGui::CollapsingHeader("Time")) {
                     /// ImGui::InputFloat("Time Simulated per Tick",
@@ -158,6 +177,13 @@ int main()
             window.clear(sf::Color(135, 206, 235, 256)); //background colour
             //window.draw(shape);
             e.render(window);
+
+
+            sf::Text txt;
+            txt.setString("Font1");
+            txt.setFont(Engine::Fonts[0].sffont);
+            window.draw(txt);
+
             ImGui::SFML::Render(window);
             window.display();
         }

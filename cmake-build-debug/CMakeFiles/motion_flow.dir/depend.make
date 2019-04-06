@@ -3,6 +3,7 @@
 
 CMakeFiles/motion_flow.dir/engine.cpp.o: ../engine.cpp
 CMakeFiles/motion_flow.dir/engine.cpp.o: ../engine.hpp
+CMakeFiles/motion_flow.dir/engine.cpp.o: ../fonts.hpp
 CMakeFiles/motion_flow.dir/engine.cpp.o: ../imgui-sfml/imconfig.h
 CMakeFiles/motion_flow.dir/engine.cpp.o: ../imgui-sfml/imgui.h
 CMakeFiles/motion_flow.dir/engine.cpp.o: ../motion.hpp
@@ -27,6 +28,12 @@ CMakeFiles/motion_flow.dir/engine.cpp.o: /usr/local/include/opencv4/opencv2/core
 CMakeFiles/motion_flow.dir/engine.cpp.o: /usr/local/include/opencv4/opencv2/core/types.hpp
 CMakeFiles/motion_flow.dir/engine.cpp.o: /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
 CMakeFiles/motion_flow.dir/engine.cpp.o: /usr/local/include/opencv4/opencv2/opencv_modules.hpp
+
+CMakeFiles/motion_flow.dir/fonts.cpp.o: ../imgui-sfml/imgui-SFML.h
+CMakeFiles/motion_flow.dir/fonts.cpp.o: ../imgui-sfml/imgui.h
+CMakeFiles/motion_flow.dir/fonts.cpp.o: ../imgui-sfml/imconfig.h
+CMakeFiles/motion_flow.dir/fonts.cpp.o: ../fonts.cpp
+CMakeFiles/motion_flow.dir/fonts.cpp.o: ../fonts.hpp
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o: ../imgui-sfml/imconfig.h
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o: ../imgui-sfml/imgui.h
@@ -61,6 +68,7 @@ CMakeFiles/motion_flow.dir/main.cpp.o: ../imgui-sfml/imconfig.h
 CMakeFiles/motion_flow.dir/main.cpp.o: ../imgui-sfml/imgui-SFML.h
 CMakeFiles/motion_flow.dir/main.cpp.o: ../imgui-sfml/imgui.h
 CMakeFiles/motion_flow.dir/main.cpp.o: ../engine.hpp
+CMakeFiles/motion_flow.dir/main.cpp.o: ../fonts.hpp
 CMakeFiles/motion_flow.dir/main.cpp.o: ../imgui-sfml/imgui.h
 CMakeFiles/motion_flow.dir/main.cpp.o: ../main.cpp
 CMakeFiles/motion_flow.dir/main.cpp.o: ../motion.hpp
@@ -188,6 +196,7 @@ CMakeFiles/motion_flow.dir/motion.cpp.o: /usr/local/include/opencv4/opencv2/vide
 CMakeFiles/motion_flow.dir/player.cpp.o: ../imgui-sfml/imgui.h
 CMakeFiles/motion_flow.dir/player.cpp.o: ../imgui-sfml/imconfig.h
 CMakeFiles/motion_flow.dir/player.cpp.o: ../engine.hpp
+CMakeFiles/motion_flow.dir/player.cpp.o: ../fonts.hpp
 CMakeFiles/motion_flow.dir/player.cpp.o: ../motion.hpp
 CMakeFiles/motion_flow.dir/player.cpp.o: ../player.cpp
 CMakeFiles/motion_flow.dir/player.cpp.o: ../player.hpp

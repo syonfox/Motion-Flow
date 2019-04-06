@@ -40,7 +40,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 #add_subdirectory(imgui-sfml/examples)
 
 file(TO_CMAKE_PATH "main.cpp" EXAMPLE_FILES)
-set(SRCS "imconfig.h" ${IMGUI_SFML_SOURCES} ${EXAMPLE_FILES} slope.cpp slope.hpp engine.cpp engine.hpp player.cpp player.hpp motion.cpp motion.hpp)
+set(SRCS "imconfig.h" ${IMGUI_SFML_SOURCES} ${EXAMPLE_FILES} slope.cpp slope.hpp engine.cpp engine.hpp player.cpp player.hpp motion.cpp motion.hpp fonts.cpp fonts.hpp)
 
 add_executable(motion_flow ${SRCS})
 

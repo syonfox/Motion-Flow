@@ -5,9 +5,20 @@
 #include <Thor/Vectors.hpp>
 #include "engine.hpp"
 #include "motion.hpp"
-
+#include <iostream>
 
 bool Engine::showDebugWindow = true;
+std::vector<Font> Engine::Fonts;
+
+Font& Engine::findFont(const std::string &name) {
+    for(int i=0; i< Engine::Fonts.size(); i++) {
+        //std::cout << Engine::Fonts[i].name << std::endl;
+        if(name == Engine::Fonts[i].name)
+            return Engine::Fonts[i];
+    }
+    std::cerr << "ERROR: Invalid name Font not loaded: '" << name<< "'"<< std::endl;
+    exit(-1);
+}
 
 Engine::Engine(sf::Vector2u ws):
     slope(10,4000,2000)
@@ -21,16 +32,63 @@ Engine::Engine(sf::Vector2u ws):
     state = State::PLAY;
 
     skyColorDay = sf::Color(135, 206, 235, 256);
-    skyColorDusk = sf::Color(255, 127, 0);
+    skyColorDusk = sf::Color(200, 50, 50);
     skyColorNight = sf::Color(0, 0, 0);
+
+    skySetting = 10;
+
+
+
 
 
 }
+
+void Engine::updateSkyColor(){
+
+    if(skySetting<0 || skySetting >10) {
+        //std::cerr << "Warrning: Invaled Sky Setting setting it to within bounds";
+        if (skySetting < 0) {
+            skySetting = 0;
+            state = State::GAMEOVER;
+        } else {
+            skySetting = 10;
+        }
+    }
+    if(skySetting <= 5){
+        skyColor = blendColor(skyColorDusk, skyColorNight, (skySetting/5));
+    }else{
+        skyColor = blendColor(skyColorDay, skyColorDusk, ((skySetting-5)/5));
+    }
+
+
+
+}
+sf::Color Engine::blendColor(sf::Color c1, sf::Color c2, float blend ){
+
+    return sf::Color(
+            c1.r*blend + c2.r*(1-blend),
+            c1.g*blend + c2.b*(1-blend),
+            c1.b*blend + c2.g*(1-blend),
+            c1.a*blend + c2.a*(1-blend)
+        );
+
+}
+
 void Engine::update(sf::Time dt) {
     if(state == State::PLAY) {
+        updateSkyColor();
         slope.update(dt, player.getPos());
         player.update(dt, slope);
+
+
+        if(player.getVel().x < skyThreshold) {
+            skySetting-=dt.asSeconds()*(1-(player.getVel().x/skyThreshold));
+        }
+        else {
+            skySetting+=dt.asSeconds() * ((player.getVel().x- skyThreshold)/skyThreshold);
+        }
     }
+
 }
 
 void Engine::handleEvent(sf::Event &e) {
@@ -71,6 +129,7 @@ void Engine::handleEvent(sf::Event &e) {
 }
 
 void Engine::render(sf::RenderWindow &window) {
+    window.clear(skyColor);
     gui();
 
     if(state == State::PLAY || state == State::PAUSE) {
@@ -98,12 +157,15 @@ void Engine::render(sf::RenderWindow &window) {
 
         ImGui::Begin("Score", NULL, 0 | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoBackground |
                                     ImGuiWindowFlags_NoBringToFrontOnFocus);
-        ImGui::SetWindowFontScale(2);
+
+        ImGui::PushFont(Engine::findFont("tusj_big").imfont);
+        //ImGui::SetWindowFontScale(2);
         ImGui::SetWindowPos(ImVec2(10, 10));
         ImGui::SetWindowSize(ImVec2(500, 200));
-        ImGui::TextColored(ImColor(0, 0, 0), "Score:    %d", player.getScore());
+        ImGui::Text("Score:    %d", player.getScore());
         ImGui::Text("Air Time: %.2f", player.getAirTime());
 
+        ImGui::PopFont();
         ImGui::End();
 
     }
@@ -132,6 +194,9 @@ void Engine::gui() {
         ImGui::Begin("Debug");
 
         if (ImGui::CollapsingHeader("Engine")) {
+
+            ImGui::SliderFloat("Sky Color", &skySetting, 0, 10,"%.5f", 1.f);
+            ImGui::SliderFloat("Sky Threshold",&skyThreshold, 0, 1000,"%.5f", 1.f );
             ImGui::Text("Engine Info");
             ImGui::Text("Game State: %d", state);
             if (ImGui::CollapsingHeader("Camera")) {

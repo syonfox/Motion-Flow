@@ -85,7 +85,8 @@ void* Motion::pose_detection(void *threadid) {
     if (!cap.isOpened())
     {
         std::cerr << "Unable to connect to camera" << std::endl;
-        exit(-1);
+        running = false;
+        return 0;
     }
 
     cv::Mat frame, frameCopy;
@@ -254,8 +255,6 @@ int Motion::init() {
 
 int Motion::shutdown() {
     int rc;
-
-
 
     std::cout << "Status: Shuting Down Motion " << std::endl;
     running = false;

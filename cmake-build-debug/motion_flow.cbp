@@ -138,6 +138,12 @@
 		<Unit filename="/home/syonfox/github/Motion-Flow/engine.hpp">
 			<Option target="motion_flow"/>
 		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/fonts.cpp">
+			<Option target="motion_flow"/>
+		</Unit>
+		<Unit filename="/home/syonfox/github/Motion-Flow/fonts.hpp">
+			<Option target="motion_flow"/>
+		</Unit>
 		<Unit filename="/home/syonfox/github/Motion-Flow/imconfig.h">
 			<Option target="motion_flow"/>
 		</Unit>

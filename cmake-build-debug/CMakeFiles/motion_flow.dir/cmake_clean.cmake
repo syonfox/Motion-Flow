@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/motion_flow.dir/engine.cpp.o"
   "CMakeFiles/motion_flow.dir/player.cpp.o"
   "CMakeFiles/motion_flow.dir/motion.cpp.o"
+  "CMakeFiles/motion_flow.dir/fonts.cpp.o"
   "motion_flow_d.pdb"
   "motion_flow_d"
 )

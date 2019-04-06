@@ -13,6 +13,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Audio/SoundBuffer.hpp>
 #include <SFML/Audio/Sound.hpp>
+#include <SFML/Graphics/Text.hpp>
 #include "imconfig.h"
 #include "slope.hpp"
 #include "motion.hpp"
@@ -32,17 +33,21 @@ private:
     float airTime;
     bool inAir;
 
+    float boostFactor;
+    float boostThreshold;
+    float boostMax;
+
     float g; //gravity accelearation
     sf::Vector2f c; //drag coefficient
 
     sf::Color color;
     sf::ConvexShape shape;
 
-    sf::ConvexShape body;
-    sf::VertexArray ski;
+//    sf::ConvexShape body;
+//    sf::VertexArray ski;
 
-    sf::Color bodyColor;
-    sf::Color skiColor;
+//    sf::Color bodyColor;
+//    sf::Color skiColor;
     int scarfLength;
     sf::VertexArray scarf;
     std::deque<sf::Vector2f> scarfPoints;
@@ -51,6 +56,13 @@ private:
     sf::Texture texture;
     sf::Sprite sprite;
 
+    sf::Text landingText;
+    sf::Color textColor;
+    float textDecay;
+    float textDuration;
+    void updateText(float dt);
+
+
     void updateSounds();
     void updateScarf(void);
     sf::Vector2f scarfPoint;
@@ -58,11 +70,10 @@ private:
     sf::Transform transform;
 
     bool debugDraw;
-    bool debugWindow;
     sf::VertexArray debugLines;
 
-    int bodyWidth, bodyHeight;
-    void genBody(int width, int hight);
+//    int bodyWidth, bodyHeight;
+//    void genBody(int width, int hight);
 
 
 

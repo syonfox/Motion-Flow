@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/syonfox/github/Motion-Flow/engine.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/engine.cpp.o"
+  "/home/syonfox/github/Motion-Flow/fonts.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/fonts.cpp.o"
   "/home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o"
   "/home/syonfox/github/Motion-Flow/imgui-sfml/imgui.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o"
   "/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_demo.cpp" "/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o"

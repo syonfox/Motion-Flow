@@ -196,6 +196,33 @@ engine.cpp.s:
 	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/engine.cpp.s
 .PHONY : engine.cpp.s
 
+fonts.o: fonts.cpp.o
+
+.PHONY : fonts.o
+
+# target to build an object file
+fonts.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/fonts.cpp.o
+.PHONY : fonts.cpp.o
+
+fonts.i: fonts.cpp.i
+
+.PHONY : fonts.i
+
+# target to preprocess a source file
+fonts.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/fonts.cpp.i
+.PHONY : fonts.cpp.i
+
+fonts.s: fonts.cpp.s
+
+.PHONY : fonts.s
+
+# target to generate assembly for a file
+fonts.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/fonts.cpp.s
+.PHONY : fonts.cpp.s
+
 imgui-sfml/imgui-SFML.o: imgui-sfml/imgui-SFML.cpp.o
 
 .PHONY : imgui-sfml/imgui-SFML.o
@@ -455,6 +482,9 @@ help:
 	@echo "... engine.o"
 	@echo "... engine.i"
 	@echo "... engine.s"
+	@echo "... fonts.o"
+	@echo "... fonts.i"
+	@echo "... fonts.s"
 	@echo "... imgui-sfml/imgui-SFML.o"
 	@echo "... imgui-sfml/imgui-SFML.i"
 	@echo "... imgui-sfml/imgui-SFML.s"

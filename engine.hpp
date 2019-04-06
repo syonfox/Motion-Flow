@@ -8,6 +8,7 @@
 #include "imgui-sfml/imgui.h"
 #include "slope.hpp"
 #include "player.hpp"
+#include "fonts.hpp"
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
@@ -17,12 +18,11 @@ enum class State{QUIT,MAINMENU, PAUSE, PLAY, GAMEOVER};
 class Engine {
 private:
     sf::Vector2u windowSize;
-    sf::View camera;
+    sf::View camera; //View port intow the game world
 
-    State state;
+    State state; //Curent game state
 
     bool isPaused = false;
-
 
     void pasueDraw(sf::RenderWindow & window);
     void mainMenuDraw(sf::RenderWindow & window);
@@ -37,20 +37,30 @@ private:
     float g;
 
     float skySetting;
+    sf::Color skyColor;
     sf::Color skyColorDay;
     sf::Color skyColorDusk;
     sf::Color skyColorNight;
+
+    float skyThreshold;
+
+    void updateSkyColor();
+    sf::Color blendColor(sf::Color c1, sf::Color c2, float blend );
 
 
 
 
 public:
-    static bool showDebugWindow;
 
+    static bool showDebugWindow;
+    static std::vector<Font> Fonts;
+
+    static Font& findFont(const std::string &name);
     Engine(sf::Vector2u windowSize);
     void update(sf::Time dt);
     void handleEvent(sf::Event &e);
     void render(sf::RenderWindow &window);
+
 
 
 };

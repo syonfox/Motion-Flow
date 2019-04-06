@@ -14,13 +14,11 @@ pos(010,010),
 vel(0,0),
 acc(0,0),
 color(sf::Color::Red),
-skiColor(sf::Color(100,100,100)),
-bodyColor(sf::Color::Red),
+textColor(sf::Color::Red),
 scarfColor(sf::Color::Red),
 debugLines(sf::Lines, 6)
 {
     debugDraw = true;
-    debugWindow = true;
     mass = 10;
     rotation = 0;
     angle = 0;
@@ -28,36 +26,33 @@ debugLines(sf::Lines, 6)
     c.x = 0.005;
     c.y = 0.02;
 
-    shape = sf::ConvexShape(3);
-    shape.setPoint(0, sf::Vector2f(-20, 0));
-    shape.setPoint(1, sf::Vector2f(20, 0));
-    shape.setPoint(2, sf::Vector2f(0, -50));
-    shape.setFillColor(color);
 
-    int len = 20;
-    ski = sf::VertexArray(sf::TrianglesStrip,6);
-    ski[0] = sf::Vertex(sf::Vector2f(-len,0), skiColor);
-    ski[1] = sf::Vertex(sf::Vector2f(-len,-3), skiColor);
-    ski[2] = sf::Vertex(sf::Vector2f(len-5,0), skiColor);
-    ski[3] = sf::Vertex(sf::Vector2f(len-5,-3), skiColor);
-    ski[4] = sf::Vertex(sf::Vector2f(len,-3), skiColor);
-    ski[5] = sf::Vertex(sf::Vector2f(len-2,-5), skiColor);
-//    ski.setPoint(0, sf::Vector2f(-20,0));
-//    ski.setPoint(1, sf::Vector2f(15,0));
-//    ski.setPoint(2, sf::Vector2f(20,-5));
-//    ski.setPoint(3, sf::Vector2f(20,-10));
-//    ski.setPoint(4, sf::Vector2f(15,-5));
-//    ski.setPoint(5, sf::Vector2f(-20,-5));
-//    ski.setFillColor(skiColor);
+    boostMax = 2;
+    boostThreshold = 20;
+//    shape = sf::ConvexShape(3);
+//    shape.setPoint(0, sf::Vector2f(-20, 0));
+//    shape.setPoint(1, sf::Vector2f(20, 0));
+//    shape.setPoint(2, sf::Vector2f(0, -50));
+//    shape.setFillColor(color);
+//
+//    int len = 20;
+//    ski = sf::VertexArray(sf::TrianglesStrip,6);
+//    ski[0] = sf::Vertex(sf::Vector2f(-len,0), skiColor);
+//    ski[1] = sf::Vertex(sf::Vector2f(-len,-3), skiColor);
+//    ski[2] = sf::Vertex(sf::Vector2f(len-5,0), skiColor);
+//    ski[3] = sf::Vertex(sf::Vector2f(len-5,-3), skiColor);
+//    ski[4] = sf::Vertex(sf::Vector2f(len,-3), skiColor);
+//    ski[5] = sf::Vertex(sf::Vector2f(len-2,-5), skiColor);
+
 
     scarfLength = 100;
     //std::deque<sf::Vector2f> scarfPoints;
     //scarf= sf::VertexArray(sf::LinesStrip 10)
 
-    bodyWidth = 20;
-    bodyHeight = 40;
-    body = sf::ConvexShape(6);
-    genBody(bodyWidth, bodyHeight);
+//    bodyWidth = 20;
+//    bodyHeight = 40;
+//    body = sf::ConvexShape(6);
+//    genBody(bodyWidth, bodyHeight);
 
 
     texture.loadFromFile("../res/penguin.png");
@@ -65,6 +60,14 @@ debugLines(sf::Lines, 6)
     sprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
     sprite.setPosition(-64, -128);
     scarfPoint = sf::Vector2f(-64+90, -128+106);
+
+
+    landingText.setFont(Engine::findFont("tusj").sffont);
+    landingText.setString("Great");
+    landingText.setFillColor(sf::Color::Red);
+    landingText.setScale(3,3);
+    textDuration = 1;
+
 
     snowSoundBuffer.loadFromFile("../res/snow.wav");
     snowSound.setBuffer(snowSoundBuffer);
@@ -74,15 +77,15 @@ debugLines(sf::Lines, 6)
 
 
 
-void Player::genBody(int width, int hight){
-    body.setPoint(0, sf::Vector2f(-width/2,0));
-    body.setPoint(1, sf::Vector2f(width/4,0));
-    body.setPoint(2, sf::Vector2f(width/2,-hight+hight/4));
-    body.setPoint(3, sf::Vector2f(width/2,-hight+hight/8));
-    body.setPoint(4, sf::Vector2f(0, -hight));
-    body.setPoint(5, sf::Vector2f(-width/2,-hight+hight/8));
-    body.setFillColor(bodyColor);
-}
+//void Player::genBody(int width, int hight){
+//    body.setPoint(0, sf::Vector2f(-width/2,0));
+//    body.setPoint(1, sf::Vector2f(width/4,0));
+//    body.setPoint(2, sf::Vector2f(width/2,-hight+hight/4));
+//    body.setPoint(3, sf::Vector2f(width/2,-hight+hight/8));
+//    body.setPoint(4, sf::Vector2f(0, -hight));
+//    body.setPoint(5, sf::Vector2f(-width/2,-hight+hight/8));
+//    body.setFillColor(bodyColor);
+//}
 
 void Player::updateScarf() {
     sf::Vector2f p = transform.transformPoint(scarfPoint);
@@ -108,6 +111,18 @@ void Player::updateScarf() {
         scarfPoints.pop_back();
     }
 
+}
+
+void Player::updateText(float dt) {
+    //landingText.setPosition(0,0);
+    if(textDecay > 0) {
+        landingText.move(0,-1);
+        textColor.a = (textDecay/textDuration)* 255;
+
+        landingText.setFillColor(textColor);
+        textDecay-=dt;
+
+    }
 }
 
 void Player::updateSounds() {
@@ -151,6 +166,10 @@ void Player::update(sf::Time dt, Slope s){
 
     float t = dt.asSeconds();
     //c = 0.01
+    //the point in world cords
+    sf::Vector2f p = transform.transformPoint(sf::Vector2f(0,0));
+
+    updateText(t);
 
     pose = getControl();
     switch(pose) {
@@ -161,6 +180,8 @@ void Player::update(sf::Time dt, Slope s){
                 sf::Vector2f boostF = vel;
                 thor::setLength(boostF, 3000.f);
                 applyForce(boostF);
+
+
             }
             break;
 
@@ -175,11 +196,7 @@ void Player::update(sf::Time dt, Slope s){
 
 
 
-    sf::Vector2f mtv, p ,Fn;
-
-    //the point in world cords
-    p = transform.transformPoint(sf::Vector2f(0,0));
-
+    sf::Vector2f mtv ,Fn;
 
     float slopeAngle = thor::polarAngle(sf::Vector2f(1, -s.slope(p.x)));
     if(vel != sf::Vector2f(0,0))
@@ -199,11 +216,7 @@ void Player::update(sf::Time dt, Slope s){
 
         thor::setPolarAngle(vel, slopeAngle);
 
-        if(aoi > 20){
-            //You lose
-            vel.x *= (1-(aoi)/180);
-            vel.y *= (1-(aoi)/180);
-        }
+
 
         float scale = force.y/mtv.y;
 
@@ -219,13 +232,43 @@ void Player::update(sf::Time dt, Slope s){
         applyForce(Fn);
         //applyGravity = false;
         //applyForce(sf::Vector2f(-g*mtv.x/mtv.y, 0));
-
+//        if(aoi > 20){
+//            //You lose
+//            vel.x *= (1-(aoi)/180);
+//            vel.y *= (1-(aoi)/180);
+//        }
         if(inAir) {
-            if(aoi < 20 ){
-            //speed boost
-                vel.x *=2;
-                vel.y *=2;
+            if(aoi < boostThreshold) {
+                boostFactor = (boostThreshold - aoi) / boostThreshold;
+                boostFactor *= (boostMax - 1);
+                boostFactor += 1;
+            } else {
+                boostFactor = 1 - ((aoi - boostThreshold)/(90 - boostThreshold));
             }
+
+            vel.x *= boostFactor;
+            vel.y *= boostFactor;
+
+            std::string s = "";
+            if(aoi < boostThreshold * 0.25 ){
+                s = "Perfect Landing";
+            } else if(aoi < boostThreshold * 0.5) {
+                s = "Great Landing";
+            } else if (aoi < boostThreshold * 0.75) {
+                s = "Good Landing";
+            }else if (aoi < boostThreshold) {
+                s = "Okay Landing";
+            } else {
+                s = "Bad Landing";
+            }
+
+
+            if(airTime > 5){
+                s += "  Big Air";
+            }
+            landingText.setString(s);
+            landingText.setPosition(pos.x, pos.y-100);
+            textDecay = textDuration;
         }
 
         airTime = 0;
@@ -234,7 +277,7 @@ void Player::update(sf::Time dt, Slope s){
         airTime += t;
     }
 
-    if(airTime > 0.1)
+    if(airTime > 0.3)
         inAir = true;
 
 
@@ -278,7 +321,7 @@ void Player::update(sf::Time dt, Slope s){
     angle += da;
 
 
-    if(thor::squaredLength(vel) > 10 ) {
+    if(vel.x > 15) {
         angle = velAngle;
     } else {
         angle = slopeAngle;
@@ -301,8 +344,6 @@ void Player::update(sf::Time dt, Slope s){
 }
 void Player::render(sf::RenderWindow &window){
 
-
-
     scarf.clear();
     scarf.setPrimitiveType(sf::LinesStrip);
     scarf.resize(scarfPoints.size());
@@ -310,8 +351,6 @@ void Player::render(sf::RenderWindow &window){
     for(int i =size-1; i >= 0; i--){
         scarf[i]= sf::Vertex(scarfPoints[i], scarfColor);
     }
-
-
 
     //window.draw(shape,transform);
     //transform.rotate(velAngle);
@@ -321,6 +360,9 @@ void Player::render(sf::RenderWindow &window){
 
     window.draw(sprite, transform);
     window.draw(scarf);
+
+    window.draw(landingText);
+
     if(debugDraw) {
         transform.rotate(-velAngle);
         window.draw(debugLines, transform);
@@ -345,6 +387,10 @@ void Player::render(sf::RenderWindow &window){
             ImGui::SliderFloat("Drag Coefecent Y", &c.y, 0, 1,"%.5f", 2.f);
             ImGui::SliderInt("Scarf Length", &scarfLength, 10, 1000 );
             ImGui::Text("In Air: %d \t Air Time: %f", inAir, airTime);
+            ImGui::SliderFloat("Max Boost Factor", &boostMax, 1, 6,"%.5f", 1.f);
+            ImGui::SliderFloat("Threshold Factor", &boostThreshold, 1, 90,"%.5f", 1.f);
+
+             ImGui::Text("Boost Factor: %f", boostFactor);
             ImGui::Text("Pose: %d", pose);
         }
 
