@@ -44,6 +44,10 @@ private:
 
     float skyThreshold;
 
+    float skyTimer;
+    float skyDelay;
+    float skyInc;
+
     void updateSkyColor();
     sf::Color blendColor(sf::Color c1, sf::Color c2, float blend );
 
@@ -58,6 +62,9 @@ public:
     static Font& findFont(const std::string &name);
     Engine(sf::Vector2u windowSize);
     void update(sf::Time dt);
+    void restart();
+    void pause();
+    void play();
     void handleEvent(sf::Event &e);
     void render(sf::RenderWindow &window);
 

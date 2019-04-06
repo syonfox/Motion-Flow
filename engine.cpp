@@ -7,7 +7,7 @@
 #include "motion.hpp"
 #include <iostream>
 
-bool Engine::showDebugWindow = true;
+bool Engine::showDebugWindow = false;
 std::vector<Font> Engine::Fonts;
 
 Font& Engine::findFont(const std::string &name) {
@@ -23,25 +23,37 @@ Font& Engine::findFont(const std::string &name) {
 Engine::Engine(sf::Vector2u ws):
     slope(10,4000,2000)
 {
-
-
-    player.setPos(sf::Vector2f(100, 100));
     windowSize = ws;
-    camera = sf::View( sf::FloatRect( sf::Vector2f(0,0), sf::Vector2f((float) ws.x, (float) ws.y) ) );
 
-    state = State::PLAY;
+    camera = sf::View( sf::FloatRect( sf::Vector2f(0,0), sf::Vector2f((float) ws.x, (float) ws.y) ) );
 
     skyColorDay = sf::Color(135, 206, 235, 256);
     skyColorDusk = sf::Color(200, 50, 50);
     skyColorNight = sf::Color(0, 0, 0);
+    skyInc = 1;
+    skyDelay = 1;
+    restart();
+}
 
+void Engine::restart() {
+    state = State::PLAY;
+    isPaused = false;
+    player.restart();
     skySetting = 10;
     skyThreshold = 400;
+    skyTimer = skyDelay;
 
+}
+void Engine::pause() {
+    isPaused = true;
+    state = State::PAUSE;
+    player.pause();
+}
 
-
-
-
+void Engine::play() {
+    isPaused = false;
+    state = State::PLAY;
+    player.play();
 }
 
 void Engine::updateSkyColor(){
@@ -50,6 +62,7 @@ void Engine::updateSkyColor(){
         //std::cerr << "Warrning: Invaled Sky Setting setting it to within bounds";
         if (skySetting < 0) {
             skySetting = 0;
+            pause();
             state = State::GAMEOVER;
         } else {
             skySetting = 10;
@@ -88,6 +101,12 @@ void Engine::update(sf::Time dt) {
         else {
             skySetting+=dt.asSeconds() * ((player.getVel().x- skyThreshold)/skyThreshold);
         }
+        skyTimer-=dt.asSeconds();
+        if(skyTimer < 0) {
+            skyTimer = skyDelay - skyTimer;
+            skyThreshold += skyInc;
+        }
+
     }
 
 }
@@ -165,6 +184,7 @@ void Engine::render(sf::RenderWindow &window) {
         ImGui::SetWindowSize(ImVec2(500, 200));
         ImGui::Text("Score:    %d", player.getScore());
         ImGui::Text("Air Time: %.2f", player.getAirTime());
+        ImGui::Text("Combo:   x%d", player.getCombo());
 
         ImGui::PopFont();
         ImGui::End();
@@ -195,7 +215,9 @@ void Engine::gui() {
         ImGui::Begin("Debug");
 
         if (ImGui::CollapsingHeader("Engine")) {
-
+            if(ImGui::Button("Restart player")) {
+                player.restart();
+            }
             ImGui::SliderFloat("Sky Color", &skySetting, 0, 10,"%.5f", 1.f);
             ImGui::SliderFloat("Sky Threshold",&skyThreshold, 0, 1000,"%.5f", 1.f );
             ImGui::Text("Engine Info");
@@ -244,14 +266,17 @@ void Engine::pasueDraw(sf::RenderWindow &window) {
 
     ImGui::SetWindowFontScale(1);
     if(ImGui::Button("Play",ImVec2(100,50))) {
-        isPaused = !isPaused;
-            if(isPaused) state = State::PAUSE;
-            else if(state == State::PAUSE){
-                state = State::PLAY;
-            }
+//            isPaused = !isPaused;
+//            if(isPaused) state = State::PAUSE;
+//            else if(state == State::PAUSE){
+//                state = State::PLAY;
+//            }
+        play();
     }
     ImGui::SameLine();
     if(ImGui::Button("Main Menu",ImVec2(100,50))) {
+        restart();
+        pause();
         state = State::MAINMENU;
     }
 
@@ -306,21 +331,19 @@ void Engine::gameoverDraw(sf::RenderWindow &window) {
 
     ImGui::SetWindowFontScale(1);
     if(ImGui::Button("Contine",btnSize)) {
-        //restart();
-        isPaused = false;
-        state = State::PLAY;
+        play();
     }
 
 
     if(ImGui::Button("Try Again",btnSize)) {
-        //restart();
-        isPaused = false;
-        state = State::PLAY;
+        restart();
     }
 
     if(ImGui::Button("Main Menu",btnSize)) {
-        //restart();
-        isPaused = false;
+
+
+        restart();
+        pause();
         state = State::MAINMENU;
     }
 

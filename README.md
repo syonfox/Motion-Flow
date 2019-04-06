@@ -92,7 +92,7 @@ it also provies functions for detecting collisions with the hill
     - Tune the physcs to be funner for jumps
         - Tune the constenst
         - detect when the player dose a good landing and give apropreat speed Boost
-
+    - Fix tree bug when the dispaera on restart of game.
 
 - Graphics
     - better player sprite
@@ -110,7 +110,8 @@ it also provies functions for detecting collisions with the hill
     - background music (Rafid)
     - sliding sound effect
     - crash sound effect  (Rafid)
-    - speedup sound effect (Rafid)
+    - speedup/landing sound effect (Rafid)
+    - wind sound effect
 
 
  sources:

@@ -10,15 +10,16 @@
 #include "engine.hpp"
 
 Player::Player():
-pos(010,010),
+pos(100,100),
 vel(0,0),
 acc(0,0),
 color(sf::Color::Red),
-textColor(sf::Color::Red),
+textColor(sf::Color(0,00,255)),
+textOutlineColor(sf::Color::Black),
 scarfColor(sf::Color::Red),
 debugLines(sf::Lines, 6)
 {
-    debugDraw = true;
+    debugDraw = false;
     mass = 10;
     rotation = 0;
     angle = 0;
@@ -27,8 +28,8 @@ debugLines(sf::Lines, 6)
     c.y = 0.02;
 
 
-    boostMax = 2;
-    boostThreshold = 20;
+    boostMax = 3;
+    boostThreshold = 30;
 //    shape = sf::ConvexShape(3);
 //    shape.setPoint(0, sf::Vector2f(-20, 0));
 //    shape.setPoint(1, sf::Vector2f(20, 0));
@@ -62,16 +63,35 @@ debugLines(sf::Lines, 6)
     scarfPoint = sf::Vector2f(-64+90, -128+106);
 
 
-    landingText.setFont(Engine::findFont("tusj").sffont);
+    landingText.setFont(Engine::findFont("marker").sffont);
     landingText.setString("Great");
-    landingText.setFillColor(sf::Color::Red);
-    landingText.setScale(3,3);
-    textDuration = 1;
+    landingText.setFillColor(textColor);
+    landingText.setOutlineColor(textOutlineColor);
+    landingText.setOutlineThickness(1);
+    landingText.setScale(2,2);
+    textDuration = 2;
 
 
     snowSoundBuffer.loadFromFile("../res/snow.wav");
     snowSound.setBuffer(snowSoundBuffer);
     snowSound.setLoop(true);
+    snowSound.play();
+}
+void Player::restart() {
+    acc = sf::Vector2f(0,0);
+    vel = sf::Vector2f(0,0);
+    pos = sf::Vector2f(0,0);
+    angle = 0;
+
+    combo = 0;
+    score = 0;
+
+}
+
+void Player::pause() {
+    snowSound.pause();
+}
+void Player::play() {
     snowSound.play();
 }
 
@@ -116,10 +136,14 @@ void Player::updateScarf() {
 void Player::updateText(float dt) {
     //landingText.setPosition(0,0);
     if(textDecay > 0) {
-        landingText.move(0,-1);
-        textColor.a = (textDecay/textDuration)* 255;
 
+        //landingText.setPosition(pos.x, pos.y);
+        landingText.move(0,-0.5);
+        textColor.a = (textDecay/textDuration)* 255;
+        textOutlineColor.a = (textDecay/textDuration)* 255;
         landingText.setFillColor(textColor);
+        landingText.setOutlineColor(textOutlineColor);
+
         textDecay-=dt;
 
     }
@@ -161,8 +185,6 @@ Pose Player::getControl(){
 }
 
 void Player::update(sf::Time dt, Slope s){
-
-    score = pos.x;
 
     float t = dt.asSeconds();
     //c = 0.01
@@ -248,26 +270,37 @@ void Player::update(sf::Time dt, Slope s){
 
             vel.x *= boostFactor;
             vel.y *= boostFactor;
-
+            int bonus = 100;
+            combo ++;
             std::string s = "";
             if(aoi < boostThreshold * 0.25 ){
                 s = "Perfect Landing";
+                bonus *= 10;
             } else if(aoi < boostThreshold * 0.5) {
                 s = "Great Landing";
+                bonus *= 5;
             } else if (aoi < boostThreshold * 0.75) {
                 s = "Good Landing";
+                bonus *=3;
             }else if (aoi < boostThreshold) {
                 s = "Okay Landing";
             } else {
                 s = "Bad Landing";
+                combo = 0;
             }
 
 
             if(airTime > 5){
                 s += "  Big Air";
+                bonus *=2;
             }
+            bonus *= combo;
+            if(bonus != 0 && combo != 0)
+                s = std::to_string(bonus) +"x" + std::to_string(combo) +" Points\n"+ s;
+
+            score += bonus;
             landingText.setString(s);
-            landingText.setPosition(pos.x, pos.y-100);
+            landingText.setPosition(pos.x-100, pos.y-100);
             textDecay = textDuration;
         }
 
@@ -457,9 +490,13 @@ float Player::getAirTime() const {
 }
 
 int Player::getScore() const {
-    return score;
+    return (int) score + pos.x;
 }
 
 bool Player::isInAir() const {
     return inAir;
+}
+
+int Player::getCombo() const {
+    return combo;
 }

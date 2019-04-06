@@ -58,6 +58,7 @@ private:
 
     sf::Text landingText;
     sf::Color textColor;
+    sf::Color textOutlineColor;
     float textDecay;
     float textDuration;
     void updateText(float dt);
@@ -80,7 +81,8 @@ private:
     Pose pose;
     Pose getControl();
 
-    int score;
+    float score;
+    int combo;
 
     sf::SoundBuffer snowSoundBuffer;
     sf::Sound snowSound;
@@ -92,6 +94,9 @@ public:
 
     Player();
     void update(sf::Time dt, Slope s);
+    void restart();
+    void pause();
+    void play();
     void render(sf::RenderWindow &window);
 
     void applyForce(const sf::Vector2f &f);
@@ -123,6 +128,8 @@ public:
     float getAirTime() const;
 
     int getScore() const;
+
+    int getCombo() const;
 
     bool isInAir() const;
 };

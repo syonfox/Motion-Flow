@@ -163,6 +163,10 @@ void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
 
     }
 
+    while(trees.back().getPosition().x < playerPos.x-backBufferDistance){
+        trees.pop_back();
+    }
+
     while(points.back().x < playerPos.x-backBufferDistance){
         points.pop_back();
     }
@@ -174,6 +178,8 @@ void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
     while(points.front().x > playerPos.x+frontBufferDistance) {
         points.pop_front();
     }
+
+    //printf("trees size %d\n", trees.size());
 
     //printf("points.size = %dm bufSz = %d", points.size(), bufferSize);
 

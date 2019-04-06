@@ -38,8 +38,9 @@ int main()
 
 
     //Font::load("../res/FFF_Tusj.ttf", 13, "trsj");
-    Engine::Fonts.push_back(Font("../res/FFF_Tusj.ttf", 13, "tusj"));
-    Engine::Fonts.push_back(Font("../res/FFF_Tusj.ttf", 32, "tusj_big"));
+    Engine::Fonts.push_back(Font("../res/fonts/FFF_Tusj.ttf", 13, "tusj"));
+    Engine::Fonts.push_back(Font("../res/fonts/FFF_Tusj.ttf", 32, "tusj_big"));
+    Engine::Fonts.push_back(Font("../res/fonts/PermanentMarker.ttf", 32, "marker"));
     bool showimguiDemo = false;
     // timing
     /*
