@@ -95,6 +95,7 @@ it also provies functions for detecting collisions with the hill
 
 
 - Graphics
+
     - better player sprite
         - Better drawing
         - an animation (Optional)
@@ -106,11 +107,11 @@ it also provies functions for detecting collisions with the hill
     - add paralec effect to background (Rafid)
     - Landing text for how good the landing was.
 
-- Sound
-    - background music (Rafid)
-    - sliding sound effect
-    - crash sound effect  (Rafid)
-    - speedup sound effect (Rafid)
+- Sound DONE
+    - background music (Rafid) Done
+    - sliding sound effect Removed
+    - crash sound effect  (Rafid) Done (Kinda hard to hear because of the background music)
+    - speedup sound effect (Rafid) Done
 
 
  sources:
@@ -118,3 +119,7 @@ it also provies functions for detecting collisions with the hill
  https://freesound.org/people/E330/sounds/223082/
 
  https://pixabay.com/vectors/tree-trunk-nature-leaves-branches-576836/
+
+ background music:
+ 8 Bit Happy! by HeatleyBros
+ https://www.youtube.com/watch?v=jHcWhQUmJ8E

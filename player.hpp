@@ -13,6 +13,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Audio/SoundBuffer.hpp>
 #include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include "imconfig.h"
 #include "slope.hpp"
@@ -82,9 +83,19 @@ private:
 
     int score;
 
+    //sounds
+    sf::SoundBuffer backgroundSoundBuffer;
+    sf::Sound backgroundSound;
+
+
     sf::SoundBuffer snowSoundBuffer;
     sf::Sound snowSound;
 
+    sf::SoundBuffer crashSoundBuffer;
+    sf::Sound crashSound;
+
+    sf::SoundBuffer flySoundBuffer;
+    sf::Sound flySound;
 
 public:
 

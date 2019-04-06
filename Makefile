@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/67/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/67/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/syonfox/github/Motion-Flow
+CMAKE_SOURCE_DIR = /home/raf/Motion-Flow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/syonfox/github/Motion-Flow
+CMAKE_BINARY_DIR = /home/raf/Motion-Flow
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,19 +59,19 @@ CMAKE_BINARY_DIR = /home/syonfox/github/Motion-Flow
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/67/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/67/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/67/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -82,19 +82,19 @@ edit_cache/fast: edit_cache
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/snap/clion/67/bin/cmake/linux/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/snap/clion/67/bin/cmake/linux/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/67/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -115,20 +115,20 @@ list_install_components/fast: list_install_components
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/67/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/67/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/syonfox/github/Motion-Flow/CMakeFiles /home/syonfox/github/Motion-Flow/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/raf/Motion-Flow/CMakeFiles /home/raf/Motion-Flow/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/syonfox/github/Motion-Flow/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/raf/Motion-Flow/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -195,6 +195,33 @@ engine.s: engine.cpp.s
 engine.cpp.s:
 	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/engine.cpp.s
 .PHONY : engine.cpp.s
+
+fonts.o: fonts.cpp.o
+
+.PHONY : fonts.o
+
+# target to build an object file
+fonts.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/fonts.cpp.o
+.PHONY : fonts.cpp.o
+
+fonts.i: fonts.cpp.i
+
+.PHONY : fonts.i
+
+# target to preprocess a source file
+fonts.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/fonts.cpp.i
+.PHONY : fonts.cpp.i
+
+fonts.s: fonts.cpp.s
+
+.PHONY : fonts.s
+
+# target to generate assembly for a file
+fonts.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/fonts.cpp.s
+.PHONY : fonts.cpp.s
 
 imgui-sfml/imgui-SFML.o: imgui-sfml/imgui-SFML.cpp.o
 
@@ -358,6 +385,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+motion.o: motion.cpp.o
+
+.PHONY : motion.o
+
+# target to build an object file
+motion.cpp.o:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/motion.cpp.o
+.PHONY : motion.cpp.o
+
+motion.i: motion.cpp.i
+
+.PHONY : motion.i
+
+# target to preprocess a source file
+motion.cpp.i:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/motion.cpp.i
+.PHONY : motion.cpp.i
+
+motion.s: motion.cpp.s
+
+.PHONY : motion.s
+
+# target to generate assembly for a file
+motion.cpp.s:
+	$(MAKE) -f CMakeFiles/motion_flow.dir/build.make CMakeFiles/motion_flow.dir/motion.cpp.s
+.PHONY : motion.cpp.s
+
 player.o: player.cpp.o
 
 .PHONY : player.o
@@ -428,6 +482,9 @@ help:
 	@echo "... engine.o"
 	@echo "... engine.i"
 	@echo "... engine.s"
+	@echo "... fonts.o"
+	@echo "... fonts.i"
+	@echo "... fonts.s"
 	@echo "... imgui-sfml/imgui-SFML.o"
 	@echo "... imgui-sfml/imgui-SFML.i"
 	@echo "... imgui-sfml/imgui-SFML.s"
@@ -446,6 +503,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... motion.o"
+	@echo "... motion.i"
+	@echo "... motion.s"
 	@echo "... player.o"
 	@echo "... player.i"
 	@echo "... player.s"

@@ -50,7 +50,7 @@ void Engine::updateSkyColor(){
         //std::cerr << "Warrning: Invaled Sky Setting setting it to within bounds";
         if (skySetting < 0) {
             skySetting = 0;
-            state = State::GAMEOVER;
+            //state = State::GAMEOVER;
         } else {
             skySetting = 10;
         }

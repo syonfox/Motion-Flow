@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/191.6183.77/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/67/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/syonfox/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/191.6183.77/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/67/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/syonfox/github/Motion-Flow
+CMAKE_SOURCE_DIR = /home/raf/Motion-Flow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/syonfox/github/Motion-Flow/cmake-build-debug
+CMAKE_BINARY_DIR = /home/raf/Motion-Flow/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/motion_flow.dir/depend.make
@@ -59,146 +59,146 @@ include CMakeFiles/motion_flow.dir/flags.make
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o: ../imgui-sfml/imgui-SFML.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o -c /home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.o -c /home/raf/Motion-Flow/imgui-sfml/imgui-SFML.cpp
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/imgui-sfml/imgui-SFML.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.i
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/imgui-sfml/imgui-SFML.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui-SFML.cpp.s
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o: ../imgui-sfml/imgui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o -c /home/syonfox/github/Motion-Flow/imgui-sfml/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.o -c /home/raf/Motion-Flow/imgui-sfml/imgui.cpp
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/imgui-sfml/imgui.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/imgui-sfml/imgui.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.i
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/imgui-sfml/imgui.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/imgui-sfml/imgui.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui.cpp.s
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o: ../imgui-sfml/imgui_demo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o -c /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.o -c /home/raf/Motion-Flow/imgui-sfml/imgui_demo.cpp
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_demo.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/imgui-sfml/imgui_demo.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.i
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_demo.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/imgui-sfml/imgui_demo.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_demo.cpp.s
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o: ../imgui-sfml/imgui_draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o -c /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.o -c /home/raf/Motion-Flow/imgui-sfml/imgui_draw.cpp
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_draw.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/imgui-sfml/imgui_draw.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.i
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_draw.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/imgui-sfml/imgui_draw.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_draw.cpp.s
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o: ../imgui-sfml/imgui_widgets.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o -c /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.o -c /home/raf/Motion-Flow/imgui-sfml/imgui_widgets.cpp
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_widgets.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/imgui-sfml/imgui_widgets.cpp > CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.i
 
 CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/imgui-sfml/imgui_widgets.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/imgui-sfml/imgui_widgets.cpp -o CMakeFiles/motion_flow.dir/imgui-sfml/imgui_widgets.cpp.s
 
 CMakeFiles/motion_flow.dir/main.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/motion_flow.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/main.cpp.o -c /home/syonfox/github/Motion-Flow/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/motion_flow.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/main.cpp.o -c /home/raf/Motion-Flow/main.cpp
 
 CMakeFiles/motion_flow.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/main.cpp > CMakeFiles/motion_flow.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/main.cpp > CMakeFiles/motion_flow.dir/main.cpp.i
 
 CMakeFiles/motion_flow.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/main.cpp -o CMakeFiles/motion_flow.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/main.cpp -o CMakeFiles/motion_flow.dir/main.cpp.s
 
 CMakeFiles/motion_flow.dir/slope.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/slope.cpp.o: ../slope.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/motion_flow.dir/slope.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/slope.cpp.o -c /home/syonfox/github/Motion-Flow/slope.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/motion_flow.dir/slope.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/slope.cpp.o -c /home/raf/Motion-Flow/slope.cpp
 
 CMakeFiles/motion_flow.dir/slope.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/slope.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/slope.cpp > CMakeFiles/motion_flow.dir/slope.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/slope.cpp > CMakeFiles/motion_flow.dir/slope.cpp.i
 
 CMakeFiles/motion_flow.dir/slope.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/slope.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/slope.cpp -o CMakeFiles/motion_flow.dir/slope.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/slope.cpp -o CMakeFiles/motion_flow.dir/slope.cpp.s
 
 CMakeFiles/motion_flow.dir/engine.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/engine.cpp.o: ../engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/motion_flow.dir/engine.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/engine.cpp.o -c /home/syonfox/github/Motion-Flow/engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/motion_flow.dir/engine.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/engine.cpp.o -c /home/raf/Motion-Flow/engine.cpp
 
 CMakeFiles/motion_flow.dir/engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/engine.cpp > CMakeFiles/motion_flow.dir/engine.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/engine.cpp > CMakeFiles/motion_flow.dir/engine.cpp.i
 
 CMakeFiles/motion_flow.dir/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/engine.cpp -o CMakeFiles/motion_flow.dir/engine.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/engine.cpp -o CMakeFiles/motion_flow.dir/engine.cpp.s
 
 CMakeFiles/motion_flow.dir/player.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/player.cpp.o: ../player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/motion_flow.dir/player.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/player.cpp.o -c /home/syonfox/github/Motion-Flow/player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/motion_flow.dir/player.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/player.cpp.o -c /home/raf/Motion-Flow/player.cpp
 
 CMakeFiles/motion_flow.dir/player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/player.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/player.cpp > CMakeFiles/motion_flow.dir/player.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/player.cpp > CMakeFiles/motion_flow.dir/player.cpp.i
 
 CMakeFiles/motion_flow.dir/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/player.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/player.cpp -o CMakeFiles/motion_flow.dir/player.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/player.cpp -o CMakeFiles/motion_flow.dir/player.cpp.s
 
 CMakeFiles/motion_flow.dir/motion.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/motion.cpp.o: ../motion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/motion_flow.dir/motion.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/motion.cpp.o -c /home/syonfox/github/Motion-Flow/motion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/motion_flow.dir/motion.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/motion.cpp.o -c /home/raf/Motion-Flow/motion.cpp
 
 CMakeFiles/motion_flow.dir/motion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/motion.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/motion.cpp > CMakeFiles/motion_flow.dir/motion.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/motion.cpp > CMakeFiles/motion_flow.dir/motion.cpp.i
 
 CMakeFiles/motion_flow.dir/motion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/motion.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/motion.cpp -o CMakeFiles/motion_flow.dir/motion.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/motion.cpp -o CMakeFiles/motion_flow.dir/motion.cpp.s
 
 CMakeFiles/motion_flow.dir/fonts.cpp.o: CMakeFiles/motion_flow.dir/flags.make
 CMakeFiles/motion_flow.dir/fonts.cpp.o: ../fonts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/motion_flow.dir/fonts.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/fonts.cpp.o -c /home/syonfox/github/Motion-Flow/fonts.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/motion_flow.dir/fonts.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motion_flow.dir/fonts.cpp.o -c /home/raf/Motion-Flow/fonts.cpp
 
 CMakeFiles/motion_flow.dir/fonts.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motion_flow.dir/fonts.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/syonfox/github/Motion-Flow/fonts.cpp > CMakeFiles/motion_flow.dir/fonts.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raf/Motion-Flow/fonts.cpp > CMakeFiles/motion_flow.dir/fonts.cpp.i
 
 CMakeFiles/motion_flow.dir/fonts.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motion_flow.dir/fonts.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/syonfox/github/Motion-Flow/fonts.cpp -o CMakeFiles/motion_flow.dir/fonts.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raf/Motion-Flow/fonts.cpp -o CMakeFiles/motion_flow.dir/fonts.cpp.s
 
 # Object files for target motion_flow
 motion_flow_OBJECTS = \
@@ -230,28 +230,59 @@ motion_flow_d: CMakeFiles/motion_flow.dir/motion.cpp.o
 motion_flow_d: CMakeFiles/motion_flow.dir/fonts.cpp.o
 motion_flow_d: CMakeFiles/motion_flow.dir/build.make
 motion_flow_d: /usr/lib/x86_64-linux-gnu/libGL.so
-motion_flow_d: /usr/lib/x86_64-linux-gnu/libGLU.so
-motion_flow_d: /usr/local/lib/libopencv_dnn.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_gapi.so.4.1.0
-motion_flow_d: /usr/local/lib/libopencv_ml.so.4.1.0
-motion_flow_d: /usr/local/lib/libopencv_objdetect.so.4.1.0
-motion_flow_d: /usr/local/lib/libopencv_photo.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_stitching.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_aruco.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_bgsegm.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_bioinspired.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_ccalib.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_dnn_objdetect.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_dpm.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_face.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_freetype.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_fuzzy.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_hfs.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_img_hash.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_line_descriptor.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_quality.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_reg.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_rgbd.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_saliency.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_stereo.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_structured_light.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_superres.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_surface_matching.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_tracking.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_videostab.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_xfeatures2d.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_xobjdetect.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_xphoto.so.4.1.0
+motion_flow_d: /usr/local/lib/libsfml-graphics.so.2.5.1
+motion_flow_d: /usr/local/lib/libsfml-window.so.2.5.1
+motion_flow_d: /usr/local/lib/libsfml-audio.so.2.5.1
+motion_flow_d: /usr/local/lib/libopencv_shape.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_datasets.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_plot.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_text.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_dnn.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_ml.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_phase_unwrapping.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_optflow.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_ximgproc.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_video.so.4.1.0
-motion_flow_d: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
-motion_flow_d: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
-motion_flow_d: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
+motion_flow_d: /usr/local/lib/libopencv_objdetect.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_calib3d.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_features2d.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_flann.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_highgui.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_videoio.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_imgcodecs.so.4.1.0
+motion_flow_d: /usr/local/lib/libopencv_photo.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_imgproc.so.4.1.0
 motion_flow_d: /usr/local/lib/libopencv_core.so.4.1.0
-motion_flow_d: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
+motion_flow_d: /usr/local/lib/libsfml-system.so.2.5.1
 motion_flow_d: CMakeFiles/motion_flow.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable motion_flow_d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/raf/Motion-Flow/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable motion_flow_d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/motion_flow.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -264,6 +295,6 @@ CMakeFiles/motion_flow.dir/clean:
 .PHONY : CMakeFiles/motion_flow.dir/clean
 
 CMakeFiles/motion_flow.dir/depend:
-	cd /home/syonfox/github/Motion-Flow/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/syonfox/github/Motion-Flow /home/syonfox/github/Motion-Flow /home/syonfox/github/Motion-Flow/cmake-build-debug /home/syonfox/github/Motion-Flow/cmake-build-debug /home/syonfox/github/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/raf/Motion-Flow/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raf/Motion-Flow /home/raf/Motion-Flow /home/raf/Motion-Flow/cmake-build-debug /home/raf/Motion-Flow/cmake-build-debug /home/raf/Motion-Flow/cmake-build-debug/CMakeFiles/motion_flow.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/motion_flow.dir/depend
 

@@ -5,237 +5,237 @@
 		<Option title="motion_flow"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\lib\;CMake Files\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\usr\local\lib\cmake\SFML\;CMake Files\..\..\..\usr\local\lib\cmake\opencv4\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="install/strip">
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="motion_flow">
-				<Option output="/home/syonfox/github/Motion-Flow/cmake-build-debug/motion_flow_d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option output="/home/raf/Motion-Flow/cmake-build-debug/motion_flow_d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
-					<Add directory="/home/syonfox/github/Motion-Flow"/>
-					<Add directory="/home/syonfox/github/Motion-Flow/imgui-sfml"/>
+					<Add directory="/home/raf/Motion-Flow"/>
+					<Add directory="/home/raf/Motion-Flow/imgui-sfml"/>
 					<Add directory="/usr/local/include/opencv4"/>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 motion_flow"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 motion_flow"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="motion_flow/fast">
-				<Option output="/home/syonfox/github/Motion-Flow/cmake-build-debug/motion_flow_d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option output="/home/raf/Motion-Flow/cmake-build-debug/motion_flow_d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DIMGUI_INCLUDE_IMCONFIG_H"/>
-					<Add directory="/home/syonfox/github/Motion-Flow"/>
-					<Add directory="/home/syonfox/github/Motion-Flow/imgui-sfml"/>
+					<Add directory="/home/raf/Motion-Flow"/>
+					<Add directory="/home/raf/Motion-Flow/imgui-sfml"/>
 					<Add directory="/usr/local/include/opencv4"/>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 motion_flow/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 motion_flow/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="install">
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="list_install_components">
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="install/local">
-				<Option working_dir="/home/syonfox/github/Motion-Flow/cmake-build-debug"/>
+				<Option working_dir="/home/raf/Motion-Flow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/syonfox/github/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/raf/Motion-Flow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/syonfox/github/Motion-Flow/engine.cpp">
+		<Unit filename="/home/raf/Motion-Flow/engine.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/engine.hpp">
+		<Unit filename="/home/raf/Motion-Flow/engine.hpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/fonts.cpp">
+		<Unit filename="/home/raf/Motion-Flow/fonts.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/fonts.hpp">
+		<Unit filename="/home/raf/Motion-Flow/fonts.hpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imconfig.h">
+		<Unit filename="/home/raf/Motion-Flow/imconfig.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imconfig-SFML.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imconfig-SFML.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imconfig.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imconfig.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.cpp">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui-SFML.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui-SFML.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui-SFML.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui.cpp">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_demo.cpp">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui_demo.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_draw.cpp">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui_draw.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_internal.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui_internal.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imgui_widgets.cpp">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imgui_widgets.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_rectpack.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imstb_rectpack.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_textedit.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imstb_textedit.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/imgui-sfml/imstb_truetype.h">
+		<Unit filename="/home/raf/Motion-Flow/imgui-sfml/imstb_truetype.h">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/main.cpp">
+		<Unit filename="/home/raf/Motion-Flow/main.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/motion.cpp">
+		<Unit filename="/home/raf/Motion-Flow/motion.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/motion.hpp">
+		<Unit filename="/home/raf/Motion-Flow/motion.hpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/player.cpp">
+		<Unit filename="/home/raf/Motion-Flow/player.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/player.hpp">
+		<Unit filename="/home/raf/Motion-Flow/player.hpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/slope.cpp">
+		<Unit filename="/home/raf/Motion-Flow/slope.cpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/slope.hpp">
+		<Unit filename="/home/raf/Motion-Flow/slope.hpp">
 			<Option target="motion_flow"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/CMakeLists.txt">
+		<Unit filename="/home/raf/Motion-Flow/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
-		<Unit filename="/home/syonfox/github/Motion-Flow/../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/raf/Motion-Flow/../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
