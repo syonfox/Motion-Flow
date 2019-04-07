@@ -195,6 +195,7 @@ void Player::updateSounds() {
 
 
 }
+
 void Player::updateVolumes() {
 
     float musicModifier = (musicVolume/100) * (masterVolume/100);
@@ -236,7 +237,6 @@ void Player::update(sf::Time dt, Slope s){
     //c = 0.01
     //the point in world cords
     sf::Vector2f p = transform.transformPoint(sf::Vector2f(0,0));
-
     updateText(t);
 
     pose = getControl();
@@ -250,8 +250,6 @@ void Player::update(sf::Time dt, Slope s){
                 sf::Vector2f boostF = vel;
                 thor::setLength(boostF, 3000.f);
                 applyForce(boostF);
-
-
             }
             break;
 

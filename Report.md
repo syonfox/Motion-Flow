@@ -12,6 +12,8 @@ The game concept started ad a ski game where the player would ski down a
 slope taking jumps and possibly tricks.  This idea took inspiration from
 Altos Adventure.  After woring on the intital sole mehanics and getti
 
+#### ML Concepts
+
 ### Motivation
 
 ### Related Work

@@ -32,6 +32,23 @@ Engine::Engine(sf::Vector2u ws):
     skyColorNight = sf::Color(0, 0, 0);
     skyInc = 1;
     skyDelay = 1;
+
+    barWidth = 50;
+    barPadding = 50;
+    sunBar = sf::VertexArray(sf::TrianglesStrip, 6);
+    sunBar[0] = sf::Vertex(sf::Vector2f(barPadding,barPadding), skyColorDay);
+    sunBar[1] = sf::Vertex(sf::Vector2f(barPadding+barWidth,barPadding), skyColorDay);
+    sunBar[2] = sf::Vertex(sf::Vector2f(barPadding,windowSize.y/2), skyColorDusk);
+    sunBar[3] = sf::Vertex(sf::Vector2f(barPadding+barWidth,windowSize.y/2), skyColorDusk);
+    sunBar[4] = sf::Vertex(sf::Vector2f(barPadding,windowSize.y-barPadding), skyColorNight);
+    sunBar[5] = sf::Vertex(sf::Vector2f(barPadding+barWidth,windowSize.y-barPadding), skyColorNight);
+
+    sunTexture.loadFromFile("../res/sun_shiny.png");
+    sunSprite.setTexture(sunTexture);
+
+    sunSprite.setTextureRect(sf::IntRect(0, 0, sunTexture.getSize().x, sunTexture.getSize().y));
+    //sunSprite.setPosition(barPadding+(barWidth/2)-sunTexture.getSize().x/2, 500-sunTexture.getSize().y/2);
+
     restart();
 }
 
@@ -42,7 +59,7 @@ void Engine::restart() {
     skySetting = 10;
     skyThreshold = 400;
     skyTimer = skyDelay;
-
+    camera.setSize(  sf::Vector2f(windowSize.x, windowSize.y) );
     slope.restart();
 
 }
@@ -56,6 +73,14 @@ void Engine::play() {
     isPaused = false;
     state = State::PLAY;
     player.play();
+}
+
+void Engine::updateSun() {
+    float y = windowSize.y-2*barPadding;
+    y -= skySetting * (windowSize.y-2*barPadding)/10;
+    y += barPadding - (sunTexture.getSize().y/2);
+    float x = barPadding+(barWidth/2)-sunTexture.getSize().x/2;
+    sunSprite.setPosition(x,y);
 }
 
 void Engine::updateSkyColor(){
@@ -93,17 +118,19 @@ sf::Color Engine::blendColor(sf::Color c1, sf::Color c2, float blend ){
 
 void Engine::update(sf::Time dt) {
     if(state == State::PLAY) {
-        updateSkyColor();
+
         slope.update(dt, player.getPos());
         player.update(dt, slope);
 
-
+        updateSkyColor(); // if thisd is dont before sounds are unpaused when player update is called
+        updateSun();
         if(player.getVel().x < skyThreshold) {
             skySetting-=dt.asSeconds()*(1-(player.getVel().x/skyThreshold));
         }
         else {
             skySetting+=dt.asSeconds() * ((player.getVel().x- skyThreshold)/skyThreshold);
         }
+
         skyTimer-=dt.asSeconds();
         if(skyTimer < 0) {
             skyTimer = skyDelay - skyTimer;
@@ -175,9 +202,14 @@ void Engine::render(sf::RenderWindow &window) {
         }
         camera.setSize(size);
 
+
+
         window.setView(camera);
         draw(window);
         window.setView(window.getDefaultView());
+
+        window.draw(sunBar);
+        window.draw(sunSprite);
 
         ImGui::Begin("Score", NULL, 0 | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoBackground |
                                     ImGuiWindowFlags_NoBringToFrontOnFocus);

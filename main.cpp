@@ -64,7 +64,7 @@ int main()
     float simTimePerSecond = tickTime.asSeconds() * ticksPerSecond;
     sf::Time secondsPerTick = sf::seconds(1.0f / (float) ticksPerSecond);
 
-    int framesPerSecond = 60; // desired render rate
+    int framesPerSecond = 120; // desired render rate
     int ticksPerFrame =
             ticksPerSecond /
             framesPerSecond; // todo: make it adgust fps for valid ratio
@@ -180,6 +180,9 @@ int main()
             window.clear(sf::Color(135, 206, 235, 256)); //background colour
             //window.draw(shape);
             e.render(window);
+
+
+
             ImGui::SFML::Render(window);
             window.display();
         }
