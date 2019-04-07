@@ -32,6 +32,7 @@ Engine::Engine(sf::Vector2u ws):
     skyColorNight = sf::Color(0, 0, 0);
     skyInc = 1;
     skyDelay = 1;
+    highscore = 0;
     restart();
 }
 
@@ -337,6 +338,10 @@ void Engine::gameoverDraw(sf::RenderWindow &window) {
     ImGui::SetWindowFontScale(2);
     ImGui::Text("Score: %d", player.getScore());
 
+    if (player.getScore() >= highscore) {
+        highscore = player.getScore();
+    }
+    ImGui::Text("Highest Score: %d" , highscore );
     ImGui::SetWindowFontScale(1);
 //    if(ImGui::Button("Contine",btnSize)) {
 //        play();

@@ -37,9 +37,18 @@ private:
     std::deque<sf::Sprite> trees;
     sf::Texture tree1;
 
+    std::deque<sf::Sprite> clouds;
+    sf::Texture cloud1;
+
+
+
     int treeSpacing;
     int treeVar;
     int nextTree;
+
+    int cloudSpacing;
+    int cloudVar;
+    int nextCloud;
 
 
 

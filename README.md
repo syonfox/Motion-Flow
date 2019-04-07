@@ -124,3 +124,9 @@ it also provies functions for detecting collisions with the hill
  background music:
  8 Bit Happy! by HeatleyBros
  https://www.youtube.com/watch?v=jHcWhQUmJ8E
+
+ Server address for google cloud : 35.233.220.111:5901
+ 
+ Public key for the VM instance needed to ssh to the system / run the command
+ 
+ - go to downloads as root and run the ./NVIDIA-...
