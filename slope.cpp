@@ -142,6 +142,11 @@ Slope::Slope(int _step, int _frontBufferDistance, int _backBufferDistance){
     nextTree = 0;
     tree1.loadFromFile("../res/tree1.png");
 
+    cloudSpacing = 220;
+    cloudVar = 50;
+    nextCloud = 0;
+    cloud1.loadFromFile("../res/cloud.png");
+
 }
 
 void Slope::restart() {
@@ -160,19 +165,39 @@ void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
         if(points.front().x >= nextTree) {
             trees.push_front(sf::Sprite(tree1,sf::IntRect(0, 0, 320, 640)));
 
-
             float scale = (rand()%10)/20.f + 0.2f;
             trees.front().setScale(scale,scale);
             trees.front().getLocalBounds().height;
 
             trees.front().setPosition(points.front().x -trees.front().getLocalBounds().width*scale/2, points.front().y-trees.front().getLocalBounds().height*scale +20);
             nextTree = nextTree+treeSpacing + rand()% (2*treeVar) - treeVar;
+
+        }
+
+        if(points.front().x >= nextCloud) {
+                clouds.push_front(sf::Sprite(cloud1, sf::IntRect(0, 0, 320, 133)));
+
+                float c_scale = (rand() % 10) / 20.f + 0.4f;
+                clouds.front().setScale(c_scale, c_scale);
+                clouds.front().getLocalBounds().height;
+
+                clouds.front().setPosition(points.front().x - clouds.front().getLocalBounds().width * c_scale ,
+                                           points.front().y - clouds.front().getLocalBounds().height * c_scale - 300);
+                nextCloud = nextCloud + cloudSpacing + rand() % (2 * cloudVar) - cloudVar;
         }
 
     }
 
+    //cloud code
+
+
+
     while(trees.back().getPosition().x < playerPos.x-backBufferDistance){
         trees.pop_back();
+    }
+
+    while(clouds.back().getPosition().x < playerPos.x-backBufferDistance){
+        clouds.pop_back();
     }
 
     while(points.back().x < playerPos.x-backBufferDistance){
@@ -195,9 +220,15 @@ void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
 
 void Slope::render(sf::RenderWindow &window){
 
+    for(int i = 0 ; i < clouds.size(); i ++) {
+        window.draw(clouds[i]);
+    }
+
     for(int i = 0 ; i < trees.size(); i ++) {
         window.draw(trees[i]);
     }
+
+
     sprite.clear();
 
     if(fillSlope) {

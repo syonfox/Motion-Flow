@@ -59,6 +59,8 @@ private:
     void updateSkyColor();
     sf::Color blendColor(sf::Color c1, sf::Color c2, float blend );
 
+    int highscore;
+
 
 
 

@@ -32,6 +32,7 @@ Engine::Engine(sf::Vector2u ws):
     skyColorNight = sf::Color(0, 0, 0);
     skyInc = 1;
     skyDelay = 1;
+    highscore = 0;
 
     barWidth = 50;
     barPadding = 50;
@@ -118,7 +119,6 @@ sf::Color Engine::blendColor(sf::Color c1, sf::Color c2, float blend ){
 
 void Engine::update(sf::Time dt) {
     if(state == State::PLAY) {
-
         slope.update(dt, player.getPos());
         player.update(dt, slope);
 
@@ -369,6 +369,10 @@ void Engine::gameoverDraw(sf::RenderWindow &window) {
     ImGui::SetWindowFontScale(2);
     ImGui::Text("Score: %d", player.getScore());
 
+    if (player.getScore() >= highscore) {
+        highscore = player.getScore();
+    }
+    ImGui::Text("Highest Score: %d" , highscore );
     ImGui::SetWindowFontScale(1);
 //    if(ImGui::Button("Contine",btnSize)) {
 //        play();
