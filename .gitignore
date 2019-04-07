@@ -1,5 +1,6 @@
 motion_flow_d
 motion_flow
+build
 .idea
 CMakeLists.txt.user
 CMakeCache.txt

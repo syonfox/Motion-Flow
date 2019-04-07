@@ -71,26 +71,39 @@ debugLines(sf::Lines, 6)
     landingText.setScale(2,2);
     textDuration = 2;
 
+    //sounds
+    masterVolume = 80;
+    musicVolume = 25;
+    gameVolume = 50;
+
+     backgroundBaseVolume = 60;
      backgroundSoundBuffer.loadFromFile("../res/background.wav");
      backgroundSound.setBuffer(backgroundSoundBuffer);
      backgroundSound.setLoop(true);
-     backgroundSound.setVolume(60);
+     backgroundSound.setVolume(backgroundBaseVolume);
      backgroundSound.play();
 
-
+     snowBaseVolume = 80;
     snowSoundBuffer.loadFromFile("../res/snow.wav");
     snowSound.setBuffer(snowSoundBuffer);
     snowSound.setLoop(true);
-    //snowSound.play();
 
+
+    crashBaseVolume = 100;
     crashSoundBuffer.loadFromFile("../res/crash_sound.wav");
     crashSound.setBuffer(crashSoundBuffer);
     crashSound.setPitch(2);
     crashSound.setLoop(false);
+    flySound.setVolume(100);
 
+    flyBaseVolume = 50;
     flySoundBuffer.loadFromFile("../res/fly_sound_trimmed.wav");
     flySound.setBuffer(flySoundBuffer);
     flySound.setLoop(false);
+    flySound.setVolume(100);
+
+
+    snowSound.play();
 }
 void Player::restart() {
     acc = sf::Vector2f(0,0);
@@ -105,9 +118,13 @@ void Player::restart() {
 
 void Player::pause() {
     snowSound.pause();
+    flySound.pause();
+    crashSound.pause();
 }
 void Player::play() {
     snowSound.play();
+    flySound.play();
+    crashSound.play();
 }
 
 
@@ -166,11 +183,19 @@ void Player::updateText(float dt) {
 
 void Player::updateSounds() {
 
-//    if(inAir && snowSound.getStatus() == sf::Sound::Status::Playing)
-//        snowSound.pause();
-//
-//    if(!inAir && snowSound.getStatus() == sf::Sound::Status::Paused)
-//        snowSound.play();
+    if(inAir && snowSound.getStatus() == sf::Sound::Status::Playing)
+        snowSound.pause();
+
+    if(!inAir && snowSound.getStatus() == sf::Sound::Status::Paused)
+        snowSound.play();
+
+
+    float musicModifier = (musicVolume/100) * (masterVolume/100);
+    float gameModifier = (gameVolume/100) * (masterVolume/100);
+    backgroundSound.setVolume(backgroundBaseVolume*musicModifier);
+    snowSound.setVolume(snowBaseVolume*gameModifier);
+    flySound.setVolume(flyBaseVolume*gameModifier);
+    crashSound.setVolume(crashBaseVolume*gameModifier);
 
     // how to figure out a bad landing
 
@@ -397,6 +422,20 @@ void Player::update(sf::Time dt, Slope s){
     updateSounds();
 
 }
+
+void Player::volumeMenu() {
+
+
+    if (ImGui::CollapsingHeader("Volume")) {
+
+        ImGui::SliderFloat("Master Volume", &masterVolume, 0, 100,"%.1f", 1.f);
+        ImGui::SliderFloat("Music Volume", &musicVolume, 0, 100,"%.1f", 1.f);
+        ImGui::SliderFloat("Game Volume", &gameVolume, 0, 100,"%.1f", 1.f);
+
+    }
+
+}
+
 void Player::render(sf::RenderWindow &window){
 
     scarf.clear();
@@ -447,6 +486,8 @@ void Player::render(sf::RenderWindow &window){
 
              ImGui::Text("Boost Factor: %f", boostFactor);
             ImGui::Text("Pose: %d", pose);
+
+            volumeMenu();
         }
 
         ImGui::End();

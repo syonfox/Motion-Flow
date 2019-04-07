@@ -66,7 +66,7 @@ private:
 
 
     void updateSounds();
-    void updateScarf(void);
+    void updateScarf();
     sf::Vector2f scarfPoint;
     //void drawScarf(void);
     sf::Transform transform;
@@ -86,18 +86,26 @@ private:
     int combo;
 
     //sounds
+
+
+    float masterVolume;
+    float musicVolume;
+    float gameVolume;
+
     sf::SoundBuffer backgroundSoundBuffer;
     sf::Sound backgroundSound;
-
-
+    float backgroundBaseVolume;
     sf::SoundBuffer snowSoundBuffer;
     sf::Sound snowSound;
-
+    float snowBaseVolume;
     sf::SoundBuffer crashSoundBuffer;
     sf::Sound crashSound;
-
+    float crashBaseVolume;
     sf::SoundBuffer flySoundBuffer;
     sf::Sound flySound;
+    float flyBaseVolume;
+
+
 
 public:
 
@@ -109,6 +117,8 @@ public:
     void pause();
     void play();
     void render(sf::RenderWindow &window);
+
+    void volumeMenu();
 
     void applyForce(const sf::Vector2f &f);
 

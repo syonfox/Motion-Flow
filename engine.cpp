@@ -117,9 +117,10 @@ void Engine::handleEvent(sf::Event &e) {
     {
         if(e.key.code == sf::Keyboard::Space) {
             isPaused = !isPaused;
-            if(isPaused) state = State::PAUSE;
+            if(isPaused)
+                 pause();
             else if(state == State::PAUSE){
-                state = State::PLAY;
+                play();
             }
         }
         if(e.key.code == sf::Keyboard::Escape) {
