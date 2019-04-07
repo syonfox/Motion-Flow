@@ -180,13 +180,6 @@ int main()
             window.clear(sf::Color(135, 206, 235, 256)); //background colour
             //window.draw(shape);
             e.render(window);
-
-
-            sf::Text txt;
-            txt.setString("Font1");
-            txt.setFont(Engine::Fonts[0].sffont);
-            window.draw(txt);
-
             ImGui::SFML::Render(window);
             window.display();
         }

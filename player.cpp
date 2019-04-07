@@ -73,7 +73,7 @@ debugLines(sf::Lines, 6)
 
     //sounds
     masterVolume = 80;
-    musicVolume = 25;
+    musicVolume = 15;
     gameVolume = 50;
 
      backgroundBaseVolume = 60;
@@ -96,13 +96,13 @@ debugLines(sf::Lines, 6)
     crashSound.setLoop(false);
     flySound.setVolume(100);
 
-    flyBaseVolume = 50;
+    flyBaseVolume = 30;
     flySoundBuffer.loadFromFile("../res/fly_sound_trimmed.wav");
     flySound.setBuffer(flySoundBuffer);
     flySound.setLoop(false);
     flySound.setVolume(100);
 
-
+    updateVolumes();
     snowSound.play();
 }
 void Player::restart() {
@@ -183,12 +183,18 @@ void Player::updateText(float dt) {
 
 void Player::updateSounds() {
 
-    if(inAir && snowSound.getStatus() == sf::Sound::Status::Playing)
+    if(airTime > 0.1 && snowSound.getStatus() == sf::Sound::Status::Playing)
         snowSound.pause();
 
     if(!inAir && snowSound.getStatus() == sf::Sound::Status::Paused)
         snowSound.play();
 
+
+    // how to figure out a bad landing
+
+
+}
+void Player::updateVolumes() {
 
     float musicModifier = (musicVolume/100) * (masterVolume/100);
     float gameModifier = (gameVolume/100) * (masterVolume/100);
@@ -196,9 +202,6 @@ void Player::updateSounds() {
     snowSound.setVolume(snowBaseVolume*gameModifier);
     flySound.setVolume(flyBaseVolume*gameModifier);
     crashSound.setVolume(crashBaseVolume*gameModifier);
-
-    // how to figure out a bad landing
-
 
 }
 
@@ -428,9 +431,10 @@ void Player::volumeMenu() {
 
     if (ImGui::CollapsingHeader("Volume")) {
 
-        ImGui::SliderFloat("Master Volume", &masterVolume, 0, 100,"%.1f", 1.f);
-        ImGui::SliderFloat("Music Volume", &musicVolume, 0, 100,"%.1f", 1.f);
-        ImGui::SliderFloat("Game Volume", &gameVolume, 0, 100,"%.1f", 1.f);
+        if(ImGui::SliderFloat("Master Volume", &masterVolume, 0, 100,"%.1f", 1.f)) updateVolumes();
+        if(ImGui::SliderFloat("Music Volume", &musicVolume, 0, 100,"%.1f", 1.f)) updateVolumes();
+        if(ImGui::SliderFloat("Game Volume", &gameVolume, 0, 100,"%.1f", 1.f)) updateVolumes();
+
 
     }
 

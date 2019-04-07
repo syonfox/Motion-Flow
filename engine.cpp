@@ -294,8 +294,8 @@ void Engine::mainMenuDraw(sf::RenderWindow &window) {
       ImGui::Begin("Main Menu", NULL, 0 | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove| ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoBackground);
 //    ImGuiStyle style = ImGui::GetStyle();
 //    style.FrameRounding ;
-    ImVec2 size(windowSize.x , windowSize.y);
-    ImVec2 pos(100,500);
+    ImVec2 size(350 , 500);
+    ImVec2 pos(100,300);
     ImGui::SetWindowPos(pos);
     ImGui::SetWindowSize(size);
 
@@ -305,10 +305,12 @@ void Engine::mainMenuDraw(sf::RenderWindow &window) {
     ImGui::Text("Main Menu");
 
     ImGui::SetWindowFontScale(1);
-    if(ImGui::Button("Play",ImVec2(100,50))) {
+    if(ImGui::Button("Play",ImVec2(330,50))) {
         isPaused = false;
         state = State::PLAY;
     }
+
+    player.volumeMenu();
 
     ImGui::End();
 

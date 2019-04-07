@@ -29,7 +29,7 @@ private:
     float angle;
     float velAngle;
     float aoi; //angle of incidence
-    
+
     float rotation;
 
     float airTime;
@@ -67,6 +67,7 @@ private:
 
 
     void updateSounds();
+    void updateVolumes();
     void updateScarf();
     sf::Vector2f scarfPoint;
     //void drawScarf(void);
