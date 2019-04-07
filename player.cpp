@@ -24,7 +24,7 @@ debugLines(sf::Lines, 6)
     rotation = 0;
     angle = 0;
     g = 100;
-    c.x = 0.005;
+    c.x = 0.002;
     c.y = 0.02;
 
 
@@ -77,7 +77,8 @@ debugLines(sf::Lines, 6)
     gameVolume = 50;
 
      backgroundBaseVolume = 60;
-     backgroundSoundBuffer.loadFromFile("../res/background.wav");
+     //backgroundSoundBuffer.loadFromFile("../res/background.wav");
+     backgroundSoundBuffer.loadFromFile("../res/music/Ketsa-02-Enticing_Dreams.wav");
      backgroundSound.setBuffer(backgroundSoundBuffer);
      backgroundSound.setLoop(true);
      backgroundSound.setVolume(backgroundBaseVolume);
@@ -239,10 +240,12 @@ void Player::update(sf::Time dt, Slope s){
     updateText(t);
 
     pose = getControl();
+    c.x = 0.002;
     switch(pose) {
         case Pose::CROUCH:
             if(inAir){
                 applyForce(sf::Vector2f(0,3000.f));
+                c.x = 0.01;
             } else {
                 sf::Vector2f boostF = vel;
                 thor::setLength(boostF, 3000.f);

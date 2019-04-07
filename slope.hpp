@@ -49,6 +49,7 @@ public:
     double slope(double x);
     Slope(int _step, int _frontBufferDistance, int _backBufferDistance);
     void update(sf::Time dt,  sf::Vector2f playerPos);
+    void restart();
     void render(sf::RenderWindow &window);
     float colisionPoint_depth(sf::Vector2f p);
 

@@ -144,6 +144,14 @@ Slope::Slope(int _step, int _frontBufferDistance, int _backBufferDistance){
 
 }
 
+void Slope::restart() {
+    trees.clear();
+    points.clear();
+    points.push_front(sf::Vector2f(0, slopeFunction(0)));
+
+    nextTree = 0;
+}
+
 void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
 
     while(points.front().x < playerPos.x+frontBufferDistance) {

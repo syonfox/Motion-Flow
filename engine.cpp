@@ -43,6 +43,8 @@ void Engine::restart() {
     skyThreshold = 400;
     skyTimer = skyDelay;
 
+    slope.restart();
+
 }
 void Engine::pause() {
     isPaused = true;
@@ -332,11 +334,13 @@ void Engine::gameoverDraw(sf::RenderWindow &window) {
     ImGui::SetWindowFontScale(5);
 
     ImGui::Text("Game Over");
+    ImGui::SetWindowFontScale(2);
+    ImGui::Text("Score: %d", player.getScore());
 
     ImGui::SetWindowFontScale(1);
-    if(ImGui::Button("Contine",btnSize)) {
-        play();
-    }
+//    if(ImGui::Button("Contine",btnSize)) {
+//        play();
+//    }
 
 
     if(ImGui::Button("Try Again",btnSize)) {
