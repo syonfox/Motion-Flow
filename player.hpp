@@ -28,7 +28,8 @@ private:
     float mass;
     float angle;
     float velAngle;
-    float aoi; //angle of incadince
+    float aoi; //angle of incidence
+    
     float rotation;
 
     float airTime;
