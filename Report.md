@@ -22,6 +22,8 @@ The game concept started as a ski game where the player would ski down a
 slope taking jumps and possibly tricks.  This idea took inspiration from
 Altos Adventure.  After woring on the intital sole mehanics and getti //
 
+#### ML Concepts
+
 ### Motivation
 
 The goal was to use machine learning to analyze human body pose or hand gesture and serve it as the controller for the game.

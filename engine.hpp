@@ -48,6 +48,14 @@ private:
     float skyDelay;
     float skyInc;
 
+    sf::VertexArray sunBar;
+    sf::Texture sunTexture;
+    sf::Sprite sunSprite;
+    float barWidth;
+    float barPadding;
+
+    void updateSun();
+
     void updateSkyColor();
     sf::Color blendColor(sf::Color c1, sf::Color c2, float blend );
 
