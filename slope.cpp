@@ -176,7 +176,7 @@ void Slope::update(sf::Time dt,  sf::Vector2f playerPos){
                 clouds.front().getLocalBounds().height;
 
                 clouds.front().setPosition(points.front().x - clouds.front().getLocalBounds().width * c_scale ,
-                                           points.front().y - clouds.front().getLocalBounds().height * c_scale - 300);
+                                           points.front().x * 0.1 - rand()%400 - clouds.front().getLocalBounds().height * c_scale - 300);
                 nextCloud = nextCloud + cloudSpacing + rand() % (2 * cloudVar) - cloudVar;
         }
 

@@ -48,6 +48,8 @@ private:
     float skyDelay;
     float skyInc;
 
+    bool lockSky = false;
+
     sf::VertexArray sunBar;
     sf::Texture sunTexture;
     sf::Sprite sunSprite;
