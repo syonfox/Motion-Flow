@@ -60,7 +60,7 @@ debugLines(sf::Lines, 6)
     sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
     sprite.setPosition(-64, -128);
-    scarfPoint = sf::Vector2f(-64+90, -128+106);
+    scarfPoint = sf::Vector2f(-64+96, -128+96);
 
 
     landingText.setFont(Engine::findFont("marker").sffont);
