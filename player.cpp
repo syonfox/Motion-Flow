@@ -56,7 +56,7 @@ debugLines(sf::Lines, 6)
 //    genBody(bodyWidth, bodyHeight);
 
 
-    texture.loadFromFile("../res/penguin.png");
+    texture.loadFromFile("../res/penguin_fatima.png");
     sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(0, 0, 128, 128));
     sprite.setPosition(-64, -128);
