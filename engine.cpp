@@ -34,7 +34,7 @@ Engine::Engine(sf::Vector2u ws):
     skyDelay = 1;
     highscore = 0;
 
-    barWidth = 50;
+    barWidth = 20;
     barPadding = 50;
     sunBar = sf::VertexArray(sf::TrianglesStrip, 6);
     sunBar[0] = sf::Vertex(sf::Vector2f(barPadding,barPadding), skyColorDay);
@@ -44,8 +44,11 @@ Engine::Engine(sf::Vector2u ws):
     sunBar[4] = sf::Vertex(sf::Vector2f(barPadding,windowSize.y-barPadding), skyColorNight);
     sunBar[5] = sf::Vertex(sf::Vector2f(barPadding+barWidth,windowSize.y-barPadding), skyColorNight);
 
-    sunTexture.loadFromFile("../res/sun_shiny.png");
+    //sunTexture.loadFromFile("../res/sun_shiny.png");
+    sunTexture.loadFromFile("../res/toon_sun.png");
+
     sunSprite.setTexture(sunTexture);
+    //sunSprite.setScale(0.25,0.25);
 
     sunSprite.setTextureRect(sf::IntRect(0, 0, sunTexture.getSize().x, sunTexture.getSize().y));
     //sunSprite.setPosition(barPadding+(barWidth/2)-sunTexture.getSize().x/2, 500-sunTexture.getSize().y/2);
@@ -123,6 +126,7 @@ void Engine::update(sf::Time dt) {
 
         updateSkyColor(); // if thisd is dont before sounds are unpaused when player update is called
         updateSun();
+        if(!lockSky) {
         if(player.getVel().x < skyThreshold) {
             skySetting-=dt.asSeconds()*(1-(player.getVel().x/skyThreshold));
         }
@@ -130,12 +134,12 @@ void Engine::update(sf::Time dt) {
             skySetting+=dt.asSeconds() * ((player.getVel().x- skyThreshold)/skyThreshold);
         }
 
-        skyTimer-=dt.asSeconds();
-        if(skyTimer < 0) {
-            skyTimer = skyDelay - skyTimer;
-            skyThreshold += skyInc;
+            skyTimer -= dt.asSeconds();
+            if (skyTimer < 0) {
+                skyTimer = skyDelay - skyTimer;
+                skyThreshold += skyInc;
+            }
         }
-
     }
 
 }
@@ -143,7 +147,7 @@ void Engine::update(sf::Time dt) {
 void Engine::handleEvent(sf::Event &e) {
     if (e.type == sf::Event::KeyPressed)
     {
-        if(e.key.code == sf::Keyboard::Space) {
+        if(e.key.code == sf::Keyboard::P) {
             isPaused = !isPaused;
             if(isPaused)
                  pause();
@@ -259,6 +263,7 @@ void Engine::gui() {
             }
             ImGui::SliderFloat("Sky Color", &skySetting, 0, 10,"%.5f", 1.f);
             ImGui::SliderFloat("Sky Threshold",&skyThreshold, 0, 1000,"%.5f", 1.f );
+            ImGui::Checkbox("Lock Sun", &lockSky);
             ImGui::Text("Engine Info");
             ImGui::Text("Game State: %d", state);
             if (ImGui::CollapsingHeader("Camera")) {
