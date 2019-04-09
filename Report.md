@@ -8,7 +8,7 @@ experimented to control the game using Computer Vision.
 The players skies through randomly generated terrain and the objective of the game is 
 travel the farthest and score as high as possible before night falls. 
 
-####Technology used
+#### Technology used
 
 The game is build with in C++ with SFML Library, Thor Library and IMgui Library. 
 //the game has it's own physics engine? 
