@@ -47,7 +47,7 @@ to detect human pose and hand gesture.
 The game concept started as a ski game where the player would ski down a
 slope taking jumps and possibly tricks.  This idea took inspiration from
 Altos Adventure.  After working on the inital skiing mehanics and getting the slope
-generation and physics working The idea 
+generation and physics working The idea
 
 #### ML Concepts
 

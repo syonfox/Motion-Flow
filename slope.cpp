@@ -81,18 +81,12 @@ bool Slope::colisionPoint(sf::Vector2f p, sf::Vector2f &mtv){
     if(fabs(m) < 0.01){
         mtv.x = 0;
         mtv.y = q.y - p.y;
-    }
-    sf::Vector2f p2 = p + sf::Vector2f(1, 1/m);
-    sf::Vector2f q2 = q + sf::Vector2f(1, -m);
-
-    mtv = lineLineIntersection(p,p2,q,q2) - p;
-    if(mtv.y > 4){
-        printf("toobig");
+    } else {
+        sf::Vector2f p2 = p + sf::Vector2f(1, 1 / m);
+        sf::Vector2f q2 = q + sf::Vector2f(1, -m);
+        mtv = lineLineIntersection(p, p2, q, q2) - p;
     }
     return true;
-
-
-
 }
 //bool Slope::colisionPoint(sf::Vector2f p, sf::Vector2f &mtv){
 //    sf::Vector2f q(p.x, slopeFunction(p.x));
