@@ -23,7 +23,7 @@ sprties for the game.
 #### Motivation
 
 We created an arcade game because arcade games are one of the major genre of games where people sit idly and play the
-games with little to no movement. We wanted to create an arcade game that can be more physcially engaging.
+games with little to no movement. We wanted to create an arcade game that can be more physically engaging.
 
 Using computer vision that detects human motion and control the game using human motion, 
 we can replace the cost for expensive sensors and controllers that are used currently in controlling game using
@@ -46,7 +46,8 @@ to detect human pose and hand gesture.
 
 The game concept started as a ski game where the player would ski down a
 slope taking jumps and possibly tricks.  This idea took inspiration from
-Altos Adventure.  After working on the intital sole mehanics and gettig//
+Altos Adventure.  After working on the inital skiing mehanics and getting the slope
+generation and physics working The idea 
 
 #### ML Concepts
 
