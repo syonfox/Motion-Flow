@@ -10,7 +10,7 @@
 #include "engine.hpp"
 
 Player::Player():
-pos(100,100),
+pos(0,0),
 vel(0,0),
 acc(0,0),
 color(sf::Color::Red),
@@ -79,6 +79,7 @@ debugLines(sf::Lines, 6)
      backgroundBaseVolume = 60;
      //backgroundSoundBuffer.loadFromFile("../res/background.wav");
      backgroundSoundBuffer.loadFromFile("../res/music/Ketsa-02-Enticing_Dreams.wav");
+//     backgroundSoundBuffer.loadFromFile("../res/music/Ketsa-07-Night_Flying.wav");
      backgroundSound.setBuffer(backgroundSoundBuffer);
      backgroundSound.setLoop(true);
      backgroundSound.setVolume(backgroundBaseVolume);
@@ -108,8 +109,8 @@ debugLines(sf::Lines, 6)
 }
 void Player::restart() {
     acc = sf::Vector2f(0,0);
-    vel = sf::Vector2f(0,0);
-    pos = sf::Vector2f(0,0);
+    vel = sf::Vector2f(100,100);
+    pos = sf::Vector2f(-50,0);
     angle = 0;
 
     combo = 0;
@@ -558,7 +559,7 @@ float Player::getAirTime() const {
 }
 
 int Player::getScore() const {
-    return (int) score + pos.x;
+    return (int) score + pos.x/10;
 }
 
 bool Player::isInAir() const {

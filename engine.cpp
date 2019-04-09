@@ -21,7 +21,7 @@ Font& Engine::findFont(const std::string &name) {
 }
 
 Engine::Engine(sf::Vector2u ws):
-    slope(10,4000,2000)
+    slope(10,4000,3000)
 {
     windowSize = ws;
 
@@ -77,9 +77,8 @@ void Engine::play() {
 }
 
 void Engine::updateSun() {
-    float y = windowSize.y-2*barPadding;
-    y -= skySetting * (windowSize.y-2*barPadding)/10;
-    y += barPadding - (sunTexture.getSize().y/2);
+    float y = windowSize.y - barPadding- (sunTexture.getSize().y/2);
+    y -= skySetting * (windowSize.y-(2*barPadding))/10;
     float x = barPadding+(barWidth/2)-sunTexture.getSize().x/2;
     sunSprite.setPosition(x,y);
 }
@@ -177,6 +176,10 @@ void Engine::handleEvent(sf::Event &e) {
         }
 
     }
+    if (e.type == sf::Event::Resized) {
+        windowSize.x  = e.size.width;
+        windowSize.y = e.size.height;
+    };
 }
 
 void Engine::render(sf::RenderWindow &window) {
@@ -216,11 +219,11 @@ void Engine::render(sf::RenderWindow &window) {
 
         ImGui::PushFont(Engine::findFont("tusj_big").imfont);
         //ImGui::SetWindowFontScale(2);
-        ImGui::SetWindowPos(ImVec2(10, 10));
+        ImGui::SetWindowPos(ImVec2(150, windowSize.y-150));
         ImGui::SetWindowSize(ImVec2(500, 200));
-        ImGui::Text("Score:    %d", player.getScore());
-        ImGui::Text("Air Time: %.2f", player.getAirTime());
-        ImGui::Text("Combo:   x%d", player.getCombo());
+        ImGui::TextColored(sf::Color::Black, "Score:    %d", player.getScore());
+        ImGui::TextColored(sf::Color::Black,"Air Time: %.2f", player.getAirTime());
+        ImGui::TextColored(sf::Color::Black, "Combo:   x%d", player.getCombo());
 
         ImGui::PopFont();
         ImGui::End();
@@ -329,10 +332,12 @@ void Engine::mainMenuDraw(sf::RenderWindow &window) {
 //    ImGuiStyle style = ImGui::GetStyle();
 //    style.FrameRounding ;
     ImVec2 size(350 , 500);
-    ImVec2 pos(100,300);
+    ImVec2 pos(100, windowSize.y/2);
     ImGui::SetWindowPos(pos);
     ImGui::SetWindowSize(size);
 
+
+    //windowSize = window.getSize();
 
     ImGui::SetWindowFontScale(5);
 
@@ -372,7 +377,7 @@ void Engine::gameoverDraw(sf::RenderWindow &window) {
     if (player.getScore() >= highscore) {
         highscore = player.getScore();
     }
-    ImGui::Text("Highest Score: %d" , highscore );
+    ImGui::Text("High Score: %d" , highscore );
     ImGui::SetWindowFontScale(1);
 //    if(ImGui::Button("Contine",btnSize)) {
 //        play();

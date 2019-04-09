@@ -114,7 +114,8 @@ int main()
                     case sf::Event::GainedFocus:
                         hasFocus = true;
                         break;
-                    default:
+
+
                         break;
                 }
 
